@@ -1,0 +1,546 @@
+{
+  "analysis": {
+    "question": "Does stopping caffeine by 2 PM improve next-day recovery?",
+    "analysis_type": "observational within-person comparison",
+    "dataset": {
+      "start_date": "2026-04-28",
+      "end_date": "2026-07-20",
+      "recorded_days": 80,
+      "persona": "Maya Chen (fictional)"
+    },
+    "primary_effect": {
+      "outcome": "hrv_ms",
+      "exposure": "caffeine_cutoff_2pm",
+      "lag_days": 1,
+      "effect": 3.94,
+      "ci_low": 1.13,
+      "ci_high": 6.42,
+      "n_on": 36,
+      "n_off": 37,
+      "mean_on": 50.22,
+      "mean_off": 46.28,
+      "interpretation": "Observed association with a higher outcome; replicate before acting."
+    },
+    "secondary_effects": [
+      {
+        "outcome": "sleep_hours",
+        "exposure": "caffeine_cutoff_2pm",
+        "lag_days": 1,
+        "effect": 0.3,
+        "ci_low": 0.05,
+        "ci_high": 0.56,
+        "n_on": 37,
+        "n_off": 38,
+        "mean_on": 7.13,
+        "mean_off": 6.83,
+        "interpretation": "Observed association with a higher outcome; replicate before acting."
+      },
+      {
+        "outcome": "resting_hr",
+        "exposure": "caffeine_cutoff_2pm",
+        "lag_days": 1,
+        "effect": -1.38,
+        "ci_low": -2.26,
+        "ci_high": -0.45,
+        "n_on": 37,
+        "n_off": 38,
+        "mean_on": 59.05,
+        "mean_off": 60.43,
+        "interpretation": "Observed association with a lower outcome; replicate before acting."
+      }
+    ],
+    "dose_response": {
+      "x": "caffeine_mg",
+      "y": "sleep_hours",
+      "lag_days": 1,
+      "r": -0.264,
+      "ci_low": -0.463,
+      "ci_high": -0.039,
+      "n": 75,
+      "interpretation": "Association only; lagging does not establish causality."
+    },
+    "trends": [
+      {
+        "metric": "hrv_ms",
+        "recent_mean": 49.71,
+        "baseline_mean": 48.12,
+        "change": 1.59,
+        "recent_n": 7,
+        "baseline_n": 25,
+        "status": "observed"
+      },
+      {
+        "metric": "sleep_hours",
+        "recent_mean": 7.08,
+        "baseline_mean": 6.94,
+        "change": 0.14,
+        "recent_n": 7,
+        "baseline_n": 26,
+        "status": "observed"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2026-05-23",
+        "hrv_ms": 45.9,
+        "sleep_hours": 7.45,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-05-24",
+        "hrv_ms": 40.7,
+        "sleep_hours": 6.62,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-05-25",
+        "hrv_ms": 52.6,
+        "sleep_hours": 7.56,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-05-26",
+        "hrv_ms": 42.7,
+        "sleep_hours": 6.94,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-05-27",
+        "hrv_ms": 56.3,
+        "sleep_hours": 7.09,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-05-28",
+        "hrv_ms": 44.7,
+        "sleep_hours": 6.53,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-05-29",
+        "hrv_ms": 45.7,
+        "sleep_hours": 6.34,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-05-30",
+        "hrv_ms": 46.6,
+        "sleep_hours": 7.32,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-05-31",
+        "hrv_ms": 50.9,
+        "sleep_hours": 6.52,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-01",
+        "hrv_ms": 50.5,
+        "sleep_hours": 6.87,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-02",
+        "hrv_ms": 46.1,
+        "sleep_hours": 7.27,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-03",
+        "hrv_ms": 48.7,
+        "sleep_hours": 7.09,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-04",
+        "hrv_ms": 58.2,
+        "sleep_hours": 7.26,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-06",
+        "hrv_ms": 53.2,
+        "sleep_hours": 6.6,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-07",
+        "hrv_ms": 40.7,
+        "sleep_hours": 5.75,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-08",
+        "hrv_ms": 45.3,
+        "sleep_hours": 6.84,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-09",
+        "hrv_ms": 45.7,
+        "sleep_hours": 7.59,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-10",
+        "hrv_ms": 49.3,
+        "sleep_hours": 6.81,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-11",
+        "hrv_ms": 45.0,
+        "sleep_hours": 7.6,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-12",
+        "hrv_ms": 40.7,
+        "sleep_hours": 6.7,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-13",
+        "hrv_ms": 41.5,
+        "sleep_hours": 6.65,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-14",
+        "hrv_ms": 45.9,
+        "sleep_hours": 6.44,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-15",
+        "hrv_ms": 44.5,
+        "sleep_hours": 7.01,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-16",
+        "hrv_ms": 52.3,
+        "sleep_hours": 7.64,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-17",
+        "hrv_ms": 46.7,
+        "sleep_hours": 7.91,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-18",
+        "hrv_ms": 48.1,
+        "sleep_hours": 7.68,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-19",
+        "hrv_ms": 50.2,
+        "sleep_hours": 6.52,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-20",
+        "hrv_ms": 51.0,
+        "sleep_hours": 6.25,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-21",
+        "hrv_ms": null,
+        "sleep_hours": 7.03,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-22",
+        "hrv_ms": 42.9,
+        "sleep_hours": 7.36,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-23",
+        "hrv_ms": 47.9,
+        "sleep_hours": 6.22,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-24",
+        "hrv_ms": 49.1,
+        "sleep_hours": 7.61,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-25",
+        "hrv_ms": 53.3,
+        "sleep_hours": 7.39,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-26",
+        "hrv_ms": 48.6,
+        "sleep_hours": 6.33,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-27",
+        "hrv_ms": 53.6,
+        "sleep_hours": 6.99,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-06-29",
+        "hrv_ms": 46.4,
+        "sleep_hours": 6.78,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-06-30",
+        "hrv_ms": 53.5,
+        "sleep_hours": 6.83,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-01",
+        "hrv_ms": 47.3,
+        "sleep_hours": 7.13,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-02",
+        "hrv_ms": 47.2,
+        "sleep_hours": 6.24,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-03",
+        "hrv_ms": 42.6,
+        "sleep_hours": 6.83,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-04",
+        "hrv_ms": 44.9,
+        "sleep_hours": 6.41,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-05",
+        "hrv_ms": 42.7,
+        "sleep_hours": 6.57,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-06",
+        "hrv_ms": 49.9,
+        "sleep_hours": 6.33,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-07",
+        "hrv_ms": 55.5,
+        "sleep_hours": 7.74,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-08",
+        "hrv_ms": 45.3,
+        "sleep_hours": 6.84,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-10",
+        "hrv_ms": 56.5,
+        "sleep_hours": 7.39,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-11",
+        "hrv_ms": 44.8,
+        "sleep_hours": 6.25,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-12",
+        "hrv_ms": 50.3,
+        "sleep_hours": 7.7,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-13",
+        "hrv_ms": 32.5,
+        "sleep_hours": 6.42,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-14",
+        "hrv_ms": 53.5,
+        "sleep_hours": 6.22,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-15",
+        "hrv_ms": 53.5,
+        "sleep_hours": 7.09,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-16",
+        "hrv_ms": 47.1,
+        "sleep_hours": 7.09,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-17",
+        "hrv_ms": 50.3,
+        "sleep_hours": 7.21,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-18",
+        "hrv_ms": 45.4,
+        "sleep_hours": 7.47,
+        "caffeine_cutoff_2pm": 1.0
+      },
+      {
+        "date": "2026-07-19",
+        "hrv_ms": 54.1,
+        "sleep_hours": 7.18,
+        "caffeine_cutoff_2pm": 0.0
+      },
+      {
+        "date": "2026-07-20",
+        "hrv_ms": 44.1,
+        "sleep_hours": 7.32,
+        "caffeine_cutoff_2pm": 1.0
+      }
+    ],
+    "quality": {
+      "score": 85,
+      "grade": "B",
+      "coverage": 0.952,
+      "calendar_days": 84,
+      "recorded_days": 80,
+      "paired_days": 73,
+      "condition_on_n": 36,
+      "condition_off_n": 37,
+      "balance_ratio": 1.03,
+      "warnings": [
+        "Calendar coverage is 95%; review why days are missing.",
+        "This is observational self-tracking data, not a randomized causal estimate."
+      ]
+    },
+    "genomics_context": {
+      "gene": "CYP1A2",
+      "marker": "rs762551",
+      "synthetic_genotype": "AC",
+      "annotation": "Often studied as an intermediate or slower-metabolism pattern; late caffeine is a testable hypothesis.",
+      "confidence": "hypothesis context only",
+      "boundary": "A single marker is probabilistic, population-dependent, and not diagnostic or prescriptive."
+    },
+    "longevity_snapshot": {
+      "phenoage": 32.11,
+      "chronological_age": 34.0,
+      "difference_years": -1.89,
+      "completeness": "10 of 10 required inputs present",
+      "boundary": "Educational biomarker summary, not a clinical age or mortality prediction."
+    },
+    "calculation_provenance": [
+      "Effect = mean(next-day outcome | cutoff followed) - mean(next-day outcome | cutoff not followed).",
+      "95% interval = deterministic seven-day moving-block bootstrap percentile interval.",
+      "Pearson interval uses Fisher's z transformation.",
+      "All labels and warnings are derived by src/liveforever_lab/analysis.py."
+    ],
+    "claim_boundary": "Wellness experiment planning only. Observed associations are not diagnoses, prescriptions, or causal proof."
+  },
+  "plan": {
+    "title": "14-day caffeine timing replication",
+    "status": "Ready to review",
+    "hypothesis": "Does stopping caffeine by 2 PM improve next-day recovery?",
+    "design": "Balanced randomized daily conditions with next-day outcome measurement.",
+    "primary_outcome": "Next-day nightly HRV (ms)",
+    "secondary_outcomes": [
+      "Sleep duration",
+      "Resting heart rate",
+      "Self-rated energy"
+    ],
+    "observed_signal": {
+      "effect": 3.94,
+      "ci_low": 1.13,
+      "ci_high": 6.42,
+      "paired_days": 73
+    },
+    "schedule": [
+      {
+        "date": "2026-07-21",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-07-22",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-07-23",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-24",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-25",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-07-26",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-27",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-28",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-29",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-07-30",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-07-31",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-08-01",
+        "condition": "Cutoff by 2 PM"
+      },
+      {
+        "date": "2026-08-02",
+        "condition": "Usual timing"
+      },
+      {
+        "date": "2026-08-03",
+        "condition": "Usual timing"
+      }
+    ],
+    "controls": [
+      "Keep total daily caffeine within the participant's usual range.",
+      "Record alcohol, illness, travel, and unusually hard training.",
+      "Use the same wearable and nightly measurement method.",
+      "Do not change medication or supplements for this experiment."
+    ],
+    "decision_rule": "Treat the result as a replication candidate only if both groups reach seven observed nights and the uncertainty interval excludes zero; otherwise label it inconclusive.",
+    "stop_conditions": [
+      "Stop and seek appropriate professional care for severe or concerning symptoms.",
+      "Pause when illness, travel, or device failure makes the comparison unreliable."
+    ],
+    "model_instruction": "GPT-5.6 may explain this plan and ask clarifying questions, but it must not change calculated values or convert association into medical advice."
+  }
+}

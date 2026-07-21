@@ -1,0 +1,3 @@
+# Fictional Build Week fixture; not a real person's DNA
+# rsid	chromosome	position	genotype
+rs762551	15	75041917	AC

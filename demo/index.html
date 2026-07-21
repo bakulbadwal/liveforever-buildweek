@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LiveForever: a personal evidence lab for privacy-first wellness experiments, built with Codex and GPT-5.6.">
+  <title>LiveForever — Personal Evidence Lab</title>
+  <style>
+    :root {
+      --page: #f5f7f8;
+      --surface: #ffffff;
+      --surface-2: #eef2f3;
+      --ink: #172126;
+      --muted: #66737a;
+      --line: #d8e0e3;
+      --teal: #087f6d;
+      --teal-soft: #e1f3ef;
+      --blue: #275ec7;
+      --blue-soft: #e8eefb;
+      --coral: #c8523f;
+      --coral-soft: #faece8;
+      --gold: #9a6900;
+      --gold-soft: #fff4d8;
+      --purple: #6a51a3;
+      --shadow: 0 1px 2px rgba(21, 33, 38, .08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--page);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--page); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .shell { min-height: 100vh; display: grid; grid-template-columns: 216px minmax(0, 1fr); }
+    .sidebar {
+      position: sticky; top: 0; height: 100vh; padding: 22px 16px;
+      background: #182226; color: #f8fbfc; display: flex; flex-direction: column;
+      border-right: 1px solid #101719;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; padding: 0 8px 22px; border-bottom: 1px solid #344145; }
+    .brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border: 2px solid #70d5c3; color: #70d5c3; font-weight: 800; }
+    .brand strong { display: block; font-size: 15px; }
+    .brand small { display: block; margin-top: 2px; color: #aebbc0; font-size: 11px; }
+    .nav { display: grid; gap: 4px; padding-top: 20px; }
+    .nav button {
+      width: 100%; text-align: left; color: #bac6ca; background: transparent; border: 0;
+      border-left: 3px solid transparent; padding: 10px 12px; min-height: 40px;
+    }
+    .nav button:hover, .nav button.active { color: #fff; background: #243136; border-left-color: #70d5c3; }
+    .privacy-note { margin-top: auto; padding: 12px; border: 1px solid #3b494e; color: #aebbc0; font-size: 11px; line-height: 1.45; }
+    .privacy-note strong { color: #fff; display: block; margin-bottom: 3px; }
+    main { min-width: 0; }
+    .topbar {
+      min-height: 64px; padding: 12px 28px; background: var(--surface); border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; position: sticky; top: 0; z-index: 5;
+    }
+    .persona { display: flex; align-items: center; gap: 10px; }
+    .avatar { width: 34px; height: 34px; background: var(--purple); color: #fff; display: grid; place-items: center; font-weight: 750; }
+    .persona strong { display: block; font-size: 13px; }
+    .persona span { color: var(--muted); font-size: 11px; }
+    .status { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+    .status-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+    .content { max-width: 1380px; padding: 28px; margin: 0 auto; }
+    .eyebrow { color: var(--teal); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 7px 0 6px; font-size: 28px; line-height: 1.16; letter-spacing: 0; }
+    .lede { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 760px; }
+    .disclaimer { margin-top: 16px; padding: 10px 13px; background: var(--gold-soft); border-left: 4px solid var(--gold); color: #604400; font-size: 12px; }
+    .question-band {
+      margin-top: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow);
+      display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 20px;
+    }
+    .question-band h2 { margin: 4px 0 5px; font-size: 20px; }
+    .question-band p { margin: 0; color: var(--muted); font-size: 13px; }
+    .signal { min-width: 200px; padding-left: 20px; border-left: 1px solid var(--line); }
+    .signal-label { color: var(--muted); font-size: 10px; text-transform: uppercase; font-weight: 700; }
+    .signal-value { font-size: 18px; font-weight: 800; color: var(--teal); margin-top: 5px; }
+    .signal small { color: var(--muted); display: block; margin-top: 2px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 12px 0; }
+    .metric { min-height: 112px; background: var(--surface); border: 1px solid var(--line); padding: 15px; box-shadow: var(--shadow); }
+    .metric:nth-child(1) { border-top: 3px solid var(--teal); }
+    .metric:nth-child(2) { border-top: 3px solid var(--blue); }
+    .metric:nth-child(3) { border-top: 3px solid var(--coral); }
+    .metric:nth-child(4) { border-top: 3px solid var(--gold); }
+    .metric-label { color: var(--muted); font-size: 11px; }
+    .metric-value { margin: 7px 0 3px; font-size: 25px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .metric-note { color: var(--muted); font-size: 11px; line-height: 1.35; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(300px, .8fr); gap: 12px; align-items: start; }
+    .panel { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .panel-head { padding: 15px 17px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .panel-head h3 { margin: 0; font-size: 14px; }
+    .panel-head p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+    .segmented { display: flex; border: 1px solid var(--line); }
+    .segmented button { min-height: 32px; padding: 0 11px; border: 0; border-right: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 11px; }
+    .segmented button:last-child { border-right: 0; }
+    .segmented button.active { background: #213036; color: #fff; }
+    .chart-wrap { padding: 14px 16px 10px; }
+    #chart { display: block; width: 100%; aspect-ratio: 3 / 1; min-height: 210px; }
+    .legend { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 11px; padding-top: 7px; }
+    .legend i { width: 8px; height: 8px; display: inline-block; margin-right: 5px; border-radius: 50%; }
+    .chart-foot { padding: 9px 16px 14px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--line); }
+    .audit-section { padding: 15px 17px; border-bottom: 1px solid var(--line); }
+    .audit-section:last-child { border-bottom: 0; }
+    .audit-section h4 { margin: 0 0 10px; font-size: 11px; text-transform: uppercase; color: var(--muted); }
+    .grade-row { display: flex; align-items: end; justify-content: space-between; gap: 12px; }
+    .grade { color: var(--gold); font-size: 36px; font-weight: 850; line-height: 1; }
+    .grade-score { color: var(--muted); font-size: 11px; text-align: right; }
+    .quality-bar { height: 7px; background: var(--surface-2); margin-top: 10px; }
+    .quality-bar span { display: block; height: 100%; width: 85%; background: var(--gold); }
+    .warning { margin-top: 8px; padding-left: 11px; border-left: 3px solid var(--gold); color: #5e4a19; font-size: 11px; line-height: 1.45; }
+    .genome { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; }
+    .gene { min-width: 64px; padding: 8px; background: var(--blue-soft); color: var(--blue); font-weight: 800; text-align: center; }
+    .genome p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .text-button { background: transparent; border: 0; color: var(--blue); padding: 0; font-size: 11px; text-decoration: underline; }
+    .section { scroll-margin-top: 82px; margin-top: 28px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .section-heading h2 { margin: 0; font-size: 18px; }
+    .section-heading p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .primary-button { min-height: 38px; border: 1px solid #15252a; background: #1c2e34; color: #fff; padding: 0 15px; font-weight: 700; font-size: 12px; }
+    .primary-button:hover { background: #294047; }
+    .experiment-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(310px, .72fr); gap: 12px; }
+    .plan-copy { padding: 17px; }
+    .plan-copy h3 { margin: 0 0 5px; font-size: 16px; }
+    .plan-copy > p { color: var(--muted); margin: 0 0 15px; font-size: 12px; }
+    .schedule { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border: 1px solid var(--line); }
+    .day { min-height: 76px; padding: 8px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 10px; }
+    .day:nth-child(7n) { border-right: 0; }
+    .day:nth-last-child(-n+7) { border-bottom: 0; }
+    .day strong { display: block; font-size: 11px; margin-bottom: 6px; }
+    .day span { display: block; line-height: 1.25; color: var(--muted); }
+    .day.cutoff { background: var(--teal-soft); border-top: 3px solid var(--teal); }
+    .day.usual { background: var(--coral-soft); border-top: 3px solid var(--coral); }
+    .controls { padding: 17px; }
+    .controls h3 { margin: 0 0 12px; font-size: 14px; }
+    .control { display: grid; grid-template-columns: 20px 1fr; gap: 7px; margin: 10px 0; color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .check { width: 17px; height: 17px; border: 1px solid var(--teal); color: var(--teal); display: grid; place-items: center; font-size: 11px; }
+    .decision { margin-top: 14px; padding: 12px; background: var(--surface-2); border-left: 3px solid var(--blue); font-size: 11px; line-height: 1.5; }
+    .sources { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--surface); }
+    .source { min-height: 118px; padding: 15px; border-right: 1px solid var(--line); }
+    .source:last-child { border-right: 0; }
+    .source-type { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+    .source strong { display: block; margin: 7px 0 4px; font-size: 14px; }
+    .source p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; display: flex; justify-content: space-between; gap: 15px; }
+    dialog { width: min(560px, calc(100vw - 32px)); border: 1px solid var(--line); padding: 0; color: var(--ink); box-shadow: 0 18px 60px rgba(11, 24, 29, .2); }
+    dialog::backdrop { background: rgba(11, 24, 29, .48); }
+    .dialog-head { display: flex; justify-content: space-between; align-items: center; padding: 15px 17px; border-bottom: 1px solid var(--line); }
+    .dialog-head h3 { margin: 0; font-size: 15px; }
+    .close { width: 32px; height: 32px; border: 0; background: var(--surface-2); font-size: 20px; }
+    .dialog-body { padding: 17px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .formula { padding: 12px; background: #182226; color: #edf6f7; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+    .loading { padding: 80px 30px; text-align: center; color: var(--muted); }
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; padding: 12px; flex-direction: row; align-items: center; overflow-x: auto; }
+      .brand { border: 0; padding: 0 14px 0 0; flex: 0 0 auto; }
+      .brand small, .privacy-note { display: none; }
+      .nav { display: flex; padding: 0; gap: 2px; }
+      .nav button { width: auto; white-space: nowrap; border-left: 0; border-bottom: 3px solid transparent; }
+      .nav button:hover, .nav button.active { border-left-color: transparent; border-bottom-color: #70d5c3; }
+      .topbar { position: static; }
+      .layout, .experiment-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .content { padding: 18px 12px; }
+      .topbar { padding: 10px 12px; }
+      .status span:last-child { display: none; }
+      h1 { font-size: 24px; }
+      .question-band { grid-template-columns: 1fr; }
+      .signal { padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .panel-head { align-items: flex-start; flex-direction: column; }
+      #chart { min-height: 190px; aspect-ratio: 1.7 / 1; }
+      .schedule { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .day, .day:nth-child(7n), .day:nth-last-child(-n+7) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .day:nth-child(2n) { border-right: 0; }
+      .day:nth-last-child(-n+2) { border-bottom: 0; }
+      .sources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .source { border-bottom: 1px solid var(--line); }
+      .source:nth-child(2n) { border-right: 0; }
+      .source:nth-last-child(-n+2) { border-bottom: 0; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">LF</div>
+        <div><strong>LiveForever</strong><small>Personal evidence lab</small></div>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="active" data-target="overview">Overview</button>
+        <button data-target="experiment">Experiment</button>
+        <button data-target="data-audit">Data audit</button>
+      </nav>
+      <div class="privacy-note"><strong>Privacy mode</strong>Local-first workflow. This public demonstration uses fictional data only.</div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div class="persona"><div class="avatar">MC</div><div><strong>Maya Chen</strong><span>Fictional demo persona · age 34</span></div></div>
+        <div class="status"><i class="status-dot"></i><span>Analysis reproducible</span><span>· Updated Jul 21</span></div>
+      </header>
+      <div class="content" id="app"><div class="loading">Loading the synthetic evidence record…</div></div>
+    </main>
+  </div>
+
+  <dialog id="calculationDialog">
+    <div class="dialog-head"><h3>How this estimate was calculated</h3><button class="close" aria-label="Close">×</button></div>
+    <div class="dialog-body" id="calculationBody"></div>
+  </dialog>
+
+  <script>
+    const fmt = (value, digits = 2) => Number(value).toFixed(digits);
+    const signed = (value, digits = 2) => `${value >= 0 ? '+' : ''}${fmt(value, digits)}`;
+    const shortDate = value => new Date(`${value}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    function render(payload) {
+      const a = payload.analysis;
+      const p = payload.plan;
+      const primary = a.primary_effect;
+      const sleep = a.secondary_effects.find(item => item.outcome === 'sleep_hours');
+      const rhr = a.secondary_effects.find(item => item.outcome === 'resting_hr');
+      document.getElementById('app').innerHTML = `
+        <section id="overview">
+          <div class="eyebrow">Personal evidence record</div>
+          <h1>Turn a health history into a testable question.</h1>
+          <p class="lede">LiveForever combines wearable trends, labs, habit logs, and privacy-preserving genomic context. Deterministic code measures the signal; GPT-5.6 explains the evidence and designs the next experiment.</p>
+          <div class="disclaimer">Wellness experiment planning only. This interface does not diagnose conditions, prescribe treatment, or prove causality.</div>
+          <div class="question-band">
+            <div><div class="eyebrow">Question under review</div><h2>${a.question}</h2><p>${a.dataset.recorded_days} fictional recorded days · ${a.quality.paired_days} paired nights · next-day analysis</p></div>
+            <div class="signal"><div class="signal-label">Current read</div><div class="signal-value">Promising, not proven</div><small>Observed association · replication recommended</small></div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="metric-label">Next-day HRV</div><div class="metric-value">${signed(primary.effect)} ms</div><div class="metric-note">95% interval ${signed(primary.ci_low)} to ${signed(primary.ci_high)} · n=${primary.n_on + primary.n_off}</div></div>
+            <div class="metric"><div class="metric-label">Sleep duration</div><div class="metric-value">${signed(sleep.effect)} h</div><div class="metric-note">95% interval ${signed(sleep.ci_low)} to ${signed(sleep.ci_high)}</div></div>
+            <div class="metric"><div class="metric-label">Resting heart rate</div><div class="metric-value">${signed(rhr.effect)} bpm</div><div class="metric-note">95% interval ${signed(rhr.ci_low)} to ${signed(rhr.ci_high)}</div></div>
+            <div class="metric"><div class="metric-label">Evidence quality</div><div class="metric-value">${a.quality.grade}</div><div class="metric-note">${a.quality.score}/100 · ${Math.round(a.quality.coverage * 100)}% calendar coverage</div></div>
+          </div>
+          <div class="layout">
+            <article class="panel">
+              <div class="panel-head"><div><h3>Recovery timeline</h3><p>Cutoff adherence mapped to the following night's outcome</p></div><div class="segmented" aria-label="Chart metric"><button class="active" data-metric="hrv_ms">HRV</button><button data-metric="sleep_hours">Sleep</button></div></div>
+              <div class="chart-wrap"><svg id="chart" viewBox="0 0 760 250" role="img" aria-label="Recovery timeline"></svg><div class="legend"><span><i style="background:var(--teal)"></i>Cutoff by 2 PM</span><span><i style="background:var(--coral)"></i>Usual timing</span><span><i style="background:#88979d"></i>7-day mean</span></div></div>
+              <div class="chart-foot">Dots show recorded nightly outcomes. Color reflects the prior day's caffeine timing. Missing observations remain missing rather than being imputed.</div>
+            </article>
+            <aside class="panel" id="data-audit">
+              <div class="panel-head"><div><h3>Evidence audit</h3><p>Confidence, provenance, and claim boundaries</p></div></div>
+              <div class="audit-section"><h4>Data quality</h4><div class="grade-row"><div class="grade">${a.quality.grade}</div><div class="grade-score">${a.quality.score} / 100<br>${a.quality.condition_on_n} vs ${a.quality.condition_off_n} paired days</div></div><div class="quality-bar"><span style="width:${a.quality.score}%"></span></div>${a.quality.warnings.map(item => `<div class="warning">${item}</div>`).join('')}</div>
+              <div class="audit-section"><h4>Genomic hypothesis context</h4><div class="genome"><div class="gene">${a.genomics_context.gene}<br>${a.genomics_context.synthetic_genotype}</div><p>${a.genomics_context.annotation}<br><br><strong>${a.genomics_context.confidence}.</strong> ${a.genomics_context.boundary}</p></div></div>
+              <div class="audit-section"><h4>Longevity snapshot</h4><div class="genome"><div class="gene">${fmt(a.longevity_snapshot.phenoage, 1)}<br>yrs</div><p>Fictional PhenoAge versus chronological age ${fmt(a.longevity_snapshot.chronological_age, 0)}. Difference ${signed(a.longevity_snapshot.difference_years, 1)} years.<br><br>${a.longevity_snapshot.boundary}</p></div></div>
+              <div class="audit-section"><button class="text-button" id="showCalculation">Inspect calculations and provenance</button></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="experiment">
+          <div class="section-heading"><div><h2>Replication plan</h2><p>GPT-5.6 turns the bounded analysis into a reviewable protocol.</p></div><button class="primary-button" id="reviewPlan">Review 14-day plan</button></div>
+          <div class="experiment-grid">
+            <article class="panel plan-copy"><h3>${p.title}</h3><p>${p.design} Primary outcome: ${p.primary_outcome}.</p><div class="schedule">${p.schedule.map(day => `<div class="day ${day.condition.startsWith('Cutoff') ? 'cutoff' : 'usual'}"><strong>${shortDate(day.date)}</strong><span>${day.condition}</span></div>`).join('')}</div></article>
+            <aside class="panel controls"><h3>Controls and decision rule</h3>${p.controls.map(item => `<div class="control"><div class="check">✓</div><div>${item}</div></div>`).join('')}<div class="decision"><strong>Decision rule</strong><br>${p.decision_rule}</div></aside>
+          </div>
+        </section>
+
+        <section class="section" id="sources">
+          <div class="section-heading"><div><h2>One record, four evidence layers</h2><p>Raw inputs stay local; the public demo includes only synthetic fixtures and derived annotations.</p></div></div>
+          <div class="sources">
+            <div class="source"><div class="source-type">Wearables</div><strong>${a.dataset.recorded_days} daily records</strong><p>HRV, sleep duration, resting heart rate, and missingness preserved.</p></div>
+            <div class="source"><div class="source-type">Habit log</div><strong>${a.quality.paired_days} paired nights</strong><p>Caffeine timing, total dose, training load, meditation, and alcohol context.</p></div>
+            <div class="source"><div class="source-type">Laboratory</div><strong>${a.longevity_snapshot.completeness}</strong><p>Published PhenoAge calculation with an explicit interpretation boundary.</p></div>
+            <div class="source"><div class="source-type">Genomics</div><strong>1 synthetic marker</strong><p>CYP1A2 provides hypothesis context without determining a recommendation.</p></div>
+          </div>
+        </section>
+        <footer class="footer"><span>Fictional persona and synthetic data. No private health information is included.</span><span>Built with Codex + GPT-5.6 for OpenAI Build Week.</span></footer>`;
+
+      drawChart(a.timeline, 'hrv_ms');
+      document.querySelectorAll('[data-metric]').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('[data-metric]').forEach(item => item.classList.toggle('active', item === button));
+        drawChart(a.timeline, button.dataset.metric);
+      }));
+      document.getElementById('reviewPlan').addEventListener('click', () => document.querySelector('.schedule').scrollIntoView({ behavior: 'smooth', block: 'center' }));
+      document.getElementById('showCalculation').addEventListener('click', () => showCalculation(a));
+      bindNavigation();
+    }
+
+    function movingAverage(values, index, width = 7) {
+      const slice = values.slice(Math.max(0, index - width + 1), index + 1).filter(value => value != null);
+      return slice.length ? slice.reduce((sum, value) => sum + value, 0) / slice.length : null;
+    }
+
+    function drawChart(timeline, metric) {
+      const svg = document.getElementById('chart');
+      const values = timeline.map(point => point[metric]);
+      const valid = values.filter(value => value != null);
+      const min = Math.min(...valid) - (metric === 'hrv_ms' ? 3 : .25);
+      const max = Math.max(...valid) + (metric === 'hrv_ms' ? 3 : .25);
+      const left = 46, right = 742, top = 18, bottom = 208;
+      const x = index => left + (right - left) * index / Math.max(1, timeline.length - 1);
+      const y = value => bottom - (value - min) / (max - min) * (bottom - top);
+      const averages = values.map((_, index) => movingAverage(values, index));
+      const path = averages.map((value, index) => value == null ? '' : `${index === 0 ? 'M' : 'L'}${x(index).toFixed(1)},${y(value).toFixed(1)}`).join(' ');
+      const grid = [0, .25, .5, .75, 1].map(frac => {
+        const value = max - (max - min) * frac;
+        const yy = top + (bottom - top) * frac;
+        return `<line x1="${left}" y1="${yy}" x2="${right}" y2="${yy}" stroke="#d8e0e3"/><text x="${left - 8}" y="${yy + 4}" text-anchor="end" fill="#66737a" font-size="10">${metric === 'hrv_ms' ? value.toFixed(0) : value.toFixed(1)}</text>`;
+      }).join('');
+      const dots = timeline.map((point, index) => point[metric] == null ? '' : `<circle cx="${x(index)}" cy="${y(point[metric])}" r="4" fill="${point.caffeine_cutoff_2pm >= .5 ? '#087f6d' : '#c8523f'}"><title>${point.date}: ${point[metric]}</title></circle>`).join('');
+      const dates = [0, Math.floor((timeline.length - 1) / 2), timeline.length - 1].map(index => `<text x="${x(index)}" y="232" text-anchor="middle" fill="#66737a" font-size="10">${shortDate(timeline[index].date)}</text>`).join('');
+      svg.innerHTML = `${grid}<path d="${path}" fill="none" stroke="#88979d" stroke-width="2.5"/>${dots}${dates}<text x="${left}" y="12" fill="#66737a" font-size="10">${metric === 'hrv_ms' ? 'HRV (ms)' : 'Sleep (hours)'}</text>`;
+    }
+
+    function showCalculation(analysis) {
+      const dialog = document.getElementById('calculationDialog');
+      document.getElementById('calculationBody').innerHTML = `
+        <p>The displayed numbers come from deterministic Python. GPT-5.6 receives this output but does not calculate or alter it.</p>
+        <div class="formula">${analysis.calculation_provenance.join('<br><br>')}</div>
+        <p><strong>Current primary estimate:</strong> ${signed(analysis.primary_effect.effect)} ms, 95% interval ${signed(analysis.primary_effect.ci_low)} to ${signed(analysis.primary_effect.ci_high)}, from ${analysis.primary_effect.n_on} cutoff and ${analysis.primary_effect.n_off} usual-timing paired nights.</p>
+        <p>${analysis.claim_boundary}</p>`;
+      dialog.showModal();
+    }
+
+    function bindNavigation() {
+      document.querySelectorAll('.nav button').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('.nav button').forEach(item => item.classList.toggle('active', item === button));
+        const target = button.dataset.target === 'data-audit' ? 'data-audit' : button.dataset.target;
+        document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+    }
+
+    document.querySelector('.close').addEventListener('click', () => document.getElementById('calculationDialog').close());
+    fetch('analysis.json').then(response => {
+      if (!response.ok) throw new Error(`Could not load analysis (${response.status})`);
+      return response.json();
+    }).then(render).catch(error => {
+      document.getElementById('app').innerHTML = `<div class="loading"><strong>Demo data could not load.</strong><br>${error.message}<br><br>Serve the demo folder over HTTP rather than opening the file directly.</div>`;
+    });
+  </script>
+</body>
+</html>
