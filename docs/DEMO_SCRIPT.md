@@ -1,62 +1,64 @@
 # Demo Video Script
 
-Target length: 2 minutes 55 seconds. Record at 1280 x 720 or higher with clear voice audio. Do not use copyrighted music.
+**Read aloud only the quoted text under `SAY`. Never read headings, timestamps, or `ON SCREEN` directions.**
 
-## 0:00-0:24 — Product And Audience
+Target length: approximately 2 minutes 10 seconds. Record at 1280 x 720 or higher with clear voice audio. Do not use copyrighted music.
 
-**On screen:** Open the LiveForever overview.
+## 0:00-0:18 — Product And Audience
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Open the LiveForever overview.
 
-"Most health products either chart what happened or offer confident AI advice. LiveForever is for serious self-trackers who need evidence they can inspect and a safer next experiment. Built for OpenAI Build Week, it turns wearable history, habits, labs, and cautious genomic context into one testable wellness question, with uncertainty shown instead of hidden."
+**SAY:**
 
-## 0:24-0:58 — Observed Signal
+"Most health products chart the past or offer confident AI advice. LiveForever gives serious self-trackers evidence they can inspect and a safer next experiment. It turns wearable history, habits, labs, and cautious genomic context into one testable wellness question."
 
-**On screen:** Show the caffeine question and trace the four-step Evidence Chain from context to next test. Switch the chart from HRV to Sleep and back.
+## 0:18-0:43 — Observed Signal
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Show the Evidence Chain. Switch HRV to Sleep and back.
 
-"This fictional user is testing whether stopping caffeine by 2 PM is associated with better next-day recovery. The evidence chain keeps context, habit, measured signal, and next test visibly separate. Across 73 paired nights, the observed HRV difference is plus 3.94 milliseconds, with a reproducible seven-day block-bootstrap interval shown on screen. Sleep is about eighteen minutes longer and resting heart rate is lower. Every point comes from deterministic synthetic data, and missing nights remain missing."
+**SAY:**
 
-## 0:58-1:30 — Confidence And Provenance
+"This fictional user is testing whether stopping caffeine by 2 PM is associated with better next-day recovery. Across 73 paired nights, HRV is 3.94 milliseconds higher, with a reproducible confidence interval shown on screen. The evidence chain keeps genomic context, habit, measured signal, and next test separate. Every point is deterministic synthetic data."
 
-**On screen:** Show the Evidence Audit. Open `Inspect calculations and provenance`.
+## 0:43-1:02 — Confidence And Provenance
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Show the Evidence Audit. Open `Inspect calculations and provenance`.
 
-"The evidence audit gives this a B, not an artificial certainty score. It checks calendar coverage, paired outcomes, minimum samples, condition balance, and known confounders. The calculation dialog shows exactly which code produced the effect and interval. The product calls this a promising association, not proof that caffeine timing caused the result."
+**SAY:**
 
-## 1:30-1:56 — Labs And Genetics
+"The audit checks coverage, sample size, condition balance, and confounders. The calculation dialog shows exactly which code produced each result. LiveForever calls this a promising association, not proof that caffeine timing caused the improvement."
 
-**On screen:** Close the dialog and show the CYP1A2 and PhenoAge sections.
+## 1:02-1:19 — Labs And Genetics
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Close the dialog. Show CYP1A2 and PhenoAge.
 
-"A fictional CYP1A2 marker provides a reason this question may be interesting, but it is labeled hypothesis context only. A synthetic lab panel also produces a PhenoAge summary only when all required inputs exist. Neither result is diagnostic or prescriptive. Genetics helps prioritize what to test; the longitudinal record tests whether the hypothesis appears in this person."
+**SAY:**
 
-## 1:56-2:19 — Replication Plan
+"A fictional CYP1A2 marker helps prioritize the question, while synthetic labs produce a PhenoAge summary only when every required input exists. Genetics is hypothesis context, never diagnosis or advice."
 
-**On screen:** Click `Review 14-day plan`. Show the balanced schedule, controls, and decision rule.
+## 1:19-1:35 — Replication Plan
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Open `Review 14-day plan`. Show the schedule and decision rule.
 
-"Instead of ending with a recommendation, LiveForever generates a balanced 14-day replication plan. It keeps the wearable and total caffeine range consistent, records confounders, avoids medication or supplement changes, and defines the decision rule before the experiment begins."
+**SAY:**
 
-## 2:19-2:49 — Build Week Extension, Codex, And GPT-5.6
+"Instead of ending with a recommendation, LiveForever creates a balanced 14-day replication plan with controls, confounder tracking, stop conditions, and a decision rule defined in advance."
 
-**On screen:** Show `SKILL.md`, `analysis.py`, and `BUILD_WEEK_PROVENANCE.md`. Briefly show this Codex build task.
+## 1:35-2:04 — Build Week Extension, Codex, And GPT-5.6
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Quickly show `SKILL.md`, `analysis.py`, and `BUILD_WEEK_PROVENANCE.md`.
 
-"The Build Week extension is a new public evidence engine, Codex Agent Skill, synthetic dataset, test suite, and product interface, built during the submission period and separately from my earlier private prototype. Codex was my primary build environment for that work. GPT-5.6 powers the Skill: it frames questions, verifies sources, explains fixed calculations, finds blind spots, and adapts experiments without changing the numbers or making medical claims."
+**SAY:**
 
-## 2:49-2:55 — Close
+"During Build Week, I used Codex to create this new public evidence engine, Agent Skill, synthetic dataset, test suite, experiment planner, and interface, separately from my earlier private prototype. GPT-5.6 powers the Skill: it frames questions, verifies sources, explains fixed calculations, finds blind spots, and adapts experiments without changing the numbers or making medical claims."
 
-**On screen:** Return to the overview.
+## 2:04-2:10 — Close
 
-**Say:**
+**ON SCREEN — SILENT DIRECTION:** Return to the overview.
 
-"LiveForever turns a health history into evidence you can inspect and a question you can test."
+**SAY:**
+
+"LiveForever turns health history into evidence you can inspect and a question you can test."
 
 ## Recording Checklist
 
