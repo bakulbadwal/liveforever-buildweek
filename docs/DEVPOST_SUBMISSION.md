@@ -70,9 +70,9 @@ Next steps include user-selected confounders, multiple-comparison controls, inte
 
 No account, API key, paid service, private health record, or real genomic file is required.
 
-## Submission Fields Still Needed
+## Submission Links
 
 - Public YouTube demo URL
 - `/feedback` Session ID from the primary Codex build task
-- Final public repository URL
-- Final GitHub Pages demo URL
+- Public repository: https://github.com/bakulbadwal/liveforever-buildweek
+- Live demo: https://bakulbadwal.github.io/liveforever-buildweek/

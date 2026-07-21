@@ -22,9 +22,9 @@ Deadline: Tuesday, July 21, 2026 at 5:00 PM PT / 8:00 PM ET.
 - [x] Pass the OpenAI Skill validator.
 - [x] Verify desktop and mobile rendering plus key interactions.
 - [x] Commit the privacy-reviewed repository.
-- [ ] Reauthenticate the personal GitHub account.
-- [ ] Publish `bakulbadwal/liveforever-buildweek` publicly.
-- [ ] Confirm GitHub Pages loads without authentication.
+- [x] Reauthenticate the personal GitHub account.
+- [x] Publish `bakulbadwal/liveforever-buildweek` publicly.
+- [x] Confirm GitHub Pages loads without authentication.
 - [ ] Record the demo using `docs/DEMO_SCRIPT.md`.
 - [ ] Upload the demo to YouTube as **Public** and verify its audio.
 - [ ] Run `/feedback` in the primary Codex build task and copy the Session ID.
