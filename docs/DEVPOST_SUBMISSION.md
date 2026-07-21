@@ -12,7 +12,7 @@
 
 LiveForever unifies longitudinal wearable signals, daily habits, laboratory trends, and cautious genomic context to answer one personal question at a time: what appears to affect my recovery, how uncertain is that signal, and how can I test it more carefully?
 
-The demonstration follows Maya Chen, a fictional user investigating whether stopping caffeine by 2 PM is associated with better next-day recovery. Deterministic Python pairs exposure days with following-night outcomes, calculates effect sizes and 95% intervals, checks missingness and group balance, preserves confounder warnings, and produces a transparent evidence grade. A synthetic CYP1A2 marker provides hypothesis context without determining the answer. GPT-5.6 then explains the bounded evidence, surfaces blind spots, reviews scientific context, and turns the result into a balanced 14-day replication plan.
+The demonstration follows Maya Chen, a fictional user investigating whether stopping caffeine by 2 PM is associated with better next-day recovery. Deterministic Python pairs exposure days with following-night outcomes, calculates effect sizes and 95% intervals, checks missingness and group balance, preserves confounder warnings, produces a transparent evidence grade, and generates a balanced 14-day replication plan. A synthetic CYP1A2 marker provides hypothesis context without determining the answer. Through the included Codex Skill, GPT-5.6 explains the bounded evidence, surfaces blind spots, reviews scientific context, and adapts the generated experiment to practical constraints without changing its calculations.
 
 The product is for wellness experiment planning, not diagnosis or treatment. Every public record is synthetic, and real health or genomic inputs remain local.
 

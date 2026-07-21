@@ -256,7 +256,7 @@
         <section id="overview">
           <div class="eyebrow">Personal evidence record</div>
           <h1>Turn a health history into a testable question.</h1>
-          <p class="lede">LiveForever combines wearable trends, labs, habit logs, and privacy-preserving genomic context. Deterministic code measures the signal; GPT-5.6 explains the evidence and designs the next experiment.</p>
+          <p class="lede">LiveForever combines wearable trends, labs, habit logs, and privacy-preserving genomic context. Deterministic code measures the signal; the included GPT-5.6 Codex Skill explains the evidence and adapts the next experiment.</p>
           <div class="disclaimer">Wellness experiment planning only. This interface does not diagnose conditions, prescribe treatment, or prove causality.</div>
           <div class="question-band">
             <div><div class="eyebrow">Question under review</div><h2>${a.question}</h2><p>${a.dataset.recorded_days} fictional recorded days · ${a.quality.paired_days} paired nights · next-day analysis</p></div>
@@ -294,7 +294,7 @@
         </section>
 
         <section class="section" id="experiment">
-          <div class="section-heading"><div><h2>Replication plan</h2><p>GPT-5.6 turns the bounded analysis into a reviewable protocol.</p></div><button class="primary-button" id="reviewPlan">Review 14-day plan</button></div>
+          <div class="section-heading"><div><h2>Replication plan</h2><p>Deterministic planning creates the protocol; GPT-5.6 adapts it within explicit safety constraints.</p></div><button class="primary-button" id="reviewPlan">Review 14-day plan</button></div>
           <div class="experiment-grid">
             <article class="panel plan-copy"><h3>${p.title}</h3><p>${p.design} Primary outcome: ${p.primary_outcome}.</p><div class="schedule">${p.schedule.map(day => `<div class="day ${day.condition.startsWith('Cutoff') ? 'cutoff' : 'usual'}"><strong>${shortDate(day.date)}</strong><span>${day.condition}</span></div>`).join('')}</div></article>
             <aside class="panel controls"><h3>Controls and decision rule</h3>${p.controls.map(item => `<div class="control"><div class="check">✓</div><div>${item}</div></div>`).join('')}<div class="decision"><strong>Decision rule</strong><br>${p.decision_rule}</div></aside>
