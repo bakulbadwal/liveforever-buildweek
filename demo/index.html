@@ -84,6 +84,29 @@
     .metric-label { color: var(--muted); font-size: 11px; }
     .metric-value { margin: 7px 0 3px; font-size: 25px; font-weight: 800; font-variant-numeric: tabular-nums; }
     .metric-note { color: var(--muted); font-size: 11px; line-height: 1.35; }
+    .chain-block { margin: 12px 0; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); }
+    .chain-head { padding: 13px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); }
+    .chain-head h3 { margin: 0; font-size: 13px; }
+    .chain-head p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+    .claim-tag { flex: 0 0 auto; padding: 5px 8px; background: var(--gold-soft); color: #725000; font-size: 10px; font-weight: 750; text-transform: uppercase; }
+    .evidence-chain { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .chain-step {
+      min-width: 0; min-height: 116px; padding: 16px; border: 0; border-right: 1px solid var(--line);
+      background: var(--surface); color: var(--ink); text-align: left; position: relative;
+    }
+    .chain-step:last-child { border-right: 0; }
+    .chain-step::after { content: "\203A"; position: absolute; top: 43px; right: -8px; z-index: 2; width: 15px; height: 22px; background: var(--surface); color: #98a4a9; display: grid; place-items: center; font-size: 20px; }
+    .chain-step:last-child::after { display: none; }
+    .chain-step:hover { background: var(--surface-2); }
+    .chain-step:hover::after { background: var(--surface-2); }
+    .chain-step:focus-visible { outline: 3px solid rgba(39, 94, 199, .3); outline-offset: -3px; z-index: 3; }
+    .chain-index { display: block; margin-bottom: 9px; color: var(--muted); font-size: 10px; font-weight: 750; text-transform: uppercase; }
+    .chain-value { display: block; overflow-wrap: anywhere; font-size: 16px; font-weight: 800; line-height: 1.15; }
+    .chain-note { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .chain-step:nth-child(1) .chain-value { color: var(--blue); }
+    .chain-step:nth-child(2) .chain-value { color: var(--coral); }
+    .chain-step:nth-child(3) .chain-value { color: var(--teal); }
+    .chain-step:nth-child(4) .chain-value { color: var(--purple); }
     .layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(300px, .8fr); gap: 12px; align-items: start; }
     .panel { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .panel-head { padding: 15px 17px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -162,12 +185,20 @@
     }
     @media (max-width: 720px) {
       .content { padding: 18px 12px; }
+      .brand { padding-right: 8px; }
+      .brand-copy { display: none; }
       .topbar { padding: 10px 12px; }
       .status span:last-child { display: none; }
       h1 { font-size: 24px; }
       .question-band { grid-template-columns: 1fr; }
       .signal { padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--line); }
       .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chain-head { align-items: flex-start; }
+      .evidence-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chain-step { border-bottom: 1px solid var(--line); }
+      .chain-step:nth-child(2n) { border-right: 0; }
+      .chain-step:nth-last-child(-n+2) { border-bottom: 0; }
+      .chain-step::after { display: none; }
       .panel-head { align-items: flex-start; flex-direction: column; }
       #chart { min-height: 190px; aspect-ratio: 1.7 / 1; }
       .schedule { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -187,7 +218,7 @@
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-mark">LF</div>
-        <div><strong>LiveForever</strong><small>Personal evidence lab</small></div>
+        <div class="brand-copy"><strong>LiveForever</strong><small>Personal evidence lab</small></div>
       </div>
       <nav class="nav" aria-label="Primary navigation">
         <button class="active" data-target="overview">Overview</button>
@@ -237,8 +268,17 @@
             <div class="metric"><div class="metric-label">Resting heart rate</div><div class="metric-value">${signed(rhr.effect)} bpm</div><div class="metric-note">95% interval ${signed(rhr.ci_low)} to ${signed(rhr.ci_high)}</div></div>
             <div class="metric"><div class="metric-label">Evidence quality</div><div class="metric-value">${a.quality.grade}</div><div class="metric-note">${a.quality.score}/100 · ${Math.round(a.quality.coverage * 100)}% calendar coverage</div></div>
           </div>
+          <div class="chain-block">
+            <div class="chain-head"><div><h3>Evidence chain</h3><p>From a plausible context to a result worth testing again.</p></div><div class="claim-tag">Association, not causation</div></div>
+            <div class="evidence-chain" aria-label="Evidence chain from genomic context to replication plan">
+              <button class="chain-step" data-chain-action="audit"><span class="chain-index">01 · Context</span><span class="chain-value">${a.genomics_context.gene} ${a.genomics_context.synthetic_genotype}</span><span class="chain-note">A hypothesis prompt, never a diagnosis</span></button>
+              <button class="chain-step" data-chain-action="timeline"><span class="chain-index">02 · Habit</span><span class="chain-value">Caffeine by 2 PM</span><span class="chain-note">Compared with usual timing</span></button>
+              <button class="chain-step" data-chain-action="calculation"><span class="chain-index">03 · Signal</span><span class="chain-value">${signed(primary.effect)} ms HRV</span><span class="chain-note">95% interval ${signed(primary.ci_low)} to ${signed(primary.ci_high)}</span></button>
+              <button class="chain-step" data-chain-action="experiment"><span class="chain-index">04 · Next test</span><span class="chain-value">14-day crossover</span><span class="chain-note">Predefined controls and decision rule</span></button>
+            </div>
+          </div>
           <div class="layout">
-            <article class="panel">
+            <article class="panel" id="timeline-panel">
               <div class="panel-head"><div><h3>Recovery timeline</h3><p>Cutoff adherence mapped to the following night's outcome</p></div><div class="segmented" aria-label="Chart metric"><button class="active" data-metric="hrv_ms">HRV</button><button data-metric="sleep_hours">Sleep</button></div></div>
               <div class="chart-wrap"><svg id="chart" viewBox="0 0 760 250" role="img" aria-label="Recovery timeline"></svg><div class="legend"><span><i style="background:var(--teal)"></i>Cutoff by 2 PM</span><span><i style="background:var(--coral)"></i>Usual timing</span><span><i style="background:#88979d"></i>7-day mean</span></div></div>
               <div class="chart-foot">Dots show recorded nightly outcomes. Color reflects the prior day's caffeine timing. Missing observations remain missing rather than being imputed.</div>
@@ -276,6 +316,15 @@
       document.querySelectorAll('[data-metric]').forEach(button => button.addEventListener('click', () => {
         document.querySelectorAll('[data-metric]').forEach(item => item.classList.toggle('active', item === button));
         drawChart(a.timeline, button.dataset.metric);
+      }));
+      document.querySelectorAll('[data-chain-action]').forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.chainAction;
+        if (action === 'calculation') {
+          showCalculation(a);
+          return;
+        }
+        const target = action === 'audit' ? 'data-audit' : action === 'timeline' ? 'timeline-panel' : 'experiment';
+        document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' });
       }));
       document.getElementById('reviewPlan').addEventListener('click', () => document.querySelector('.schedule').scrollIntoView({ behavior: 'smooth', block: 'center' }));
       document.getElementById('showCalculation').addEventListener('click', () => showCalculation(a));

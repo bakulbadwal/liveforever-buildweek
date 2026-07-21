@@ -12,11 +12,11 @@ Target length: 2 minutes 40 seconds. Record at 1280 x 720 or higher with clear v
 
 ## 0:18-0:52 — Observed Signal
 
-**On screen:** Show the caffeine question and four metric tiles. Switch the chart from HRV to Sleep and back.
+**On screen:** Show the caffeine question and trace the four-step Evidence Chain from context to next test. Switch the chart from HRV to Sleep and back.
 
 **Say:**
 
-"This fictional user is testing whether stopping caffeine by 2 PM is associated with better next-day recovery. Across 73 paired nights, the observed HRV difference is plus 3.94 milliseconds, with a reproducible seven-day block-bootstrap interval shown on screen. Sleep is about eighteen minutes longer and resting heart rate is lower. Every point comes from deterministic synthetic data, and missing nights remain missing."
+"This fictional user is testing whether stopping caffeine by 2 PM is associated with better next-day recovery. The evidence chain keeps context, habit, measured signal, and next test visibly separate. Across 73 paired nights, the observed HRV difference is plus 3.94 milliseconds, with a reproducible seven-day block-bootstrap interval shown on screen. Sleep is about eighteen minutes longer and resting heart rate is lower. Every point comes from deterministic synthetic data, and missing nights remain missing."
 
 ## 0:52-1:24 — Confidence And Provenance
 
