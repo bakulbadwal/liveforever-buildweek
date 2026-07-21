@@ -5,7 +5,7 @@
 > **OpenAI Build Week 2026 · Apps for Your Life**
 > A public, synthetic-data extension of a private personal-health prototype, meaningfully built with Codex and GPT-5.6 during Build Week.
 
-**[Open the live demo](https://bakulbadwal.github.io/liveforever-buildweek/)** · [Build Week provenance](docs/BUILD_WEEK_PROVENANCE.md) · [Technical method](docs/TECHNICAL_METHOD.md)
+**[Open the live demo](https://bakulbadwal.github.io/liveforever-buildweek/)** · [Product case study](CASE_STUDY.md) · [Build Week provenance](docs/BUILD_WEEK_PROVENANCE.md) · [Technical method](docs/TECHNICAL_METHOD.md)
 
 [![LiveForever personal evidence lab showing the recovery question, evidence chain, timeline, and evidence audit](docs/liveforever-evidence-lab.png)](https://bakulbadwal.github.io/liveforever-buildweek/)
 
