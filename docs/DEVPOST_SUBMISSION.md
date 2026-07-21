@@ -8,6 +8,10 @@
 
 **Category:** Apps for Your Life
 
+## Inspiration
+
+Most health products either chart what happened or offer confident AI advice. LiveForever is for serious self-trackers who need evidence they can inspect, uncertainty they can see, and a safer next experiment. The product addresses a practical gap between fragmented personal health history and medical-sounding AI conclusions: helping someone ask one bounded question, understand the strength of the available signal, and test it more carefully.
+
 ## What It Does
 
 LiveForever unifies longitudinal wearable signals, daily habits, laboratory trends, and cautious genomic context to answer one personal question at a time: what appears to affect my recovery, how uncertain is that signal, and how can I test it more carefully?
@@ -17,6 +21,8 @@ The demonstration follows Maya Chen, a fictional user investigating whether stop
 The product is for wellness experiment planning, not diagnosis or treatment. Every public record is synthetic, and real health or genomic inputs remain local.
 
 ## How We Built It
+
+Before Build Week, a private personal-health prototype already existed. During the submission period, Codex and GPT-5.6 were used to create a separate public extension: a new evidence engine, Codex Agent Skill, synthetic dataset, test suite, experiment planner, and product interface. The earlier private prototype and its personal data are not part of this submission or presented as Codex work.
 
 Codex was the primary Build Week environment. It inspected and tested the earlier private baseline without exposing its data, researched the hackathon and competitive landscape, helped choose the evidence-lab extension, designed the boundary between probabilistic model reasoning and deterministic calculations, implemented and tested the analysis engine, created the fictional fixtures, built the interactive dashboard, validated the Agent Skill, and prepared the submission materials.
 
