@@ -33,11 +33,11 @@ The model can be articulate *about* the evidence without becoming authoritative 
 
 ## The core product insight: uncertainty is part of the interface
 
-Most products hide uncertainty in a methodology page or a footer disclaimer. LiveForever puts it in the main workflow: confidence intervals sit beside effects, low samples generate visible warnings, missing nights stay missing, genetics is labeled hypothesis context, and the headline says “promising, not proven.”
+Most products hide uncertainty in a methodology page or a footer disclaimer. LiveForever puts it in the main workflow: confidence intervals sit beside effects, low samples generate visible warnings, missing nights stay missing, genetics is separated into contextual evidence, and the primary result carries a compact “Association only” label.
 
-The four-step **Evidence Chain** makes the reasoning inspectable:
+The four-step **How we got here** path makes the reasoning inspectable:
 
-`context → habit → observed signal → next test`
+`habit → comparison → observed signal → next test`
 
 That sequence prevents a plausible biological story from being mistaken for proof. The CYP1A2 marker can make caffeine timing an interesting question; only the longitudinal record can show whether the pattern appears in this fictional person; neither establishes causation.
 
@@ -49,7 +49,7 @@ That sequence prevents a plausible biological story from being mistaken for proo
 | **Deterministic calculations over model-generated statistics** | Effects, intervals, warnings, and grades must be reproducible and testable. | Less conversational flexibility. Trust is more valuable than improvisation in a health context. |
 | **A replication plan over a recommendation** | An observational result should produce a better next test, not a confident instruction. | The product may feel less decisive. That restraint is intentional. |
 | **One coherent fictional persona over anonymized personal records** | Longitudinal health and genomic data can remain identifying even after obvious fields are removed. Synthetic data demonstrates the complete workflow without creating that exposure. | It cannot prove real-world efficacy. The public artifact proves product and engineering judgment, not clinical validity. |
-| **Evidence Chain over a generic chat-first interface** | Users need to inspect how context became a claim and what happens next. | Less open-ended than chat. The constrained path is the product. |
+| **A guided evidence path over a generic chat-first interface** | Users need to inspect how a comparison became a claim and what happens next. | Less open-ended than chat. The constrained path is the product. |
 | **Static hosted demo plus an Agent Skill over a new backend** | Judges and users can test the product with no account, key, database, or privacy risk; GPT-5.6 operates through the included Skill. | No multi-user persistence or live model call in the browser. Those are future needs, not current ones. |
 
 ## How I would measure success

@@ -7,7 +7,11 @@
 
 **[Open the live demo](https://bakulbadwal.github.io/liveforever-buildweek/)** · [Product case study](CASE_STUDY.md) · [Build Week provenance](docs/BUILD_WEEK_PROVENANCE.md) · [Technical method](docs/TECHNICAL_METHOD.md)
 
-[![LiveForever personal evidence lab showing the recovery question, evidence chain, timeline, and evidence audit](docs/liveforever-evidence-lab.png)](https://bakulbadwal.github.io/liveforever-buildweek/)
+**Bakul Badwal** · UVA Darden MBA '27
+
+> **Submission record:** The judged Build Week artifact is frozen at commit [`6978bcd`](https://github.com/bakulbadwal/liveforever-buildweek/commit/6978bcdddb418af799d6023c1d4b1b36c2fcf4a7). The interface shown below is a presentation-only portfolio redesign prepared after the submission deadline; the analysis engine, synthetic record, results, and privacy boundaries are unchanged. The submitted interface is preserved in [`demo/index-buildweek.html`](demo/index-buildweek.html).
+
+[![LiveForever personal evidence lab showing the recovery question, comparison timeline, experiment view, and data methods](docs/liveforever-evidence-lab.png)](https://bakulbadwal.github.io/liveforever-buildweek/)
 
 LiveForever combines longitudinal wearable signals, habit logs, laboratory trends, and cautious genomic context to answer one practical question at a time:
 
@@ -17,11 +21,11 @@ The hosted demo needs no login, API key, external health service, or live model 
 
 ## Try It In 30 Seconds
 
-1. Follow the **Evidence Chain** from genomic context to habit, observed signal, and next test.
-2. Toggle the recovery chart between **HRV** and **Sleep**, then inspect the calculation provenance.
-3. Review the balanced **14-day replication plan**, controls, and decision rule.
+1. Use **Snapshot** to compare the primary result, supporting metrics, and nightly recovery timeline.
+2. Toggle the chart between **HRV** and **Sleep**, then hover or tab through individual observations.
+3. Open **Experiment** for the balanced 14-day schedule, then use **Data & methods** to inspect context and calculation provenance.
 
-The demo examines whether stopping caffeine by 2 PM is associated with better next-day recovery across 73 paired nights. It reports a `+3.94 ms` HRV difference with a 95% interval of `+1.13 to +6.42`, while labeling the result **promising, not proven**.
+The demo examines whether stopping caffeine by 2 PM is associated with better next-day recovery across 73 paired nights. It reports a `+3.94 ms` HRV difference with a 95% interval of `+1.13 to +6.42` and keeps the result explicitly labeled as an **association only**.
 
 ## What Makes It Different
 
@@ -57,6 +61,10 @@ Codex inspected the private baseline without modifying it, verified its existing
 The key human product decisions were to preserve the stronger longevity direction, submit only one project, make uncertainty and experiment design the differentiator, keep every personal record private, and use genetics only to prioritize questions rather than prescribe behavior.
 
 The hosted website intentionally avoids a browser-side API key or backend model dependency. GPT-5.6 operates through the included Skill; the static demo remains fast, free to test, and reproducible. Full before-and-after documentation is in [BUILD_WEEK_PROVENANCE.md](docs/BUILD_WEEK_PROVENANCE.md).
+
+### Post-submission portfolio iteration
+
+After the deadline, the submitted commit was frozen and a separate local branch was created for presentation improvements. This iteration replaces scroll-only navigation with three real client-side views, shortens repetitive interface copy, adds keyboard-accessible chart details, moves genomic context into Data & methods, and adds creator attribution. It does not add analyses, alter results, introduce real data, or change the Build Week submission materials.
 
 ## How It Works
 
@@ -116,7 +124,7 @@ $liveforever-evidence-lab Investigate whether my caffeine timing is associated w
 
 - [`src/liveforever_lab/`](src/liveforever_lab/) · Deterministic analysis, genomics, PhenoAge, synthetic data, and planning.
 - [`SKILL.md`](SKILL.md) · GPT-5.6 workflow, responsibilities, forbidden behavior, and claim language.
-- [`demo/`](demo/) · Static interactive application and generated analysis contract.
+- [`demo/`](demo/) · Static interactive application, generated analysis contract, and preserved Build Week interface.
 - [`tests/`](tests/) · Eleven focused tests for analysis and context behavior.
 - [`docs/`](docs/) · Technical method, provenance, submission copy, demo script, and checklist.
 
