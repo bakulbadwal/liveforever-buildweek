@@ -144,3 +144,21 @@ $liveforever-evidence-lab Investigate whether my caffeine timing is associated w
 ## License
 
 MIT
+
+## September 2026 portfolio revision
+
+The post-submission version now validates daily input before analysis, preserves results when
+records are reordered, and avoids uncertainty intervals for single-observation conditions. Its
+timeline uses the prior calendar day's caffeine timing, an actual seven-calendar-day mean, and
+a time axis that preserves missing-date gaps. The original submitted commit remains unchanged.
+
+The synthetic demo's headline estimates, evidence-quality score, and experiment plan remain
+unchanged. See [the exact change record](docs/ASTRA_CHANGELOG_2026-09-05.md) for the file list,
+reasoning, and remaining statistical limitations.
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+node --test tests/chart-math.test.cjs
+```
+
+The Python engine requires Python 3.11+; the optional chart tests use Node.js 18+ and no packages.

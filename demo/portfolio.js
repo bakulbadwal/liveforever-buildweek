@@ -182,6 +182,7 @@
             '<div class="legend">',
               '<span><i style="background:var(--green)"></i>Cutoff by 2 PM</span>',
               '<span><i style="background:var(--coral)"></i>Usual timing</span>',
+              '<span><i style="background:#63788c"></i>Prior timing unrecorded</span>',
               '<span><i style="background:#87959a"></i>7-day mean</span>',
             '</div>',
           '</section>',
@@ -355,21 +356,6 @@
     }
   }
 
-  function movingAverage(values, index, width) {
-    var lookback = width == null ? 7 : width;
-    var slice = values
-      .slice(Math.max(0, index - lookback + 1), index + 1)
-      .filter(function (value) { return value != null; });
-
-    if (!slice.length) {
-      return null;
-    }
-
-    return slice.reduce(function (sum, value) {
-      return sum + value;
-    }, 0) / slice.length;
-  }
-
   function drawChart(timeline, metric) {
     var svg = document.getElementById('chart');
     if (!svg) {
@@ -386,14 +372,14 @@
     var top = 22;
     var bottom = 208;
     var x = function (index) {
-      return left + (right - left) * index / Math.max(1, timeline.length - 1);
+      return left + (right - left) * window.LiveForeverChart.calendarFraction(timeline, index);
     };
     var y = function (value) {
       return bottom - (value - min) / (max - min) * (bottom - top);
     };
 
     var averages = values.map(function (_, index) {
-      return movingAverage(values, index, 7);
+      return window.LiveForeverChart.rollingMean(timeline, index, metric, 7);
     });
 
     var pathParts = [];
@@ -421,11 +407,11 @@
       if (point[metric] == null) {
         return '';
       }
-      var cutoff = point.caffeine_cutoff_2pm >= 0.5;
+      var condition = window.LiveForeverChart.condition(point);
       return [
         '<circle class="chart-point" tabindex="0" data-index="', index, '" ',
         'cx="', x(index), '" cy="', y(point[metric]), '" r="4.5" ',
-        'fill="', cutoff ? '#14745f' : '#c45b49', '" ',
+        'fill="', condition === 'cutoff' ? '#14745f' : condition === 'usual' ? '#c45b49' : '#63788c', '" ',
         'stroke="#ffffff" stroke-width="1.5">',
         '<title>', shortDate(point.date), ': ', fmt(point[metric], meta.digits), ' ', meta.unit, '</title>',
         '</circle>'
@@ -464,7 +450,8 @@
       var point = timeline[Number(circle.dataset.index)];
       var circleRect = circle.getBoundingClientRect();
       var wrapperRect = wrapper.getBoundingClientRect();
-      var condition = point.caffeine_cutoff_2pm >= 0.5 ? 'Cutoff by 2 PM' : 'Usual timing';
+      var prior = window.LiveForeverChart.condition(point);
+      var condition = prior === 'cutoff' ? 'Prior day: cutoff by 2 PM' : prior === 'usual' ? 'Prior day: usual timing' : 'Prior-day timing unrecorded';
 
       tooltip.innerHTML = [
         '<strong>', shortDate(point.date), '</strong><br>',

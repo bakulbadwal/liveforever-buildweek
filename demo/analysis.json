@@ -84,337 +84,393 @@
         "date": "2026-05-23",
         "hrv_ms": 45.9,
         "sleep_hours": 7.45,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-05-24",
         "hrv_ms": 40.7,
         "sleep_hours": 6.62,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-05-25",
         "hrv_ms": 52.6,
         "sleep_hours": 7.56,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-05-26",
         "hrv_ms": 42.7,
         "sleep_hours": 6.94,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-05-27",
         "hrv_ms": 56.3,
         "sleep_hours": 7.09,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-05-28",
         "hrv_ms": 44.7,
         "sleep_hours": 6.53,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-05-29",
         "hrv_ms": 45.7,
         "sleep_hours": 6.34,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-05-30",
         "hrv_ms": 46.6,
         "sleep_hours": 7.32,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-05-31",
         "hrv_ms": 50.9,
         "sleep_hours": 6.52,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-01",
         "hrv_ms": 50.5,
         "sleep_hours": 6.87,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-02",
         "hrv_ms": 46.1,
         "sleep_hours": 7.27,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-03",
         "hrv_ms": 48.7,
         "sleep_hours": 7.09,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-04",
         "hrv_ms": 58.2,
         "sleep_hours": 7.26,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-06",
         "hrv_ms": 53.2,
         "sleep_hours": 6.6,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": null
       },
       {
         "date": "2026-06-07",
         "hrv_ms": 40.7,
         "sleep_hours": 5.75,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-08",
         "hrv_ms": 45.3,
         "sleep_hours": 6.84,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-09",
         "hrv_ms": 45.7,
         "sleep_hours": 7.59,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-10",
         "hrv_ms": 49.3,
         "sleep_hours": 6.81,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-11",
         "hrv_ms": 45.0,
         "sleep_hours": 7.6,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-12",
         "hrv_ms": 40.7,
         "sleep_hours": 6.7,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-13",
         "hrv_ms": 41.5,
         "sleep_hours": 6.65,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-14",
         "hrv_ms": 45.9,
         "sleep_hours": 6.44,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-15",
         "hrv_ms": 44.5,
         "sleep_hours": 7.01,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-16",
         "hrv_ms": 52.3,
         "sleep_hours": 7.64,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-17",
         "hrv_ms": 46.7,
         "sleep_hours": 7.91,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-18",
         "hrv_ms": 48.1,
         "sleep_hours": 7.68,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-19",
         "hrv_ms": 50.2,
         "sleep_hours": 6.52,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-20",
         "hrv_ms": 51.0,
         "sleep_hours": 6.25,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-21",
         "hrv_ms": null,
         "sleep_hours": 7.03,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-22",
         "hrv_ms": 42.9,
         "sleep_hours": 7.36,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-23",
         "hrv_ms": 47.9,
         "sleep_hours": 6.22,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-24",
         "hrv_ms": 49.1,
         "sleep_hours": 7.61,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-06-25",
         "hrv_ms": 53.3,
         "sleep_hours": 7.39,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-26",
         "hrv_ms": 48.6,
         "sleep_hours": 6.33,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-27",
         "hrv_ms": 53.6,
         "sleep_hours": 6.99,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-06-29",
         "hrv_ms": 46.4,
         "sleep_hours": 6.78,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": null
       },
       {
         "date": "2026-06-30",
         "hrv_ms": 53.5,
         "sleep_hours": 6.83,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-01",
         "hrv_ms": 47.3,
         "sleep_hours": 7.13,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-02",
         "hrv_ms": 47.2,
         "sleep_hours": 6.24,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-03",
         "hrv_ms": 42.6,
         "sleep_hours": 6.83,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-04",
         "hrv_ms": 44.9,
         "sleep_hours": 6.41,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-05",
         "hrv_ms": 42.7,
         "sleep_hours": 6.57,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-06",
         "hrv_ms": 49.9,
         "sleep_hours": 6.33,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-07",
         "hrv_ms": 55.5,
         "sleep_hours": 7.74,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-08",
         "hrv_ms": 45.3,
         "sleep_hours": 6.84,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-10",
         "hrv_ms": 56.5,
         "sleep_hours": 7.39,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": null
       },
       {
         "date": "2026-07-11",
         "hrv_ms": 44.8,
         "sleep_hours": 6.25,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-12",
         "hrv_ms": 50.3,
         "sleep_hours": 7.7,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-13",
         "hrv_ms": 32.5,
         "sleep_hours": 6.42,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-14",
         "hrv_ms": 53.5,
         "sleep_hours": 6.22,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-15",
         "hrv_ms": 53.5,
         "sleep_hours": 7.09,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-16",
         "hrv_ms": 47.1,
         "sleep_hours": 7.09,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-17",
         "hrv_ms": 50.3,
         "sleep_hours": 7.21,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-18",
         "hrv_ms": 45.4,
         "sleep_hours": 7.47,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       },
       {
         "date": "2026-07-19",
         "hrv_ms": 54.1,
         "sleep_hours": 7.18,
-        "caffeine_cutoff_2pm": 0.0
+        "caffeine_cutoff_2pm": 0.0,
+        "prior_day_caffeine_cutoff_2pm": 1.0
       },
       {
         "date": "2026-07-20",
         "hrv_ms": 44.1,
         "sleep_hours": 7.32,
-        "caffeine_cutoff_2pm": 1.0
+        "caffeine_cutoff_2pm": 1.0,
+        "prior_day_caffeine_cutoff_2pm": 0.0
       }
     ],
     "quality": {
@@ -449,7 +505,8 @@
     },
     "calculation_provenance": [
       "Effect = mean(next-day outcome | cutoff followed) - mean(next-day outcome | cutoff not followed).",
-      "95% interval = deterministic seven-day moving-block bootstrap percentile interval.",
+      "95% interval = deterministic moving-block bootstrap over seven consecutive available pairs; gaps are not imputed.",
+      "Fewer than eight pairs use a normal approximation; an interval is unavailable if either condition has fewer than two observations.",
       "Pearson interval uses Fisher's z transformation.",
       "All labels and warnings are derived by src/liveforever_lab/analysis.py."
     ],
