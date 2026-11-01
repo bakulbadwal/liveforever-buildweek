@@ -474,7 +474,11 @@ figure { margin: 0; }
   touch-action: pan-y;
 }
 .helix-canvas canvas { display: block; width: 100% !important; height: 100% !important; }
-.helix-hint { margin-top: 8px; font-size: 0.85rem; color: var(--ink-3); }
+.helix-hint { margin-top: -16px; font-size: 0.85rem; color: var(--ink-3); }
+/* genome.js inserts the hint after the canvas; keep it under the canvas, list on the right */
+.helix-stage > .helix-canvas { grid-column: 1; grid-row: 1; }
+.helix-stage > .helix-hint { grid-column: 1; grid-row: 2; }
+.helix-stage > .helix-list { grid-column: 2; grid-row: 1 / span 2; }
 .helix-canvas svg.fallback { display: block; width: 100%; height: 100%; }
 .helix-list { display: grid; gap: 2px; }
 .gene {
@@ -558,6 +562,7 @@ figure { margin: 0; }
   .dial { justify-self: start; width: min(100%, 300px); }
   .side-by-side, .plan, .ledger, .quality, .helix-stage, .finding { grid-template-columns: 1fr; }
   .helix-canvas { height: 400px; }
+  .helix-stage > .helix-canvas, .helix-stage > .helix-hint, .helix-stage > .helix-list { grid-column: 1; grid-row: auto; }
   .intervention { grid-template-columns: 1fr; gap: 12px; }
   .marker-grid { grid-template-columns: 1fr; }
   .chapter { padding-top: 56px; margin-top: 40px; }
@@ -574,8 +579,12 @@ figure { margin: 0; }
   .dial { width: min(100%, 256px); gap: 10px; }
   .dial-caption { font-size: 0.95rem; }
   .scope { margin-top: 22px; padding: 12px 0; font-size: 0.88rem; }
-  .heat-row { grid-template-columns: 96px minmax(0, 1fr) 46px; gap: 8px; }
-  .heat-axis { grid-template-columns: 96px minmax(0, 1fr) 46px; gap: 8px; }
+  /* 53 weeks can't sit beside a label at phone width: name + count on one line, the year full-width below */
+  .heat-row { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; }
+  .heat-row .heat-cells { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(var(--weeks), minmax(0, 1fr)); gap: 1px; }
+  .heat-cell { min-height: 0; aspect-ratio: auto; height: 14px; }
+  .heat-axis { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .heat-axis > div:empty { display: none; }
   .heat-row .name { font-size: 0.82rem; }
   .effect-row, .effect-axis, .forest .effect-row, .forest .effect-axis { grid-template-columns: 104px minmax(0, 1fr); gap: 8px; }
   .effect-row .name { font-size: 0.88rem; }

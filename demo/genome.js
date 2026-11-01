@@ -227,7 +227,8 @@
     var twoPi = Math.PI * 2;
     var delta = ((want - cur) % twoPi + twoPi * 1.5) % twoPi - Math.PI;
     ctx.targetRot = cur + delta;
-    ctx.targetY = -r.y;
+    // clamp the pan so the helix (10 tall, ~7.7 visible) never leaves the frame half empty
+    ctx.targetY = Math.max(-1.1, Math.min(1.1, -r.y));
     ctx.auto = false;
     clearTimeout(ctx.autoTimer);
     ctx.autoTimer = setTimeout(function () { ctx.auto = true; }, 5000);

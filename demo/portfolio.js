@@ -448,11 +448,18 @@
     var w = width(host);
     var innerW = narrow() ? w - 104 : Math.floor(w * 0.58) - 150;
     var html = [];
+    // One scale per outcome across all changes, so interval widths compare.
+    var byOutcome = {};
+    record.interventions.forEach(function (iv) {
+      iv.effects.forEach(function (e) {
+        (byOutcome[e.outcome] = byOutcome[e.outcome] || []).push(e);
+      });
+    });
     record.interventions.forEach(function (iv) {
       html.push('<div class="intervention"><div><h4>' + esc(iv.title) + '</h4><div class="when">' + longDate(iv.date) + ' · ' + esc(iv.category) + '</div><div class="planted"><em>Generator truth:</em> ' + esc(iv.planted) + '</div></div><div class="iv-effects">');
       iv.effects.forEach(function (e) {
         var o = OUTCOME[e.outcome];
-        var dom = sharedDomain([e], o.pad);
+        var dom = sharedDomain(byOutcome[e.outcome], o.pad);
         var scale = linearScale(dom[0], dom[1], 0, innerW);
         var back = {};
         var plot = intervalRow(innerW, 46, scale, { effect: e.effect, ci_low: e.ci_low, ci_high: e.ci_high, note: 'not enough days on both sides' }, { unit: o.unit, digits: 2, detectedWord: 'change observed', readingOut: back });
