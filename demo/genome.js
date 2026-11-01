@@ -27,10 +27,10 @@
       renderFallback();
       return;
     }
-    var hint = document.createElement('div');
-    hint.className = 'hint';
-    hint.textContent = 'Drag to turn · tap a lit pair';
-    container.appendChild(hint);
+    var hint = document.createElement('p');
+    hint.className = 'helix-hint';
+    hint.textContent = 'Drag to turn. Tap a lit base pair, or choose one from the list.';
+    container.parentNode.insertBefore(hint, container.nextSibling);
     var started = false;
     var start = function () {
       if (started) return;
@@ -39,7 +39,7 @@
       s.src = THREE_URL;
       s.async = true;
       s.onload = build;
-      s.onerror = function () { container.removeChild(hint); renderFallback(); };
+      s.onerror = function () { hint.remove(); renderFallback(); };
       document.head.appendChild(s);
     };
     if ('IntersectionObserver' in window) {
@@ -80,10 +80,10 @@
     scene.add(group);
 
     var height = 10, radius = 1.55, turns = 3.0;
-    var strandMat = new T.MeshStandardMaterial({ color: 0xbfb8a9, roughness: 0.55, metalness: 0.1 });
+    var strandMat = new T.MeshStandardMaterial({ color: 0x8f8a7e, roughness: 0.6, metalness: 0.1 });
     var rungMat = new T.MeshStandardMaterial({ color: 0x56627c, roughness: 0.7, metalness: 0.05 });
-    var litMat = new T.MeshStandardMaterial({ color: 0xe8ab4f, emissive: 0xe8ab4f, emissiveIntensity: 0.55, roughness: 0.35 });
-    var selMat = new T.MeshStandardMaterial({ color: 0xf3c877, emissive: 0xf3c877, emissiveIntensity: 1.0, roughness: 0.25 });
+    var litMat = new T.MeshStandardMaterial({ color: 0xece6d8, emissive: 0xece6d8, emissiveIntensity: 0.45, roughness: 0.35 });
+    var selMat = new T.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6e4, emissiveIntensity: 1.0, roughness: 0.25 });
 
     function strandPoint(t, phase) {
       var y = -height / 2 + t * height;
@@ -267,7 +267,7 @@
       var tt = (0.06 + 0.88 * m / (n - 1));
       var xx = pad + (w - pad * 2) * tt;
       var ya = cy + Math.sin(tt * turns * Math.PI * 2) * amp, yb = cy + Math.sin(tt * turns * Math.PI * 2 + Math.PI) * amp;
-      lit.push('<g class="lit" data-lit="' + m + '"><line x1="' + xx.toFixed(1) + '" y1="' + ya.toFixed(1) + '" x2="' + xx.toFixed(1) + '" y2="' + yb.toFixed(1) + '" stroke="var(--accent)" stroke-width="4"/><circle cx="' + xx.toFixed(1) + '" cy="' + ya.toFixed(1) + '" r="6" fill="var(--accent)"/><circle cx="' + xx.toFixed(1) + '" cy="' + yb.toFixed(1) + '" r="6" fill="var(--accent)"/></g>');
+      lit.push('<g class="lit" data-lit="' + m + '"><line x1="' + xx.toFixed(1) + '" y1="' + ya.toFixed(1) + '" x2="' + xx.toFixed(1) + '" y2="' + yb.toFixed(1) + '" stroke="var(--self)" stroke-width="4"/><circle cx="' + xx.toFixed(1) + '" cy="' + ya.toFixed(1) + '" r="6" fill="var(--self)"/><circle cx="' + xx.toFixed(1) + '" cy="' + yb.toFixed(1) + '" r="6" fill="var(--self)"/></g>');
     }
     out.push(lit.join(''));
     out.push('</svg>');
@@ -275,8 +275,8 @@
     ctx.fallback = function (i) {
       container.querySelectorAll('.lit').forEach(function (g) {
         var on = Number(g.dataset.lit) === i;
-        g.querySelectorAll('line').forEach(function (l) { l.setAttribute('stroke-width', on ? '7' : '4'); l.setAttribute('stroke', on ? 'var(--accent-ink)' : 'var(--accent)'); });
-        g.querySelectorAll('circle').forEach(function (c) { c.setAttribute('r', on ? '9' : '6'); c.setAttribute('fill', on ? 'var(--accent-ink)' : 'var(--accent)'); });
+        g.querySelectorAll('line').forEach(function (l) { l.setAttribute('stroke-width', on ? '7' : '4'); l.setAttribute('stroke', on ? '#ffffff' : 'var(--self)'); });
+        g.querySelectorAll('circle').forEach(function (c) { c.setAttribute('r', on ? '9' : '6'); c.setAttribute('fill', on ? '#ffffff' : 'var(--self)'); });
       });
     };
     container.querySelectorAll('.lit').forEach(function (g) {

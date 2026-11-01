@@ -8829,7 +8829,7 @@
    "n": 83,
    "window_days": 90,
    "reference": 50,
-   "reference_note": "Approximate population median for the age band; HRV is device- and method-dependent.",
+   "reference_note": "Approximate age-band figure, a checked-in constant rather than a cited cohort; HRV is device- and method-dependent.",
    "age": 34.4,
    "sex": "female"
   },

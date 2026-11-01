@@ -1,8 +1,9 @@
-"""Age and sex cohort reference points for reading a personal metric in context.
+"""Age and sex reference points for reading a personal metric in context.
 
-Approximate population reference values from published norms, written as
-checked-in constants with a note. HRV in particular is device- and
-method-dependent; these are rough medians for context, never targets.
+Approximate age-band figures written as checked-in constants with a note.
+They are not drawn from a cited cohort study; they are rough reference
+values for context, never targets. HRV in particular is device- and
+method-dependent.
 """
 
 from __future__ import annotations
@@ -19,7 +20,7 @@ RHR_REFERENCE = 60
 SLEEP_REFERENCE_HOURS = 7.0
 
 REFERENCE_NOTES = {
-    "hrv_ms": "Approximate population median for the age band; HRV is device- and method-dependent.",
+    "hrv_ms": "Approximate age-band figure, a checked-in constant rather than a cited cohort; HRV is device- and method-dependent.",
     "resting_hr": "A fit-but-not-athlete reference, roughly flat across adult ages.",
     "sleep_hours": "Lower edge of the common 7 to 9 hour adult recommendation.",
 }

@@ -50,14 +50,14 @@
     }
     var x = scale(row.effect);
     var detected = row.ci_low != null && !(row.ci_low <= 0 && 0 <= row.ci_high);
-    var stroke = detected ? 'var(--accent)' : 'var(--slate)';
+    var stroke = 'var(--slate)';
     if (row.ci_low != null) {
       out.push('<line x1="' + scale(row.ci_low) + '" y1="' + cy + '" x2="' + scale(row.ci_high) + '" y2="' + cy + '" stroke="' + stroke + '" stroke-width="2" stroke-linecap="round"/>');
       out.push('<line x1="' + scale(row.ci_low) + '" y1="' + (cy - 5) + '" x2="' + scale(row.ci_low) + '" y2="' + (cy + 5) + '" stroke="' + stroke + '" stroke-width="1.5"/>');
       out.push('<line x1="' + scale(row.ci_high) + '" y1="' + (cy - 5) + '" x2="' + scale(row.ci_high) + '" y2="' + (cy + 5) + '" stroke="' + stroke + '" stroke-width="1.5"/>');
     }
     if (detected) {
-      out.push('<circle cx="' + x + '" cy="' + cy + '" r="5.5" fill="var(--accent)" stroke="var(--ground)" stroke-width="2"/>');
+      out.push('<circle cx="' + x + '" cy="' + cy + '" r="5.5" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
     } else {
       out.push('<circle cx="' + x + '" cy="' + cy + '" r="5" fill="var(--ground)" stroke="var(--slate)" stroke-width="2"/>');
     }
@@ -150,6 +150,7 @@
     svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--self)" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
     svg.push('<circle cx="' + mx.toFixed(1) + '" cy="' + my.toFixed(1) + '" r="7" fill="var(--ground)" stroke="var(--self)" stroke-width="2.5"/>');
     svg.push('<text x="' + cx + '" y="' + (cy - 36) + '" text-anchor="middle" class="axis-label" font-size="12.5">biological age</text>');
+    svg.push('<text x="' + (cx + 14) + '" y="' + (cy - r - 22) + '" class="axis-label" font-size="11">' + fmt(hero.chronological_age_at_draw, 1) + ' calendar</text>');
     svg.push('<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-family="Spectral, serif" font-weight="300" font-size="64" fill="var(--ink)" letter-spacing="-0.02em">' + fmt(hero.phenoage, 1) + '</text>');
     svg.push('<line x1="' + tx0 + '" y1="' + sy(0).toFixed(1) + '" x2="' + (tx0 + tw) + '" y2="' + sy(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>');
     svg.push('<path d="' + path + '" fill="none" stroke="var(--ink-2)" stroke-width="1.5" stroke-linejoin="round"/>');
@@ -204,12 +205,17 @@
     var out = [svgOpen(w, h, 'role="img" aria-label="Time coverage of the five data layers from ' + labs[0].date.slice(0, 4) + ' to ' + record.scope.last_night.slice(0, 4) + '"')];
     // year grid
     var y0 = parse(labs[0].date).getFullYear(), y1 = parse(record.scope.last_night).getFullYear();
+    var lastLabelX = -Infinity;
     for (var yr = y0; yr <= y1 + 1; yr++) {
       var xx = x(dayNum(yr + '-01-01'));
       if (xx < left || xx > w - right) continue;
-      if (narrow() && yr % 2) continue;
       out.push('<line x1="' + xx.toFixed(1) + '" y1="' + (top - 8) + '" x2="' + xx.toFixed(1) + '" y2="' + (h - 22) + '" class="grid-line"/>');
-      out.push('<text x="' + (xx + 4).toFixed(1) + '" y="' + (h - 8) + '" class="axis-label">' + yr + '</text>');
+      if (narrow() && yr % 2) continue;
+      var endAnchored = xx > w - right - 40;
+      var labelX = endAnchored ? xx - 4 : xx + 4;
+      if ((endAnchored ? labelX - 36 : labelX) - lastLabelX < 44) continue;
+      lastLabelX = endAnchored ? labelX : labelX + 36;
+      out.push('<text x="' + labelX.toFixed(1) + '" y="' + (h - 8) + '" text-anchor="' + (endAnchored ? 'end' : 'start') + '" class="axis-label">' + yr + '</text>');
     }
     rows.forEach(function (row, i) {
       var y = top + i * (rowH + gap), cy = y + rowH / 2;
@@ -256,7 +262,7 @@
         var n = record.genome.findings.length;
         for (var k = 0; k < n; k++) {
           var gx = left + (k + 0.5) / n * (w - right - left);
-          out.push('<circle cx="' + gx.toFixed(1) + '" cy="' + cy + '" r="3" fill="var(--accent)"/>');
+          out.push('<circle cx="' + gx.toFixed(1) + '" cy="' + cy + '" r="3" fill="var(--self)"/>');
         }
       }
     });
@@ -298,7 +304,8 @@
       out.push('<g class="draw-button" role="button" tabindex="0" data-draw="' + i + '" aria-pressed="' + selected + '" aria-label="' + longDate(d.date) + ': biological age ' + fmt(d.phenoage, 1) + ', calendar age ' + fmt(d.age, 1) + '">');
       out.push('<rect class="draw-hit" x="' + (dx - 22) + '" y="' + (Math.min(dy, ay) - 22) + '" width="44" height="' + (Math.abs(dy - ay) + 44) + '" rx="6"/>');
       out.push('<circle cx="' + dx.toFixed(1) + '" cy="' + ay.toFixed(1) + '" r="3" fill="var(--slate)"/>');
-      out.push('<circle class="draw-dot" cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="' + (selected ? 7 : 5) + '" fill="' + (selected ? 'var(--accent)' : 'var(--self)') + '" stroke="var(--ground)" stroke-width="2"/>');
+      if (selected) out.push('<circle cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="12" fill="none" stroke="var(--self)" stroke-width="1.5"/>');
+      out.push('<circle class="draw-dot" cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="' + (selected ? 6 : 5) + '" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
       if (!narrow() || i === 0 || i === draws.length - 1 || selected) {
         out.push('<text x="' + dx.toFixed(1) + '" y="' + (dy - 12).toFixed(1) + '" text-anchor="middle" class="value-label">' + fmt(d.phenoage, 1) + '</text>');
       }
@@ -309,7 +316,7 @@
     out.push('<text x="' + (x(dayNum(lastD.date)) + 10).toFixed(1) + '" y="' + (y(lastD.age) + 4).toFixed(1) + '" class="axis-label" fill="var(--slate)">' + (narrow() ? 'age' : 'calendar age') + '</text>');
     out.push('</svg>');
     host.innerHTML = out.join('') +
-      '<div class="legend"><span><i class="self"></i>PhenoAge</span><span><i class="slate"></i>Calendar age</span><span><i class="accent"></i>Selected draw</span></div>';
+      '<div class="legend"><span><i class="self"></i>PhenoAge</span><span><i class="slate"></i>Calendar age</span><span><i class="ringed"></i>Selected draw</span></div>';
     host.querySelectorAll('.draw-button').forEach(function (g) {
       var i = Number(g.dataset.draw);
       g.addEventListener('click', function () { selectDraw(i, true); });
@@ -418,7 +425,9 @@
       html.push('<div class="effect-row"><div class="name">' + esc(r.label) + '<small>' + r.n_on + ' done / ' + r.n_off + ' not' + (back.text ? ' <em>· ' + esc(back.text) + '</em>' : '') + '</small></div>' + svgOpen(w, 46) + plot + '</svg></div>');
     });
     html.push('</div><div class="effect-axis"><div></div>' + axisRow(w, scale, dom[0], dom[1], o.unit) + '</div>');
-    html.push('<p class="fig-note">Filled amber: the 95% interval excludes zero (an association, not a cause). Hollow: the interval includes zero, so nothing is detected at this sample size. ' + esc(record.habits.note) + '</p>');
+    var paired = rows.length ? rows[0].n_on + rows[0].n_off : 0;
+    var logged = record.habits.calendar.totals[rows[0].habit].logged;
+    html.push('<p class="fig-note">Filled: the 95% interval excludes zero (an association, not a cause). Hollow: the interval includes zero, so nothing is detected at this sample size. Counts here are days with a recorded next night (' + paired + ' of the ' + logged + ' logged days for the first row), so they are smaller than the calendar totals above. ' + esc(record.habits.note) + '</p>');
     host.innerHTML = html.join('');
     host.querySelectorAll('[data-habit-outcome]').forEach(function (b) {
       b.addEventListener('click', function () { state.habitOutcome = b.dataset.habitOutcome; renderHabitEffects(record); });
@@ -481,7 +490,7 @@
         '<text x="' + clamp(xp, 30, barW - 30).toFixed(1) + '" y="12" text-anchor="middle" class="value-label">' + esc(herLabel) + '</text>' +
         '</svg></div>');
     });
-    html.push('<p class="bench-note">Cohort references are approximate published norms for a woman of ' + record.benchmarks[0].age + '; ivory is her mean, slate the reference. HRV is device- and method-dependent; these are context, not targets.</p>');
+    html.push('<p class="bench-note">Reference values are approximate age-band figures written into the code as constants with a note, for a woman of ' + record.benchmarks[0].age + '; they are not a cited cohort study. Ivory is her mean, slate the reference. HRV is device- and method-dependent; these are context, not targets.</p>');
     host.innerHTML = html.join('');
   }
 
@@ -600,7 +609,7 @@
     var html = ['<div><div class="schedule" aria-label="Fourteen-day schedule">'];
     plan.schedule.forEach(function (d) {
       var cut = d.condition.indexOf('Cutoff') === 0;
-      html.push('<div class="day ' + (cut ? 'cutoff' : 'usual') + '"><b>' + weekday(d.date) + ' ' + parse(d.date).getDate() + '</b><span>' + (cut ? '2 PM cutoff' : 'Usual') + '</span></div>');
+      html.push('<div class="day ' + (cut ? 'cutoff' : 'usual') + '" aria-label="' + longDate(d.date) + ': ' + esc(d.condition) + '"><b>' + weekday(d.date) + '</b><b>' + parse(d.date).getDate() + '</b><span>' + (cut ? 'Cutoff' : 'Usual') + '</span></div>');
     });
     html.push('</div><div class="legend"><span><i class="accent"></i>Cutoff by 2 PM</span><span><i class="slate"></i>Usual timing</span></div>');
     html.push('<p class="fig-note">' + esc(plan.design) + ' Seven days of each, in a fixed seeded order, starting ' + longDate(plan.schedule[0].date) + '.</p></div>');
