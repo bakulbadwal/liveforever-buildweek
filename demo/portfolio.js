@@ -205,18 +205,27 @@
     var out = [svgOpen(w, h, 'role="img" aria-label="Time coverage of the five data layers from ' + labs[0].date.slice(0, 4) + ' to ' + record.scope.last_night.slice(0, 4) + '"')];
     // year grid
     var y0 = parse(labs[0].date).getFullYear(), y1 = parse(record.scope.last_night).getFullYear();
-    var lastLabelX = -Infinity;
+    var years = [];
     for (var yr = y0; yr <= y1 + 1; yr++) {
       var xx = x(dayNum(yr + '-01-01'));
       if (xx < left || xx > w - right) continue;
       out.push('<line x1="' + xx.toFixed(1) + '" y1="' + (top - 8) + '" x2="' + xx.toFixed(1) + '" y2="' + (h - 22) + '" class="grid-line"/>');
-      if (narrow() && yr % 2) continue;
-      var endAnchored = xx > w - right - 40;
-      var labelX = endAnchored ? xx - 4 : xx + 4;
-      if ((endAnchored ? labelX - 36 : labelX) - lastLabelX < 44) continue;
-      lastLabelX = endAnchored ? labelX : labelX + 36;
-      out.push('<text x="' + labelX.toFixed(1) + '" y="' + (h - 8) + '" text-anchor="' + (endAnchored ? 'end' : 'start') + '" class="axis-label">' + yr + '</text>');
+      years.push({ yr: yr, x: xx });
     }
+    // label the first and last visible years always; thin the middle ones so nothing collides
+    var labelW = 36, lastEnd = years.length ? years[years.length - 1].x : 0;
+    var prevRight = -Infinity;
+    years.forEach(function (item, i) {
+      var isLast = i === years.length - 1;
+      var isFirst = i === 0;
+      if (!isFirst && !isLast) {
+        if (narrow() && item.yr % 2) return;
+        if (item.x + 4 - prevRight < 10 || lastEnd - labelW - (item.x + 4 + labelW) < 10) return;
+      }
+      var labelX = isLast ? item.x - 4 : item.x + 4;
+      out.push('<text x="' + labelX.toFixed(1) + '" y="' + (h - 8) + '" text-anchor="' + (isLast ? 'end' : 'start') + '" class="axis-label">' + item.yr + '</text>');
+      if (!isLast) prevRight = labelX + labelW;
+    });
     rows.forEach(function (row, i) {
       var y = top + i * (rowH + gap), cy = y + rowH / 2;
       out.push('<line x1="' + left + '" y1="' + (y + rowH) + '" x2="' + (w - right) + '" y2="' + (y + rowH) + '" class="grid-line"/>');
