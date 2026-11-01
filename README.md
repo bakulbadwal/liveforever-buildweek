@@ -9,9 +9,9 @@
 
 **Bakul Badwal** · UVA Darden MBA '27
 
-> **Submission record:** The judged Build Week artifact is frozen at commit [`6978bcd`](https://github.com/bakulbadwal/liveforever-buildweek/commit/6978bcdddb418af799d6023c1d4b1b36c2fcf4a7). The interface shown below is a presentation-only portfolio redesign prepared after the submission deadline; the analysis engine, synthetic record, results, and privacy boundaries are unchanged. The submitted interface is preserved in [`demo/index-buildweek.html`](demo/index-buildweek.html).
+> **Submission record:** The judged Build Week artifact is frozen at commit [`6978bcd`](https://github.com/bakulbadwal/liveforever-buildweek/commit/6978bcdddb418af799d6023c1d4b1b36c2fcf4a7). The interface shown below is a post-submission portfolio redesign (November 2026); the featured analysis, its results and the privacy boundaries are unchanged, and the synthetic record was extended around it. The submitted interface is preserved in [`demo/index-buildweek.html`](demo/index-buildweek.html). Change record: [docs/DESIGN_PASS_2026-11-01.md](docs/DESIGN_PASS_2026-11-01.md).
 
-[![LiveForever personal evidence lab showing the recovery question, comparison timeline, experiment view, and data methods](docs/liveforever-evidence-lab.png)](https://bakulbadwal.github.io/liveforever-buildweek/)
+[![LiveForever: a biological-age dial reading 32.1 against a calendar age of 34.0 for a fictional person, beside the one-line definition and byline](docs/liveforever-evidence-lab.png)](https://bakulbadwal.github.io/liveforever-buildweek/)
 
 LiveForever combines longitudinal wearable signals, habit logs, laboratory trends, and cautious genomic context to answer one practical question at a time:
 
@@ -21,11 +21,13 @@ The hosted demo needs no login, API key, external health service, or live model 
 
 ## Try It In 30 Seconds
 
-1. Use **Snapshot** to compare the primary result, supporting metrics, and nightly recovery timeline.
-2. Toggle the chart between **HRV** and **Sleep**, then hover or tab through individual observations.
-3. Open **Experiment** for the balanced 14-day schedule, then use **Data & methods** to inspect context and calculation provenance.
+1. Open the [live demo](https://bakulbadwal.github.io/liveforever-buildweek/). The first screen is the biological-age dial for Maya Chen, a fictional 34-year-old, with her seven-year trend and a line of what is connected.
+2. Scroll to **Biological age across seven blood draws** and select a draw to see every marker from that day against its reference range.
+3. In **Do the practices work?**, switch the outcome between HRV, Sleep and Resting HR; several practices show nothing, and the three dated changes print the generator's own truth beside each result.
+4. The featured experiment is unchanged from the submission: whether stopping caffeine by 2 PM is associated with better next-day recovery across 73 paired nights, `+3.94 ms` HRV with a 95% interval of `+1.13 to +6.42`, labeled **association only**, with the 14-day pre-registered retest beneath it.
+5. Turn the genome helix and tap a lit base pair; each marker says what it is often studied as and how LiveForever uses it (CYP1A2 is why caffeine timing was the question worth testing).
 
-The demo examines whether stopping caffeine by 2 PM is associated with better next-day recovery across 73 paired nights. It reports a `+3.94 ms` HRV difference with a 95% interval of `+1.13 to +6.42` and keeps the result explicitly labeled as an **association only**.
+The private LiveForever runs on the author's own wearable data, a decade of coaching logs, bloodwork back to 2015 and his own 23andMe file. This public version replays the whole system on one invented person so anyone can inspect it; no real value appears here.
 
 ## What Makes It Different
 
@@ -64,7 +66,7 @@ The hosted website intentionally avoids a browser-side API key or backend model 
 
 ### Post-submission portfolio iteration
 
-After the deadline, the submitted commit was frozen and a separate local branch was created for presentation improvements. This iteration replaces scroll-only navigation with three real client-side views, shortens repetitive interface copy, adds keyboard-accessible chart details, moves genomic context into Data & methods, and adds creator attribution. It does not add analyses, alter results, introduce real data, or change the Build Week submission materials.
+After the deadline, the submitted commit was frozen and later presentation work happened on separate branches. The September 2026 revision added input validation and calendar-correct charts. The November 2026 redesign rebuilt the demo as one scrolling narrative and extended the synthetic record around the unchanged featured analysis: a year of nights and habits whose final 84 days are the judged window verbatim, seven lab draws with PhenoAge per draw, habit and intervention effects with intervals, a supplement history, cohort references and a ten-marker genome panel drawn as an interactive helix. It does not alter the featured results, introduce real data, or change the Build Week submission materials. Details: [docs/DESIGN_PASS_2026-11-01.md](docs/DESIGN_PASS_2026-11-01.md).
 
 ## How It Works
 
@@ -86,7 +88,7 @@ flowchart LR
 
 ## Demonstration Record
 
-The synthetic record spans 84 calendar days with 80 recorded days and reports:
+The featured experiment runs on a fixed 84-calendar-day window with 80 recorded days and reports:
 
 - `+3.94 ms` next-day HRV, 95% interval `+1.13 to +6.42`
 - `+0.30 h` sleep duration, 95% interval `+0.05 to +0.56`
@@ -97,16 +99,18 @@ The synthetic record spans 84 calendar days with 80 recorded days and reports:
 
 These are deliberately generated signals in synthetic data, not findings about a real person. One coherent persona keeps the end-to-end story inspectable; automated tests cover small samples, missing genomic markers, missing laboratory inputs, lag correctness, and other failure cases.
 
+Around that window, `demo/record.json` holds the rest of Maya Chen's fictional record, all generated by the same CLI: 365 calendar days of nights and habits ending on the window (`examples/maya_history.csv`), seven blood draws from 2019 to 2026 with PhenoAge per draw (`examples/maya_labs_history.json`), a supplement log since 2023 (`examples/maya_supplements.csv`), three dated interventions, cohort references, and a ten-marker genome panel (`examples/maya_genome.txt`). `tests/test_record.py` proves the window inside the longer history is byte-for-byte the judged one and still yields `+3.94 ms`.
+
 ## Run It
 
 Requires Python 3.11 or newer and has no runtime dependencies.
 
 ```bash
-PYTHONPATH=src python3.11 -m liveforever_lab.cli
+PYTHONPATH=src python3.11 -m liveforever_lab.cli   # regenerates examples/*, demo/analysis.json and demo/record.json
 python3.11 -m http.server 8765 --directory demo
 ```
 
-Open `http://localhost:8765`, or use the [hosted demo](https://bakulbadwal.github.io/liveforever-buildweek/).
+Open `http://localhost:8765`, or use the [hosted demo](https://bakulbadwal.github.io/liveforever-buildweek/). The genome helix loads three.js r128 from cdnjs when the section scrolls into view; without WebGL, or with reduced motion, it shows a static two-strand drawing with the same lit markers.
 
 Run the tests:
 
@@ -122,10 +126,10 @@ $liveforever-evidence-lab Investigate whether my caffeine timing is associated w
 
 ## Project Map
 
-- [`src/liveforever_lab/`](src/liveforever_lab/) · Deterministic analysis, genomics, PhenoAge, synthetic data, and planning.
+- [`src/liveforever_lab/`](src/liveforever_lab/) · Deterministic analysis, genomics panel, PhenoAge, labs, habits, benchmarks, synthetic data, record assembly, and planning.
 - [`SKILL.md`](SKILL.md) · GPT-5.6 workflow, responsibilities, forbidden behavior, and claim language.
-- [`demo/`](demo/) · Static interactive application, generated analysis contract, and preserved Build Week interface.
-- [`tests/`](tests/) · Eleven focused tests for analysis and context behavior.
+- [`demo/`](demo/) · Static interactive application, generated `analysis.json` and `record.json`, share image, and the preserved Build Week interface.
+- [`tests/`](tests/) · Thirty-six Python tests plus six Node chart-math tests.
 - [`docs/`](docs/) · Technical method, provenance, submission copy, demo script, and checklist.
 
 ## Privacy And Safety
