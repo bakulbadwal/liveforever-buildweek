@@ -1,0 +1,9008 @@
+{
+ "persona": {
+  "name": "Maya Chen",
+  "sex": "female",
+  "birth_date": "1992-02-14",
+  "note": "Fictional persona generated for this demonstration.",
+  "age": 34.4,
+  "as_of": "2026-07-20"
+ },
+ "scope": {
+  "calendar_days": 365,
+  "nights_recorded": 344,
+  "habit_days": 350,
+  "lab_draws": 7,
+  "biomarkers_tracked": 17,
+  "years_of_labs": 6.9,
+  "supplements_tracked": 7,
+  "supplement_days": 1226,
+  "supplement_first": "2023-01-09",
+  "genome_markers": 10,
+  "interventions": 3,
+  "featured_paired_nights": 73,
+  "first_night": "2025-07-21",
+  "last_night": "2026-07-20"
+ },
+ "hero": {
+  "phenoage": 32.11,
+  "chronological_age_at_draw": 34.0,
+  "gap_years": -1.89,
+  "draw_date": "2026-02-14",
+  "first_gap_years": 3.85,
+  "first_draw_date": "2019-03-12",
+  "trend": [
+   {
+    "date": "2019-03-12",
+    "phenoage": 30.95,
+    "age": 27.1,
+    "gap_years": 3.85
+   },
+   {
+    "date": "2020-09-22",
+    "phenoage": 31.46,
+    "age": 28.6,
+    "gap_years": 2.86
+   },
+   {
+    "date": "2021-11-08",
+    "phenoage": 31.56,
+    "age": 29.7,
+    "gap_years": 1.86
+   },
+   {
+    "date": "2022-10-17",
+    "phenoage": 31.92,
+    "age": 30.7,
+    "gap_years": 1.22
+   },
+   {
+    "date": "2023-10-30",
+    "phenoage": 31.52,
+    "age": 31.7,
+    "gap_years": -0.18
+   },
+   {
+    "date": "2024-11-18",
+    "phenoage": 31.75,
+    "age": 32.8,
+    "gap_years": -1.05
+   },
+   {
+    "date": "2026-02-14",
+    "phenoage": 32.11,
+    "age": 34.0,
+    "gap_years": -1.89
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "date": "2025-07-21",
+   "hrv_ms": 42.8,
+   "sleep_hours": 7.03,
+   "resting_hr": 63.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-07-22",
+   "hrv_ms": 46.1,
+   "sleep_hours": 6.38,
+   "resting_hr": 65.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-07-23",
+   "hrv_ms": 51.0,
+   "sleep_hours": 6.79,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-24",
+   "hrv_ms": 48.6,
+   "sleep_hours": 6.82,
+   "resting_hr": 61.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-07-25",
+   "hrv_ms": 44.8,
+   "sleep_hours": 7.03,
+   "resting_hr": 58.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-26",
+   "hrv_ms": 58.1,
+   "sleep_hours": 6.58,
+   "resting_hr": 61.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-27",
+   "hrv_ms": 55.3,
+   "sleep_hours": 6.65,
+   "resting_hr": 56.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-07-28",
+   "hrv_ms": 50.6,
+   "sleep_hours": 6.53,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-29",
+   "hrv_ms": 54.6,
+   "sleep_hours": 6.77,
+   "resting_hr": 61.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-30",
+   "hrv_ms": 51.7,
+   "sleep_hours": 7.6,
+   "resting_hr": 60.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-07-31",
+   "hrv_ms": 49.5,
+   "sleep_hours": 6.56,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-01",
+   "hrv_ms": 43.9,
+   "sleep_hours": 7.14,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-02",
+   "hrv_ms": 45.8,
+   "sleep_hours": 6.64,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-03",
+   "hrv_ms": 52.0,
+   "sleep_hours": 7.2,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-04",
+   "hrv_ms": 47.0,
+   "sleep_hours": 7.29,
+   "resting_hr": 61.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-05",
+   "hrv_ms": 54.5,
+   "sleep_hours": 6.53,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-06",
+   "hrv_ms": 54.3,
+   "sleep_hours": 6.91,
+   "resting_hr": 57.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-07",
+   "hrv_ms": 54.8,
+   "sleep_hours": 6.22,
+   "resting_hr": 60.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-08",
+   "hrv_ms": 54.5,
+   "sleep_hours": 7.08,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-09",
+   "hrv_ms": 43.4,
+   "sleep_hours": 6.38,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-10",
+   "hrv_ms": 53.9,
+   "sleep_hours": 6.82,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-11",
+   "hrv_ms": 48.6,
+   "sleep_hours": 7.87,
+   "resting_hr": 62.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-12",
+   "hrv_ms": 54.7,
+   "sleep_hours": 5.85,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-13",
+   "hrv_ms": 48.4,
+   "sleep_hours": 6.28,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-14",
+   "hrv_ms": 48.7,
+   "sleep_hours": 7.2,
+   "resting_hr": 62.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-15",
+   "hrv_ms": 45.1,
+   "sleep_hours": 6.55,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-16",
+   "hrv_ms": 36.4,
+   "sleep_hours": 6.33,
+   "resting_hr": 60.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-17",
+   "hrv_ms": 53.1,
+   "sleep_hours": 6.71,
+   "resting_hr": 60.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-18",
+   "hrv_ms": 46.4,
+   "sleep_hours": 6.26,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-19",
+   "hrv_ms": 54.8,
+   "sleep_hours": 6.6,
+   "resting_hr": 62.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-20",
+   "hrv_ms": 49.7,
+   "sleep_hours": 6.37,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-21",
+   "hrv_ms": 45.8,
+   "sleep_hours": 6.61,
+   "resting_hr": 61.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-22",
+   "hrv_ms": 48.9,
+   "sleep_hours": 6.44,
+   "resting_hr": 57.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-23",
+   "hrv_ms": 51.5,
+   "sleep_hours": 7.07,
+   "resting_hr": 61.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-24",
+   "hrv_ms": 47.3,
+   "sleep_hours": 7.43,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-25",
+   "hrv_ms": 44.2,
+   "sleep_hours": 6.45,
+   "resting_hr": 57.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-26",
+   "hrv_ms": 54.8,
+   "sleep_hours": 7.42,
+   "resting_hr": 63.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-27",
+   "hrv_ms": 51.7,
+   "sleep_hours": 6.57,
+   "resting_hr": 61.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-08-28",
+   "hrv_ms": 40.2,
+   "sleep_hours": 7.14,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-29",
+   "hrv_ms": 54.2,
+   "sleep_hours": 7.31,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-30",
+   "hrv_ms": 48.7,
+   "sleep_hours": 7.76,
+   "resting_hr": 57.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-08-31",
+   "hrv_ms": 43.1,
+   "sleep_hours": 6.49,
+   "resting_hr": 55.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-01",
+   "hrv_ms": 44.5,
+   "sleep_hours": 6.43,
+   "resting_hr": 62.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-02",
+   "hrv_ms": 52.4,
+   "sleep_hours": 6.8,
+   "resting_hr": 63.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-03",
+   "hrv_ms": 51.3,
+   "sleep_hours": 7.41,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-04",
+   "hrv_ms": 50.4,
+   "sleep_hours": 8.04,
+   "resting_hr": 56.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-05",
+   "hrv_ms": 50.7,
+   "sleep_hours": 7.01,
+   "resting_hr": 57.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-06",
+   "hrv_ms": 41.2,
+   "sleep_hours": 6.1,
+   "resting_hr": 63.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-07",
+   "hrv_ms": 40.6,
+   "sleep_hours": 6.25,
+   "resting_hr": 64.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-08",
+   "hrv_ms": 42.1,
+   "sleep_hours": 7.25,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-09",
+   "hrv_ms": 39.8,
+   "sleep_hours": 7.24,
+   "resting_hr": 62.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-10",
+   "hrv_ms": 56.4,
+   "sleep_hours": 6.4,
+   "resting_hr": 60.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-12",
+   "hrv_ms": 41.7,
+   "sleep_hours": 6.56,
+   "resting_hr": 59.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-13",
+   "hrv_ms": 53.7,
+   "sleep_hours": 6.77,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-14",
+   "hrv_ms": 49.5,
+   "sleep_hours": 6.02,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-15",
+   "hrv_ms": 49.5,
+   "sleep_hours": 6.94,
+   "resting_hr": 61.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-16",
+   "hrv_ms": 50.6,
+   "sleep_hours": 6.23,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-17",
+   "hrv_ms": 51.2,
+   "sleep_hours": 7.46,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-18",
+   "hrv_ms": 53.4,
+   "sleep_hours": 6.62,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-20",
+   "hrv_ms": 42.2,
+   "sleep_hours": 6.71,
+   "resting_hr": 60.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-21",
+   "hrv_ms": 49.2,
+   "sleep_hours": 6.86,
+   "resting_hr": 65.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-22",
+   "hrv_ms": 54.7,
+   "sleep_hours": 7.27,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-23",
+   "hrv_ms": 50.3,
+   "sleep_hours": 7.1,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-24",
+   "hrv_ms": 53.4,
+   "sleep_hours": 6.02,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-25",
+   "hrv_ms": 49.9,
+   "sleep_hours": 6.34,
+   "resting_hr": 61.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-26",
+   "hrv_ms": 49.7,
+   "sleep_hours": 6.74,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-27",
+   "hrv_ms": 52.5,
+   "sleep_hours": 6.85,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-09-28",
+   "hrv_ms": 41.7,
+   "sleep_hours": 6.42,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-29",
+   "hrv_ms": 45.7,
+   "sleep_hours": 6.75,
+   "resting_hr": 59.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-09-30",
+   "hrv_ms": 59.0,
+   "sleep_hours": 6.61,
+   "resting_hr": 57.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-01",
+   "hrv_ms": 60.8,
+   "sleep_hours": 7.53,
+   "resting_hr": 57.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-02",
+   "hrv_ms": 52.5,
+   "sleep_hours": 6.72,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-03",
+   "hrv_ms": 48.0,
+   "sleep_hours": 6.31,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-04",
+   "hrv_ms": 50.5,
+   "sleep_hours": 5.89,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-05",
+   "hrv_ms": 50.1,
+   "sleep_hours": 6.58,
+   "resting_hr": 58.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-06",
+   "hrv_ms": 53.7,
+   "sleep_hours": 6.46,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-07",
+   "hrv_ms": 48.2,
+   "sleep_hours": 6.39,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-08",
+   "hrv_ms": 53.1,
+   "sleep_hours": 7.46,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-09",
+   "hrv_ms": 41.1,
+   "sleep_hours": 6.8,
+   "resting_hr": 61.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-10",
+   "hrv_ms": 48.9,
+   "sleep_hours": 6.92,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-11",
+   "hrv_ms": 52.7,
+   "sleep_hours": 7.38,
+   "resting_hr": 60.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-12",
+   "hrv_ms": 51.9,
+   "sleep_hours": 6.76,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-13",
+   "hrv_ms": 50.1,
+   "sleep_hours": 7.25,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-14",
+   "hrv_ms": 44.2,
+   "sleep_hours": 6.63,
+   "resting_hr": 57.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-15",
+   "hrv_ms": 45.0,
+   "sleep_hours": 7.26,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-16",
+   "hrv_ms": 52.8,
+   "sleep_hours": 7.13,
+   "resting_hr": 57.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-17",
+   "hrv_ms": 37.3,
+   "sleep_hours": 6.07,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-18",
+   "hrv_ms": 40.7,
+   "sleep_hours": 6.49,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-19",
+   "hrv_ms": 42.6,
+   "sleep_hours": 6.68,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-20",
+   "hrv_ms": 50.2,
+   "sleep_hours": 6.66,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-21",
+   "hrv_ms": 46.4,
+   "sleep_hours": 7.67,
+   "resting_hr": 58.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-22",
+   "hrv_ms": 48.0,
+   "sleep_hours": 6.6,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-23",
+   "hrv_ms": 52.3,
+   "sleep_hours": 7.1,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-24",
+   "hrv_ms": 47.0,
+   "sleep_hours": 6.52,
+   "resting_hr": 62.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-25",
+   "hrv_ms": null,
+   "sleep_hours": 6.83,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-26",
+   "hrv_ms": null,
+   "sleep_hours": 6.87,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-27",
+   "hrv_ms": 44.2,
+   "sleep_hours": 6.22,
+   "resting_hr": 62.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-28",
+   "hrv_ms": 48.1,
+   "sleep_hours": 7.0,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-29",
+   "hrv_ms": 46.4,
+   "sleep_hours": 6.59,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-10-30",
+   "hrv_ms": 47.5,
+   "sleep_hours": 7.31,
+   "resting_hr": 60.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-10-31",
+   "hrv_ms": 45.6,
+   "sleep_hours": 6.35,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-01",
+   "hrv_ms": 44.3,
+   "sleep_hours": 6.55,
+   "resting_hr": 63.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-02",
+   "hrv_ms": 47.1,
+   "sleep_hours": 6.75,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-03",
+   "hrv_ms": 45.8,
+   "sleep_hours": 5.9,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-04",
+   "hrv_ms": 46.8,
+   "sleep_hours": 7.27,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-05",
+   "hrv_ms": 48.6,
+   "sleep_hours": 6.85,
+   "resting_hr": 63.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-06",
+   "hrv_ms": 47.8,
+   "sleep_hours": 6.69,
+   "resting_hr": 63.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-07",
+   "hrv_ms": 50.2,
+   "sleep_hours": 6.43,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-08",
+   "hrv_ms": 50.2,
+   "sleep_hours": 7.29,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-09",
+   "hrv_ms": 43.2,
+   "sleep_hours": 6.03,
+   "resting_hr": 61.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-10",
+   "hrv_ms": 46.1,
+   "sleep_hours": 6.74,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-11",
+   "hrv_ms": 49.9,
+   "sleep_hours": 7.34,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-13",
+   "hrv_ms": 47.5,
+   "sleep_hours": 6.96,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-14",
+   "hrv_ms": 48.9,
+   "sleep_hours": 6.25,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-15",
+   "hrv_ms": 51.8,
+   "sleep_hours": 6.25,
+   "resting_hr": 63.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-16",
+   "hrv_ms": 48.6,
+   "sleep_hours": 7.29,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-17",
+   "hrv_ms": 53.3,
+   "sleep_hours": 6.92,
+   "resting_hr": 60.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-18",
+   "hrv_ms": 49.0,
+   "sleep_hours": 7.28,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-19",
+   "hrv_ms": 44.4,
+   "sleep_hours": 6.54,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-21",
+   "hrv_ms": 49.5,
+   "sleep_hours": 6.78,
+   "resting_hr": 60.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-22",
+   "hrv_ms": 40.3,
+   "sleep_hours": 7.05,
+   "resting_hr": 64.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-23",
+   "hrv_ms": 57.1,
+   "sleep_hours": 6.7,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-24",
+   "hrv_ms": 49.8,
+   "sleep_hours": 7.34,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-25",
+   "hrv_ms": 53.0,
+   "sleep_hours": 6.7,
+   "resting_hr": 63.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-26",
+   "hrv_ms": 54.0,
+   "sleep_hours": 6.37,
+   "resting_hr": 61.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-27",
+   "hrv_ms": 48.9,
+   "sleep_hours": 6.34,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-28",
+   "hrv_ms": 46.1,
+   "sleep_hours": 6.31,
+   "resting_hr": 61.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-11-29",
+   "hrv_ms": 46.4,
+   "sleep_hours": 7.04,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-11-30",
+   "hrv_ms": 47.9,
+   "sleep_hours": 6.85,
+   "resting_hr": 62.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-01",
+   "hrv_ms": 55.1,
+   "sleep_hours": 7.18,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-02",
+   "hrv_ms": 48.6,
+   "sleep_hours": 6.74,
+   "resting_hr": 58.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-03",
+   "hrv_ms": 48.8,
+   "sleep_hours": 7.18,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-04",
+   "hrv_ms": 45.0,
+   "sleep_hours": 7.29,
+   "resting_hr": 62.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-05",
+   "hrv_ms": 52.1,
+   "sleep_hours": 6.81,
+   "resting_hr": 58.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-06",
+   "hrv_ms": 45.9,
+   "sleep_hours": 6.67,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-07",
+   "hrv_ms": 45.1,
+   "sleep_hours": 7.58,
+   "resting_hr": 57.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-08",
+   "hrv_ms": 48.7,
+   "sleep_hours": 6.92,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-09",
+   "hrv_ms": 52.2,
+   "sleep_hours": 6.56,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-10",
+   "hrv_ms": 56.5,
+   "sleep_hours": 6.92,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-11",
+   "hrv_ms": 46.8,
+   "sleep_hours": 5.49,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-12",
+   "hrv_ms": 49.4,
+   "sleep_hours": 6.88,
+   "resting_hr": 61.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-13",
+   "hrv_ms": 49.8,
+   "sleep_hours": 6.8,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-14",
+   "hrv_ms": 49.6,
+   "sleep_hours": 6.31,
+   "resting_hr": 63.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-15",
+   "hrv_ms": 41.8,
+   "sleep_hours": 5.99,
+   "resting_hr": 63.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-16",
+   "hrv_ms": 52.6,
+   "sleep_hours": 6.7,
+   "resting_hr": 56.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-17",
+   "hrv_ms": 51.6,
+   "sleep_hours": 7.32,
+   "resting_hr": 57.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-18",
+   "hrv_ms": 46.5,
+   "sleep_hours": 7.38,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-19",
+   "hrv_ms": 49.8,
+   "sleep_hours": 6.67,
+   "resting_hr": 62.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-20",
+   "hrv_ms": 45.4,
+   "sleep_hours": 6.87,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-21",
+   "hrv_ms": null,
+   "sleep_hours": 7.4,
+   "resting_hr": 60.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-22",
+   "hrv_ms": 51.4,
+   "sleep_hours": 6.82,
+   "resting_hr": 62.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-23",
+   "hrv_ms": 49.4,
+   "sleep_hours": 6.08,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-24",
+   "hrv_ms": 58.2,
+   "sleep_hours": 7.35,
+   "resting_hr": 56.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-25",
+   "hrv_ms": 42.8,
+   "sleep_hours": 7.18,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-26",
+   "hrv_ms": 45.6,
+   "sleep_hours": 7.15,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-27",
+   "hrv_ms": 51.6,
+   "sleep_hours": 6.36,
+   "resting_hr": 57.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-28",
+   "hrv_ms": 45.6,
+   "sleep_hours": 7.13,
+   "resting_hr": 58.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2025-12-29",
+   "hrv_ms": 50.8,
+   "sleep_hours": 6.64,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2025-12-30",
+   "hrv_ms": 53.5,
+   "sleep_hours": 7.25,
+   "resting_hr": 57.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-01",
+   "hrv_ms": 48.6,
+   "sleep_hours": 7.3,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-02",
+   "hrv_ms": 51.8,
+   "sleep_hours": 6.99,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-03",
+   "hrv_ms": 50.9,
+   "sleep_hours": 6.11,
+   "resting_hr": 56.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-04",
+   "hrv_ms": 56.0,
+   "sleep_hours": 6.83,
+   "resting_hr": 57.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-05",
+   "hrv_ms": 48.3,
+   "sleep_hours": 7.31,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-06",
+   "hrv_ms": 51.9,
+   "sleep_hours": 6.93,
+   "resting_hr": 60.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-07",
+   "hrv_ms": 49.5,
+   "sleep_hours": 5.98,
+   "resting_hr": 63.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-08",
+   "hrv_ms": 40.8,
+   "sleep_hours": 6.57,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-09",
+   "hrv_ms": 52.4,
+   "sleep_hours": 6.54,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-10",
+   "hrv_ms": 51.8,
+   "sleep_hours": 5.84,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-11",
+   "hrv_ms": 38.6,
+   "sleep_hours": 6.23,
+   "resting_hr": 63.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-12",
+   "hrv_ms": 54.0,
+   "sleep_hours": 7.74,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-13",
+   "hrv_ms": 48.1,
+   "sleep_hours": 6.51,
+   "resting_hr": 63.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-14",
+   "hrv_ms": 44.3,
+   "sleep_hours": 6.27,
+   "resting_hr": 63.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-15",
+   "hrv_ms": null,
+   "sleep_hours": 7.06,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-16",
+   "hrv_ms": 45.9,
+   "sleep_hours": 6.9,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-17",
+   "hrv_ms": 46.6,
+   "sleep_hours": 7.27,
+   "resting_hr": 62.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-18",
+   "hrv_ms": 51.9,
+   "sleep_hours": 7.0,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-19",
+   "hrv_ms": 41.1,
+   "sleep_hours": 6.96,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-20",
+   "hrv_ms": 57.5,
+   "sleep_hours": 7.23,
+   "resting_hr": 57.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-21",
+   "hrv_ms": 53.0,
+   "sleep_hours": 7.57,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-22",
+   "hrv_ms": 47.6,
+   "sleep_hours": 7.41,
+   "resting_hr": 61.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-23",
+   "hrv_ms": 43.0,
+   "sleep_hours": 7.03,
+   "resting_hr": 64.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-24",
+   "hrv_ms": 39.7,
+   "sleep_hours": 7.06,
+   "resting_hr": 58.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-25",
+   "hrv_ms": 49.5,
+   "sleep_hours": 8.14,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-26",
+   "hrv_ms": 58.0,
+   "sleep_hours": 7.11,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-27",
+   "hrv_ms": 49.1,
+   "sleep_hours": 6.67,
+   "resting_hr": 61.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-01-28",
+   "hrv_ms": 56.1,
+   "sleep_hours": 7.29,
+   "resting_hr": 62.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-29",
+   "hrv_ms": 44.3,
+   "sleep_hours": 5.96,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-30",
+   "hrv_ms": 54.7,
+   "sleep_hours": 6.61,
+   "resting_hr": 61.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-01-31",
+   "hrv_ms": 48.6,
+   "sleep_hours": 7.21,
+   "resting_hr": 62.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-01",
+   "hrv_ms": 51.5,
+   "sleep_hours": 6.89,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-02",
+   "hrv_ms": 51.1,
+   "sleep_hours": 7.31,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-03",
+   "hrv_ms": 47.8,
+   "sleep_hours": 7.28,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-04",
+   "hrv_ms": 45.3,
+   "sleep_hours": 7.0,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-05",
+   "hrv_ms": 45.6,
+   "sleep_hours": 7.76,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-06",
+   "hrv_ms": 49.8,
+   "sleep_hours": 6.85,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-07",
+   "hrv_ms": 50.7,
+   "sleep_hours": 6.83,
+   "resting_hr": 56.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-08",
+   "hrv_ms": 47.3,
+   "sleep_hours": 6.39,
+   "resting_hr": 65.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-09",
+   "hrv_ms": 50.0,
+   "sleep_hours": 6.75,
+   "resting_hr": 63.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-10",
+   "hrv_ms": 49.1,
+   "sleep_hours": 6.23,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-11",
+   "hrv_ms": 46.3,
+   "sleep_hours": 6.61,
+   "resting_hr": 63.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-12",
+   "hrv_ms": 50.5,
+   "sleep_hours": 7.37,
+   "resting_hr": 61.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-13",
+   "hrv_ms": 43.4,
+   "sleep_hours": 6.46,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-14",
+   "hrv_ms": 48.1,
+   "sleep_hours": 7.36,
+   "resting_hr": 61.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-15",
+   "hrv_ms": 44.5,
+   "sleep_hours": 6.83,
+   "resting_hr": 60.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-16",
+   "hrv_ms": 48.7,
+   "sleep_hours": 7.23,
+   "resting_hr": 62.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-17",
+   "hrv_ms": 59.2,
+   "sleep_hours": 7.6,
+   "resting_hr": 62.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-18",
+   "hrv_ms": 53.5,
+   "sleep_hours": 7.59,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-19",
+   "hrv_ms": 45.0,
+   "sleep_hours": 6.52,
+   "resting_hr": 58.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-20",
+   "hrv_ms": 55.1,
+   "sleep_hours": 6.96,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-22",
+   "hrv_ms": 40.1,
+   "sleep_hours": 7.47,
+   "resting_hr": 64.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-23",
+   "hrv_ms": 55.0,
+   "sleep_hours": 6.92,
+   "resting_hr": 57.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-24",
+   "hrv_ms": 43.0,
+   "sleep_hours": 6.84,
+   "resting_hr": 62.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-25",
+   "hrv_ms": 52.3,
+   "sleep_hours": 6.33,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-26",
+   "hrv_ms": 52.7,
+   "sleep_hours": 7.4,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-02-27",
+   "hrv_ms": 50.6,
+   "sleep_hours": 6.02,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-02-28",
+   "hrv_ms": 48.3,
+   "sleep_hours": 7.42,
+   "resting_hr": 60.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-01",
+   "hrv_ms": 48.8,
+   "sleep_hours": 7.07,
+   "resting_hr": 61.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-02",
+   "hrv_ms": 55.0,
+   "sleep_hours": 6.92,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-04",
+   "hrv_ms": 47.1,
+   "sleep_hours": 8.02,
+   "resting_hr": 55.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-05",
+   "hrv_ms": 42.6,
+   "sleep_hours": 7.09,
+   "resting_hr": 56.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-06",
+   "hrv_ms": 49.3,
+   "sleep_hours": 7.49,
+   "resting_hr": 57.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-07",
+   "hrv_ms": 42.6,
+   "sleep_hours": 6.75,
+   "resting_hr": 56.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-08",
+   "hrv_ms": 53.3,
+   "sleep_hours": 7.6,
+   "resting_hr": 54.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-09",
+   "hrv_ms": 53.9,
+   "sleep_hours": 7.47,
+   "resting_hr": 57.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-10",
+   "hrv_ms": 46.1,
+   "sleep_hours": 6.43,
+   "resting_hr": 59.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-11",
+   "hrv_ms": 56.2,
+   "sleep_hours": 7.49,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-12",
+   "hrv_ms": 54.6,
+   "sleep_hours": 6.34,
+   "resting_hr": 55.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-13",
+   "hrv_ms": 53.5,
+   "sleep_hours": 7.34,
+   "resting_hr": 63.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-14",
+   "hrv_ms": 45.8,
+   "sleep_hours": 6.16,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-15",
+   "hrv_ms": 49.1,
+   "sleep_hours": 6.93,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-16",
+   "hrv_ms": 54.0,
+   "sleep_hours": 6.57,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-17",
+   "hrv_ms": 46.4,
+   "sleep_hours": 6.94,
+   "resting_hr": 60.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-18",
+   "hrv_ms": 50.3,
+   "sleep_hours": 7.71,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-19",
+   "hrv_ms": 49.0,
+   "sleep_hours": 7.6,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-20",
+   "hrv_ms": 48.0,
+   "sleep_hours": 6.71,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-21",
+   "hrv_ms": 54.0,
+   "sleep_hours": 7.52,
+   "resting_hr": 58.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-22",
+   "hrv_ms": 48.1,
+   "sleep_hours": 6.74,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-23",
+   "hrv_ms": 44.5,
+   "sleep_hours": 6.66,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-24",
+   "hrv_ms": 50.8,
+   "sleep_hours": 7.21,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-25",
+   "hrv_ms": 56.2,
+   "sleep_hours": 7.26,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-26",
+   "hrv_ms": 53.7,
+   "sleep_hours": 7.63,
+   "resting_hr": 58.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-27",
+   "hrv_ms": 46.6,
+   "sleep_hours": 6.44,
+   "resting_hr": 57.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-28",
+   "hrv_ms": 54.9,
+   "sleep_hours": 6.73,
+   "resting_hr": 57.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-03-30",
+   "hrv_ms": 55.2,
+   "sleep_hours": 7.82,
+   "resting_hr": 58.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-03-31",
+   "hrv_ms": 57.0,
+   "sleep_hours": 7.35,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-01",
+   "hrv_ms": 48.6,
+   "sleep_hours": 7.42,
+   "resting_hr": 56.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-02",
+   "hrv_ms": 53.1,
+   "sleep_hours": 7.99,
+   "resting_hr": 60.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-03",
+   "hrv_ms": 49.6,
+   "sleep_hours": 7.23,
+   "resting_hr": 57.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-05",
+   "hrv_ms": 50.1,
+   "sleep_hours": 7.14,
+   "resting_hr": 58.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-06",
+   "hrv_ms": 48.7,
+   "sleep_hours": 6.26,
+   "resting_hr": 61.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-07",
+   "hrv_ms": 46.4,
+   "sleep_hours": 7.37,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-08",
+   "hrv_ms": 51.1,
+   "sleep_hours": 8.24,
+   "resting_hr": 60.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-10",
+   "hrv_ms": 42.6,
+   "sleep_hours": 5.91,
+   "resting_hr": 60.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-11",
+   "hrv_ms": 44.6,
+   "sleep_hours": 6.07,
+   "resting_hr": 63.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-12",
+   "hrv_ms": 54.9,
+   "sleep_hours": 7.04,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-13",
+   "hrv_ms": 50.2,
+   "sleep_hours": 7.12,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-14",
+   "hrv_ms": 45.6,
+   "sleep_hours": 7.85,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-15",
+   "hrv_ms": 47.9,
+   "sleep_hours": 7.29,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-16",
+   "hrv_ms": 57.2,
+   "sleep_hours": 7.15,
+   "resting_hr": 58.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-17",
+   "hrv_ms": 54.2,
+   "sleep_hours": 7.18,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-18",
+   "hrv_ms": 47.4,
+   "sleep_hours": 6.99,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-19",
+   "hrv_ms": 45.4,
+   "sleep_hours": 7.12,
+   "resting_hr": 57.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-20",
+   "hrv_ms": 54.0,
+   "sleep_hours": 7.16,
+   "resting_hr": 58.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-21",
+   "hrv_ms": 50.1,
+   "sleep_hours": 7.51,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-22",
+   "hrv_ms": 43.4,
+   "sleep_hours": 6.62,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-23",
+   "hrv_ms": 42.5,
+   "sleep_hours": 7.3,
+   "resting_hr": 62.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-24",
+   "hrv_ms": 55.0,
+   "sleep_hours": 6.61,
+   "resting_hr": 58.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-25",
+   "hrv_ms": 51.3,
+   "sleep_hours": 6.39,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-26",
+   "hrv_ms": 51.3,
+   "sleep_hours": 6.69,
+   "resting_hr": 60.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-04-28",
+   "hrv_ms": 49.6,
+   "sleep_hours": 6.78,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-29",
+   "hrv_ms": 58.9,
+   "sleep_hours": 7.41,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-04-30",
+   "hrv_ms": 54.3,
+   "sleep_hours": 7.42,
+   "resting_hr": 57.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-01",
+   "hrv_ms": 51.0,
+   "sleep_hours": 7.21,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-02",
+   "hrv_ms": 41.5,
+   "sleep_hours": 6.35,
+   "resting_hr": 59.9,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-03",
+   "hrv_ms": 38.9,
+   "sleep_hours": 6.81,
+   "resting_hr": 56.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-04",
+   "hrv_ms": 45.0,
+   "sleep_hours": 6.71,
+   "resting_hr": 61.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-05",
+   "hrv_ms": 49.7,
+   "sleep_hours": 6.79,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-06",
+   "hrv_ms": 58.1,
+   "sleep_hours": 7.26,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-07",
+   "hrv_ms": 52.0,
+   "sleep_hours": 6.5,
+   "resting_hr": 59.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-08",
+   "hrv_ms": 46.3,
+   "sleep_hours": 6.62,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-09",
+   "hrv_ms": 49.0,
+   "sleep_hours": 7.48,
+   "resting_hr": 53.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-10",
+   "hrv_ms": 48.5,
+   "sleep_hours": 7.14,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-12",
+   "hrv_ms": 56.5,
+   "sleep_hours": 7.47,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-13",
+   "hrv_ms": 53.7,
+   "sleep_hours": 8.01,
+   "resting_hr": 62.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-14",
+   "hrv_ms": 47.7,
+   "sleep_hours": 7.76,
+   "resting_hr": 60.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-15",
+   "hrv_ms": 47.5,
+   "sleep_hours": 6.92,
+   "resting_hr": 58.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-16",
+   "hrv_ms": 48.7,
+   "sleep_hours": 7.2,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-17",
+   "hrv_ms": 55.1,
+   "sleep_hours": 7.38,
+   "resting_hr": 62.2,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-18",
+   "hrv_ms": 52.0,
+   "sleep_hours": 7.32,
+   "resting_hr": 55.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-19",
+   "hrv_ms": 47.9,
+   "sleep_hours": 6.7,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-20",
+   "hrv_ms": 50.5,
+   "sleep_hours": 6.46,
+   "resting_hr": 60.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-21",
+   "hrv_ms": 47.4,
+   "sleep_hours": 7.62,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-22",
+   "hrv_ms": null,
+   "sleep_hours": 6.02,
+   "resting_hr": 60.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-23",
+   "hrv_ms": 45.9,
+   "sleep_hours": 7.45,
+   "resting_hr": 58.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-24",
+   "hrv_ms": 40.7,
+   "sleep_hours": 6.62,
+   "resting_hr": 62.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-25",
+   "hrv_ms": 52.6,
+   "sleep_hours": 7.56,
+   "resting_hr": 57.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-26",
+   "hrv_ms": 42.7,
+   "sleep_hours": 6.94,
+   "resting_hr": 61.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-27",
+   "hrv_ms": 56.3,
+   "sleep_hours": 7.09,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-28",
+   "hrv_ms": 44.7,
+   "sleep_hours": 6.53,
+   "resting_hr": 59.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-05-29",
+   "hrv_ms": 45.7,
+   "sleep_hours": 6.34,
+   "resting_hr": 61.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-30",
+   "hrv_ms": 46.6,
+   "sleep_hours": 7.32,
+   "resting_hr": 58.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-05-31",
+   "hrv_ms": 50.9,
+   "sleep_hours": 6.52,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-01",
+   "hrv_ms": 50.5,
+   "sleep_hours": 6.87,
+   "resting_hr": 59.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-02",
+   "hrv_ms": 46.1,
+   "sleep_hours": 7.27,
+   "resting_hr": 60.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-03",
+   "hrv_ms": 48.7,
+   "sleep_hours": 7.09,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-04",
+   "hrv_ms": 58.2,
+   "sleep_hours": 7.26,
+   "resting_hr": 58.7,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-06",
+   "hrv_ms": 53.2,
+   "sleep_hours": 6.6,
+   "resting_hr": 56.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-07",
+   "hrv_ms": 40.7,
+   "sleep_hours": 5.75,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-08",
+   "hrv_ms": 45.3,
+   "sleep_hours": 6.84,
+   "resting_hr": 59.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-09",
+   "hrv_ms": 45.7,
+   "sleep_hours": 7.59,
+   "resting_hr": 59.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-10",
+   "hrv_ms": 49.3,
+   "sleep_hours": 6.81,
+   "resting_hr": 62.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-11",
+   "hrv_ms": 45.0,
+   "sleep_hours": 7.6,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-12",
+   "hrv_ms": 40.7,
+   "sleep_hours": 6.7,
+   "resting_hr": 58.5,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-13",
+   "hrv_ms": 41.5,
+   "sleep_hours": 6.65,
+   "resting_hr": 54.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-14",
+   "hrv_ms": 45.9,
+   "sleep_hours": 6.44,
+   "resting_hr": 61.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-15",
+   "hrv_ms": 44.5,
+   "sleep_hours": 7.01,
+   "resting_hr": 59.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-16",
+   "hrv_ms": 52.3,
+   "sleep_hours": 7.64,
+   "resting_hr": 57.1,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-17",
+   "hrv_ms": 46.7,
+   "sleep_hours": 7.91,
+   "resting_hr": 57.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-18",
+   "hrv_ms": 48.1,
+   "sleep_hours": 7.68,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-19",
+   "hrv_ms": 50.2,
+   "sleep_hours": 6.52,
+   "resting_hr": 64.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-20",
+   "hrv_ms": 51.0,
+   "sleep_hours": 6.25,
+   "resting_hr": 65.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-21",
+   "hrv_ms": null,
+   "sleep_hours": 7.03,
+   "resting_hr": 59.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-22",
+   "hrv_ms": 42.9,
+   "sleep_hours": 7.36,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-23",
+   "hrv_ms": 47.9,
+   "sleep_hours": 6.22,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-24",
+   "hrv_ms": 49.1,
+   "sleep_hours": 7.61,
+   "resting_hr": 59.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-25",
+   "hrv_ms": 53.3,
+   "sleep_hours": 7.39,
+   "resting_hr": 62.3,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-26",
+   "hrv_ms": 48.6,
+   "sleep_hours": 6.33,
+   "resting_hr": 63.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-27",
+   "hrv_ms": 53.6,
+   "sleep_hours": 6.99,
+   "resting_hr": 60.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-06-29",
+   "hrv_ms": 46.4,
+   "sleep_hours": 6.78,
+   "resting_hr": 63.6,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-06-30",
+   "hrv_ms": 53.5,
+   "sleep_hours": 6.83,
+   "resting_hr": 60.6,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-01",
+   "hrv_ms": 47.3,
+   "sleep_hours": 7.13,
+   "resting_hr": 60.0,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-02",
+   "hrv_ms": 47.2,
+   "sleep_hours": 6.24,
+   "resting_hr": 59.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-03",
+   "hrv_ms": 42.6,
+   "sleep_hours": 6.83,
+   "resting_hr": 60.4,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-04",
+   "hrv_ms": 44.9,
+   "sleep_hours": 6.41,
+   "resting_hr": 60.4,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-05",
+   "hrv_ms": 42.7,
+   "sleep_hours": 6.57,
+   "resting_hr": 59.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-06",
+   "hrv_ms": 49.9,
+   "sleep_hours": 6.33,
+   "resting_hr": 57.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-07",
+   "hrv_ms": 55.5,
+   "sleep_hours": 7.74,
+   "resting_hr": 59.2,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-08",
+   "hrv_ms": 45.3,
+   "sleep_hours": 6.84,
+   "resting_hr": 58.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-10",
+   "hrv_ms": 56.5,
+   "sleep_hours": 7.39,
+   "resting_hr": 58.9,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-11",
+   "hrv_ms": 44.8,
+   "sleep_hours": 6.25,
+   "resting_hr": 57.3,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-12",
+   "hrv_ms": 50.3,
+   "sleep_hours": 7.7,
+   "resting_hr": 57.1,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-13",
+   "hrv_ms": 32.5,
+   "sleep_hours": 6.42,
+   "resting_hr": 62.8,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-14",
+   "hrv_ms": 53.5,
+   "sleep_hours": 6.22,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-15",
+   "hrv_ms": 53.5,
+   "sleep_hours": 7.09,
+   "resting_hr": 60.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-16",
+   "hrv_ms": 47.1,
+   "sleep_hours": 7.09,
+   "resting_hr": 61.0,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-17",
+   "hrv_ms": 50.3,
+   "sleep_hours": 7.21,
+   "resting_hr": 59.7,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-18",
+   "hrv_ms": 45.4,
+   "sleep_hours": 7.47,
+   "resting_hr": 59.5,
+   "caffeine_cutoff_2pm": 1.0
+  },
+  {
+   "date": "2026-07-19",
+   "hrv_ms": 54.1,
+   "sleep_hours": 7.18,
+   "resting_hr": 58.8,
+   "caffeine_cutoff_2pm": 0.0
+  },
+  {
+   "date": "2026-07-20",
+   "hrv_ms": 44.1,
+   "sleep_hours": 7.32,
+   "resting_hr": 61.4,
+   "caffeine_cutoff_2pm": 1.0
+  }
+ ],
+ "labs": {
+  "draws": [
+   {
+    "date": "2019-03-12",
+    "age": 27.1,
+    "values": {
+     "albumin": 4.0,
+     "creatinine": 0.9,
+     "glucose": 99.0,
+     "crp": 3.4,
+     "lymphocyte_pct": 23.0,
+     "mcv": 90.0,
+     "rdw": 13.9,
+     "alk_phosphatase": 74.0,
+     "wbc": 7.6,
+     "total_cholesterol": 212.0,
+     "ldl": 138.0,
+     "hdl": 52.0,
+     "triglycerides": 118.0,
+     "apob": 104.0,
+     "hba1c": 5.6,
+     "vitamin_d": 21.0,
+     "ferritin": 24.0
+    },
+    "phenoage": 30.95,
+    "gap_years": 3.85,
+    "outside_range": [
+     "crp",
+     "total_cholesterol",
+     "ldl",
+     "apob",
+     "vitamin_d"
+    ]
+   },
+   {
+    "date": "2020-09-22",
+    "age": 28.6,
+    "values": {
+     "albumin": 4.0,
+     "creatinine": 0.92,
+     "glucose": 98.0,
+     "crp": 2.9,
+     "lymphocyte_pct": 24.0,
+     "mcv": 90.0,
+     "rdw": 13.8,
+     "alk_phosphatase": 72.0,
+     "wbc": 7.3,
+     "total_cholesterol": 206.0,
+     "ldl": 134.0,
+     "hdl": 54.0,
+     "triglycerides": 112.0,
+     "apob": 101.0,
+     "hba1c": 5.5,
+     "vitamin_d": 26.0,
+     "ferritin": 27.0
+    },
+    "phenoage": 31.46,
+    "gap_years": 2.86,
+    "outside_range": [
+     "total_cholesterol",
+     "ldl",
+     "apob",
+     "vitamin_d"
+    ]
+   },
+   {
+    "date": "2021-11-08",
+    "age": 29.7,
+    "values": {
+     "albumin": 4.1,
+     "creatinine": 0.93,
+     "glucose": 97.0,
+     "crp": 2.6,
+     "lymphocyte_pct": 25.0,
+     "mcv": 91.0,
+     "rdw": 13.7,
+     "alk_phosphatase": 70.0,
+     "wbc": 7.1,
+     "total_cholesterol": 201.0,
+     "ldl": 129.0,
+     "hdl": 56.0,
+     "triglycerides": 104.0,
+     "apob": 97.0,
+     "hba1c": 5.5,
+     "vitamin_d": 31.0,
+     "ferritin": 31.0
+    },
+    "phenoage": 31.56,
+    "gap_years": 1.86,
+    "outside_range": [
+     "total_cholesterol",
+     "ldl",
+     "apob"
+    ]
+   },
+   {
+    "date": "2022-10-17",
+    "age": 30.7,
+    "values": {
+     "albumin": 4.1,
+     "creatinine": 0.94,
+     "glucose": 97.0,
+     "crp": 2.2,
+     "lymphocyte_pct": 25.0,
+     "mcv": 91.0,
+     "rdw": 13.6,
+     "alk_phosphatase": 69.0,
+     "wbc": 7.0,
+     "total_cholesterol": 194.0,
+     "ldl": 122.0,
+     "hdl": 58.0,
+     "triglycerides": 96.0,
+     "apob": 92.0,
+     "hba1c": 5.4,
+     "vitamin_d": 34.0,
+     "ferritin": 36.0
+    },
+    "phenoage": 31.92,
+    "gap_years": 1.22,
+    "outside_range": [
+     "ldl",
+     "apob"
+    ]
+   },
+   {
+    "date": "2023-10-30",
+    "age": 31.7,
+    "values": {
+     "albumin": 4.2,
+     "creatinine": 0.95,
+     "glucose": 96.0,
+     "crp": 1.9,
+     "lymphocyte_pct": 26.0,
+     "mcv": 92.0,
+     "rdw": 13.4,
+     "alk_phosphatase": 67.0,
+     "wbc": 6.8,
+     "total_cholesterol": 188.0,
+     "ldl": 116.0,
+     "hdl": 60.0,
+     "triglycerides": 90.0,
+     "apob": 88.0,
+     "hba1c": 5.4,
+     "vitamin_d": 38.0,
+     "ferritin": 41.0
+    },
+    "phenoage": 31.52,
+    "gap_years": -0.18,
+    "outside_range": [
+     "ldl"
+    ]
+   },
+   {
+    "date": "2024-11-18",
+    "age": 32.8,
+    "values": {
+     "albumin": 4.2,
+     "creatinine": 0.95,
+     "glucose": 95.0,
+     "crp": 1.7,
+     "lymphocyte_pct": 26.0,
+     "mcv": 92.0,
+     "rdw": 13.3,
+     "alk_phosphatase": 66.0,
+     "wbc": 6.6,
+     "total_cholesterol": 184.0,
+     "ldl": 111.0,
+     "hdl": 61.0,
+     "triglycerides": 86.0,
+     "apob": 85.0,
+     "hba1c": 5.3,
+     "vitamin_d": 42.0,
+     "ferritin": 45.0
+    },
+    "phenoage": 31.75,
+    "gap_years": -1.05,
+    "outside_range": [
+     "ldl"
+    ]
+   },
+   {
+    "date": "2026-02-14",
+    "age": 34.0,
+    "values": {
+     "albumin": 4.2,
+     "creatinine": 0.95,
+     "glucose": 95.0,
+     "crp": 1.5,
+     "lymphocyte_pct": 27.0,
+     "mcv": 92.0,
+     "rdw": 13.2,
+     "alk_phosphatase": 65.0,
+     "wbc": 6.5,
+     "total_cholesterol": 181.0,
+     "ldl": 108.0,
+     "hdl": 62.0,
+     "triglycerides": 82.0,
+     "apob": 83.0,
+     "hba1c": 5.3,
+     "vitamin_d": 44.0,
+     "ferritin": 48.0
+    },
+    "phenoage": 32.11,
+    "gap_years": -1.89,
+    "outside_range": [
+     "ldl"
+    ]
+   }
+  ],
+  "markers": {
+   "albumin": {
+    "label": "Albumin",
+    "unit": "g/dL",
+    "range": [
+     3.5,
+     5.0
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 4.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 4.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 4.1
+     },
+     {
+      "date": "2022-10-17",
+      "value": 4.1
+     },
+     {
+      "date": "2023-10-30",
+      "value": 4.2
+     },
+     {
+      "date": "2024-11-18",
+      "value": 4.2
+     },
+     {
+      "date": "2026-02-14",
+      "value": 4.2
+     }
+    ]
+   },
+   "creatinine": {
+    "label": "Creatinine",
+    "unit": "mg/dL",
+    "range": [
+     0.6,
+     1.1
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 0.9
+     },
+     {
+      "date": "2020-09-22",
+      "value": 0.92
+     },
+     {
+      "date": "2021-11-08",
+      "value": 0.93
+     },
+     {
+      "date": "2022-10-17",
+      "value": 0.94
+     },
+     {
+      "date": "2023-10-30",
+      "value": 0.95
+     },
+     {
+      "date": "2024-11-18",
+      "value": 0.95
+     },
+     {
+      "date": "2026-02-14",
+      "value": 0.95
+     }
+    ]
+   },
+   "glucose": {
+    "label": "Fasting glucose",
+    "unit": "mg/dL",
+    "range": [
+     70,
+     99
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 99.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 98.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 97.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 97.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 96.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 95.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 95.0
+     }
+    ]
+   },
+   "crp": {
+    "label": "hs-CRP",
+    "unit": "mg/L",
+    "range": [
+     0,
+     3.0
+    ],
+    "phenoage": true,
+    "note": "Under 1 mg/L is often read as lower cardiovascular risk; 1 to 3 average.",
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 3.4
+     },
+     {
+      "date": "2020-09-22",
+      "value": 2.9
+     },
+     {
+      "date": "2021-11-08",
+      "value": 2.6
+     },
+     {
+      "date": "2022-10-17",
+      "value": 2.2
+     },
+     {
+      "date": "2023-10-30",
+      "value": 1.9
+     },
+     {
+      "date": "2024-11-18",
+      "value": 1.7
+     },
+     {
+      "date": "2026-02-14",
+      "value": 1.5
+     }
+    ]
+   },
+   "lymphocyte_pct": {
+    "label": "Lymphocytes",
+    "unit": "%",
+    "range": [
+     20,
+     40
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 23.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 24.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 25.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 25.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 26.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 26.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 27.0
+     }
+    ]
+   },
+   "mcv": {
+    "label": "MCV",
+    "unit": "fL",
+    "range": [
+     80,
+     100
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 90.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 90.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 91.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 91.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 92.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 92.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 92.0
+     }
+    ]
+   },
+   "rdw": {
+    "label": "RDW",
+    "unit": "%",
+    "range": [
+     11.5,
+     14.5
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 13.9
+     },
+     {
+      "date": "2020-09-22",
+      "value": 13.8
+     },
+     {
+      "date": "2021-11-08",
+      "value": 13.7
+     },
+     {
+      "date": "2022-10-17",
+      "value": 13.6
+     },
+     {
+      "date": "2023-10-30",
+      "value": 13.4
+     },
+     {
+      "date": "2024-11-18",
+      "value": 13.3
+     },
+     {
+      "date": "2026-02-14",
+      "value": 13.2
+     }
+    ]
+   },
+   "alk_phosphatase": {
+    "label": "Alkaline phosphatase",
+    "unit": "U/L",
+    "range": [
+     40,
+     120
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 74.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 72.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 70.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 69.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 67.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 66.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 65.0
+     }
+    ]
+   },
+   "wbc": {
+    "label": "White blood cells",
+    "unit": "K/uL",
+    "range": [
+     4.0,
+     10.5
+    ],
+    "phenoage": true,
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 7.6
+     },
+     {
+      "date": "2020-09-22",
+      "value": 7.3
+     },
+     {
+      "date": "2021-11-08",
+      "value": 7.1
+     },
+     {
+      "date": "2022-10-17",
+      "value": 7.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 6.8
+     },
+     {
+      "date": "2024-11-18",
+      "value": 6.6
+     },
+     {
+      "date": "2026-02-14",
+      "value": 6.5
+     }
+    ]
+   },
+   "total_cholesterol": {
+    "label": "Total cholesterol",
+    "unit": "mg/dL",
+    "range": [
+     0,
+     200
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 212.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 206.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 201.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 194.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 188.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 184.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 181.0
+     }
+    ]
+   },
+   "ldl": {
+    "label": "LDL cholesterol",
+    "unit": "mg/dL",
+    "range": [
+     0,
+     100
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 138.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 134.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 129.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 122.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 116.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 111.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 108.0
+     }
+    ]
+   },
+   "hdl": {
+    "label": "HDL cholesterol",
+    "unit": "mg/dL",
+    "range": [
+     50,
+     100
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 52.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 54.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 56.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 58.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 60.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 61.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 62.0
+     }
+    ]
+   },
+   "triglycerides": {
+    "label": "Triglycerides",
+    "unit": "mg/dL",
+    "range": [
+     0,
+     150
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 118.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 112.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 104.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 96.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 90.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 86.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 82.0
+     }
+    ]
+   },
+   "apob": {
+    "label": "ApoB",
+    "unit": "mg/dL",
+    "range": [
+     0,
+     90
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 104.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 101.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 97.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 92.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 88.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 85.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 83.0
+     }
+    ]
+   },
+   "hba1c": {
+    "label": "HbA1c",
+    "unit": "%",
+    "range": [
+     4.0,
+     5.6
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 5.6
+     },
+     {
+      "date": "2020-09-22",
+      "value": 5.5
+     },
+     {
+      "date": "2021-11-08",
+      "value": 5.5
+     },
+     {
+      "date": "2022-10-17",
+      "value": 5.4
+     },
+     {
+      "date": "2023-10-30",
+      "value": 5.4
+     },
+     {
+      "date": "2024-11-18",
+      "value": 5.3
+     },
+     {
+      "date": "2026-02-14",
+      "value": 5.3
+     }
+    ]
+   },
+   "vitamin_d": {
+    "label": "Vitamin D (25-OH)",
+    "unit": "ng/mL",
+    "range": [
+     30,
+     100
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 21.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 26.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 31.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 34.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 38.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 42.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 44.0
+     }
+    ]
+   },
+   "ferritin": {
+    "label": "Ferritin",
+    "unit": "ng/mL",
+    "range": [
+     15,
+     150
+    ],
+    "series": [
+     {
+      "date": "2019-03-12",
+      "value": 24.0
+     },
+     {
+      "date": "2020-09-22",
+      "value": 27.0
+     },
+     {
+      "date": "2021-11-08",
+      "value": 31.0
+     },
+     {
+      "date": "2022-10-17",
+      "value": 36.0
+     },
+     {
+      "date": "2023-10-30",
+      "value": 41.0
+     },
+     {
+      "date": "2024-11-18",
+      "value": 45.0
+     },
+     {
+      "date": "2026-02-14",
+      "value": 48.0
+     }
+    ]
+   }
+  },
+  "latest": {
+   "date": "2026-02-14",
+   "age": 34.0,
+   "values": {
+    "albumin": 4.2,
+    "creatinine": 0.95,
+    "glucose": 95.0,
+    "crp": 1.5,
+    "lymphocyte_pct": 27.0,
+    "mcv": 92.0,
+    "rdw": 13.2,
+    "alk_phosphatase": 65.0,
+    "wbc": 6.5,
+    "total_cholesterol": 181.0,
+    "ldl": 108.0,
+    "hdl": 62.0,
+    "triglycerides": 82.0,
+    "apob": 83.0,
+    "hba1c": 5.3,
+    "vitamin_d": 44.0,
+    "ferritin": 48.0
+   },
+   "phenoage": 32.11,
+   "gap_years": -1.89,
+   "outside_range": [
+    "ldl"
+   ]
+  },
+  "first": {
+   "date": "2019-03-12",
+   "age": 27.1,
+   "values": {
+    "albumin": 4.0,
+    "creatinine": 0.9,
+    "glucose": 99.0,
+    "crp": 3.4,
+    "lymphocyte_pct": 23.0,
+    "mcv": 90.0,
+    "rdw": 13.9,
+    "alk_phosphatase": 74.0,
+    "wbc": 7.6,
+    "total_cholesterol": 212.0,
+    "ldl": 138.0,
+    "hdl": 52.0,
+    "triglycerides": 118.0,
+    "apob": 104.0,
+    "hba1c": 5.6,
+    "vitamin_d": 21.0,
+    "ferritin": 24.0
+   },
+   "phenoage": 30.95,
+   "gap_years": 3.85,
+   "outside_range": [
+    "crp",
+    "total_cholesterol",
+    "ldl",
+    "apob",
+    "vitamin_d"
+   ]
+  },
+  "boundary": "PhenoAge (Levine et al. 2018) is an educational biomarker summary, not a clinical age or mortality prediction. Reference ranges are general laboratory conventions, not thresholds for this person."
+ },
+ "habits": {
+  "columns": [
+   "meditation",
+   "breathwork",
+   "cold_exposure",
+   "morning_light",
+   "evening_walk"
+  ],
+  "effects": [
+   {
+    "habit": "meditation",
+    "label": "Meditation",
+    "outcome": "hrv_ms",
+    "outcome_label": "Next-day HRV",
+    "unit": "ms",
+    "effect": 0.74,
+    "ci_low": -0.21,
+    "ci_high": 1.62,
+    "n_on": 164,
+    "n_off": 164,
+    "mean_on": 49.42,
+    "mean_off": 48.69,
+    "r": 0.081,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "meditation",
+    "label": "Meditation",
+    "outcome": "sleep_hours",
+    "outcome_label": "Sleep duration",
+    "unit": "h",
+    "effect": -0.01,
+    "ci_low": -0.11,
+    "ci_high": 0.09,
+    "n_on": 168,
+    "n_off": 166,
+    "mean_on": 6.89,
+    "mean_off": 6.9,
+    "r": -0.007,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "meditation",
+    "label": "Meditation",
+    "outcome": "resting_hr",
+    "outcome_label": "Resting heart rate",
+    "unit": "bpm",
+    "effect": 0.07,
+    "ci_low": -0.4,
+    "ci_high": 0.53,
+    "n_on": 168,
+    "n_off": 166,
+    "mean_on": 60.19,
+    "mean_off": 60.13,
+    "r": 0.016,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "breathwork",
+    "label": "Breathwork",
+    "outcome": "hrv_ms",
+    "outcome_label": "Next-day HRV",
+    "unit": "ms",
+    "effect": 0.8,
+    "ci_low": -0.39,
+    "ci_high": 1.97,
+    "n_on": 114,
+    "n_off": 214,
+    "mean_on": 49.58,
+    "mean_off": 48.78,
+    "r": 0.084,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "breathwork",
+    "label": "Breathwork",
+    "outcome": "sleep_hours",
+    "outcome_label": "Sleep duration",
+    "unit": "h",
+    "effect": 0.06,
+    "ci_low": -0.05,
+    "ci_high": 0.16,
+    "n_on": 116,
+    "n_off": 218,
+    "mean_on": 6.93,
+    "mean_off": 6.87,
+    "r": 0.056,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "breathwork",
+    "label": "Breathwork",
+    "outcome": "resting_hr",
+    "outcome_label": "Resting heart rate",
+    "unit": "bpm",
+    "effect": -0.03,
+    "ci_low": -0.47,
+    "ci_high": 0.45,
+    "n_on": 116,
+    "n_off": 218,
+    "mean_on": 60.14,
+    "mean_off": 60.17,
+    "r": -0.007,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "cold_exposure",
+    "label": "Cold exposure",
+    "outcome": "hrv_ms",
+    "outcome_label": "Next-day HRV",
+    "unit": "ms",
+    "effect": 0.77,
+    "ci_low": -0.29,
+    "ci_high": 1.87,
+    "n_on": 115,
+    "n_off": 213,
+    "mean_on": 49.56,
+    "mean_off": 48.78,
+    "r": 0.081,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "cold_exposure",
+    "label": "Cold exposure",
+    "outcome": "sleep_hours",
+    "outcome_label": "Sleep duration",
+    "unit": "h",
+    "effect": -0.03,
+    "ci_low": -0.13,
+    "ci_high": 0.08,
+    "n_on": 117,
+    "n_off": 217,
+    "mean_on": 6.88,
+    "mean_off": 6.9,
+    "r": -0.026,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "cold_exposure",
+    "label": "Cold exposure",
+    "outcome": "resting_hr",
+    "outcome_label": "Resting heart rate",
+    "unit": "bpm",
+    "effect": -0.7,
+    "ci_low": -1.08,
+    "ci_high": -0.3,
+    "n_on": 117,
+    "n_off": 217,
+    "mean_on": 59.71,
+    "mean_off": 60.41,
+    "r": -0.162,
+    "reading": "association",
+    "interpretation": "Observed association with a lower outcome; replicate before acting."
+   },
+   {
+    "habit": "morning_light",
+    "label": "Morning light",
+    "outcome": "hrv_ms",
+    "outcome_label": "Next-day HRV",
+    "unit": "ms",
+    "effect": 0.35,
+    "ci_low": -0.69,
+    "ci_high": 1.31,
+    "n_on": 188,
+    "n_off": 140,
+    "mean_on": 49.2,
+    "mean_off": 48.85,
+    "r": 0.038,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "morning_light",
+    "label": "Morning light",
+    "outcome": "sleep_hours",
+    "outcome_label": "Sleep duration",
+    "unit": "h",
+    "effect": 0.18,
+    "ci_low": 0.07,
+    "ci_high": 0.28,
+    "n_on": 193,
+    "n_off": 141,
+    "mean_on": 6.97,
+    "mean_off": 6.79,
+    "r": 0.179,
+    "reading": "association",
+    "interpretation": "Observed association with a higher outcome; replicate before acting."
+   },
+   {
+    "habit": "morning_light",
+    "label": "Morning light",
+    "outcome": "resting_hr",
+    "outcome_label": "Resting heart rate",
+    "unit": "bpm",
+    "effect": -0.31,
+    "ci_low": -0.73,
+    "ci_high": 0.12,
+    "n_on": 193,
+    "n_off": 141,
+    "mean_on": 60.03,
+    "mean_off": 60.34,
+    "r": -0.073,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "evening_walk",
+    "label": "Evening walk",
+    "outcome": "hrv_ms",
+    "outcome_label": "Next-day HRV",
+    "unit": "ms",
+    "effect": 0.23,
+    "ci_low": -0.77,
+    "ci_high": 1.19,
+    "n_on": 137,
+    "n_off": 191,
+    "mean_on": 49.19,
+    "mean_off": 48.96,
+    "r": 0.025,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "evening_walk",
+    "label": "Evening walk",
+    "outcome": "sleep_hours",
+    "outcome_label": "Sleep duration",
+    "unit": "h",
+    "effect": 0.06,
+    "ci_low": -0.04,
+    "ci_high": 0.16,
+    "n_on": 141,
+    "n_off": 193,
+    "mean_on": 6.93,
+    "mean_off": 6.87,
+    "r": 0.061,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   },
+   {
+    "habit": "evening_walk",
+    "label": "Evening walk",
+    "outcome": "resting_hr",
+    "outcome_label": "Resting heart rate",
+    "unit": "bpm",
+    "effect": -0.18,
+    "ci_low": -0.63,
+    "ci_high": 0.27,
+    "n_on": 141,
+    "n_off": 193,
+    "mean_on": 60.05,
+    "mean_off": 60.24,
+    "r": -0.044,
+    "reading": "nothing detected",
+    "interpretation": "Inconclusive: the interval includes no difference."
+   }
+  ],
+  "detected_on_hrv": 0,
+  "tested": 5,
+  "calendar": {
+   "weeks": [
+    {
+     "start": "2025-07-21",
+     "days": [
+      {
+       "date": "2025-07-21",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-07-22",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-07-23",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-07-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-27",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-07-28",
+     "days": [
+      {
+       "date": "2025-07-28",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-29",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-30",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-07-31",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-01",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-02",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-08-04",
+     "days": [
+      {
+       "date": "2025-08-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-07",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-08",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-09",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-10",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-08-11",
+     "days": [
+      {
+       "date": "2025-08-11",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-14",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-15",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-08-18",
+     "days": [
+      {
+       "date": "2025-08-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-19",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-23",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-24",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-08-25",
+     "days": [
+      {
+       "date": "2025-08-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-26",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-08-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-30",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-08-31",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-09-01",
+     "days": [
+      {
+       "date": "2025-09-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-04",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-05",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-07",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-09-08",
+     "days": [
+      {
+       "date": "2025-09-08",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-11",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2025-09-12",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-09-15",
+     "days": [
+      {
+       "date": "2025-09-15",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-18",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-19",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2025-09-20",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-21",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-09-22",
+     "days": [
+      {
+       "date": "2025-09-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-27",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-09-28",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-09-29",
+     "days": [
+      {
+       "date": "2025-09-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-09-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-02",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-03",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-10-06",
+     "days": [
+      {
+       "date": "2025-10-06",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-11",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-10-13",
+     "days": [
+      {
+       "date": "2025-10-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-15",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-19",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-10-20",
+     "days": [
+      {
+       "date": "2025-10-20",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-24",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-10-27",
+     "days": [
+      {
+       "date": "2025-10-27",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-10-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-10-31",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-01",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-02",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-11-03",
+     "days": [
+      {
+       "date": "2025-11-03",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-11-10",
+     "days": [
+      {
+       "date": "2025-11-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-11",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-12",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2025-11-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-11-17",
+     "days": [
+      {
+       "date": "2025-11-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-20",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2025-11-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-23",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-11-24",
+     "days": [
+      {
+       "date": "2025-11-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-27",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-28",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-11-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-11-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-12-01",
+     "days": [
+      {
+       "date": "2025-12-01",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-05",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-12-08",
+     "days": [
+      {
+       "date": "2025-12-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-09",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-11",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-12-15",
+     "days": [
+      {
+       "date": "2025-12-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-19",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-12-22",
+     "days": [
+      {
+       "date": "2025-12-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-24",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-26",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2025-12-29",
+     "days": [
+      {
+       "date": "2025-12-29",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2025-12-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2025-12-31",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-01-01",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-02",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-04",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-01-05",
+     "days": [
+      {
+       "date": "2026-01-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-10",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-11",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-01-12",
+     "days": [
+      {
+       "date": "2026-01-12",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-14",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-17",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-01-19",
+     "days": [
+      {
+       "date": "2026-01-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-20",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-21",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-23",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-01-26",
+     "days": [
+      {
+       "date": "2026-01-26",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-01-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-29",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-01-31",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-02-02",
+     "days": [
+      {
+       "date": "2026-02-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-05",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-06",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-07",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-02-09",
+     "days": [
+      {
+       "date": "2026-02-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-11",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-14",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-02-16",
+     "days": [
+      {
+       "date": "2026-02-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-17",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-18",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-21",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-02-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-02-23",
+     "days": [
+      {
+       "date": "2026-02-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-24",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-26",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-02-27",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-02-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-01",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-03-02",
+     "days": [
+      {
+       "date": "2026-03-02",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-03",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-03-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-05",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-03-09",
+     "days": [
+      {
+       "date": "2026-03-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-10",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-11",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-12",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-14",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-15",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-03-16",
+     "days": [
+      {
+       "date": "2026-03-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-18",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-19",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-22",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-03-23",
+     "days": [
+      {
+       "date": "2026-03-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-28",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-03-29",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-03-30",
+     "days": [
+      {
+       "date": "2026-03-30",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-03-31",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-04",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-04-05",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-04-06",
+     "days": [
+      {
+       "date": "2026-04-06",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-09",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-04-10",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-11",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-04-13",
+     "days": [
+      {
+       "date": "2026-04-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-14",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-17",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-04-20",
+     "days": [
+      {
+       "date": "2026-04-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-21",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-25",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-04-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-04-27",
+     "days": [
+      {
+       "date": "2026-04-27",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-04-28",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-04-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-03",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-05-04",
+     "days": [
+      {
+       "date": "2026-05-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-06",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-07",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-08",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-09",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-10",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-05-11",
+     "days": [
+      {
+       "date": "2026-05-11",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-05-12",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-17",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-05-18",
+     "days": [
+      {
+       "date": "2026-05-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-19",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-20",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-21",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-23",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-24",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-05-25",
+     "days": [
+      {
+       "date": "2026-05-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-26",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-28",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-05-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-30",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-05-31",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-06-01",
+     "days": [
+      {
+       "date": "2026-06-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-05",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-06-06",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-07",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-06-08",
+     "days": [
+      {
+       "date": "2026-06-08",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-09",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-11",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-12",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-13",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-06-15",
+     "days": [
+      {
+       "date": "2026-06-15",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-16",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-17",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-18",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-21",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-06-22",
+     "days": [
+      {
+       "date": "2026-06-22",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-23",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-24",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-25",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-26",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-27",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-06-28",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-06-29",
+     "days": [
+      {
+       "date": "2026-06-29",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-06-30",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-01",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-02",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-03",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-04",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-05",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-07-06",
+     "days": [
+      {
+       "date": "2026-07-06",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-07",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-08",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 1,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-09",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-10",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-11",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-12",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-07-13",
+     "days": [
+      {
+       "date": "2026-07-13",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-14",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-15",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-16",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-17",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 0
+       }
+      },
+      {
+       "date": "2026-07-18",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 1,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-19",
+       "logged": true,
+       "done": {
+        "meditation": 0,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 0,
+        "evening_walk": 1,
+        "caffeine_cutoff_2pm": 0
+       }
+      }
+     ]
+    },
+    {
+     "start": "2026-07-20",
+     "days": [
+      {
+       "date": "2026-07-20",
+       "logged": true,
+       "done": {
+        "meditation": 1,
+        "breathwork": 0,
+        "cold_exposure": 0,
+        "morning_light": 1,
+        "evening_walk": 0,
+        "caffeine_cutoff_2pm": 1
+       }
+      },
+      {
+       "date": "2026-07-21",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-22",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-23",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-24",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-25",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      },
+      {
+       "date": "2026-07-26",
+       "logged": false,
+       "done": {
+        "meditation": null,
+        "breathwork": null,
+        "cold_exposure": null,
+        "morning_light": null,
+        "evening_walk": null,
+        "caffeine_cutoff_2pm": null
+       }
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "meditation": {
+     "label": "Meditation",
+     "done": 177,
+     "logged": 350,
+     "streak": 1
+    },
+    "breathwork": {
+     "label": "Breathwork",
+     "done": 122,
+     "logged": 350,
+     "streak": 0
+    },
+    "cold_exposure": {
+     "label": "Cold exposure",
+     "done": 123,
+     "logged": 350,
+     "streak": 0
+    },
+    "morning_light": {
+     "label": "Morning light",
+     "done": 203,
+     "logged": 350,
+     "streak": 1
+    },
+    "evening_walk": {
+     "label": "Evening walk",
+     "done": 148,
+     "logged": 350,
+     "streak": 0
+    },
+    "caffeine_cutoff_2pm": {
+     "label": "Caffeine stopped by 2 PM",
+     "done": 188,
+     "logged": 350,
+     "streak": 1
+    }
+   },
+   "first": "2025-07-21",
+   "last": "2026-07-20"
+  },
+  "note": "Caffeine timing is excluded from this panel because it has its own pre-specified experiment on the fixed 84-day window below; mixing windows would show two different numbers for one question."
+ },
+ "inputs": [
+  {
+   "input": "alcohol_units",
+   "label": "Alcohol",
+   "outcome": "sleep_hours",
+   "outcome_label": "Sleep duration",
+   "r": -0.31,
+   "ci_low": -0.404,
+   "ci_high": -0.21,
+   "n": 334
+  },
+  {
+   "input": "caffeine_mg",
+   "label": "Caffeine (mg)",
+   "outcome": "hrv_ms",
+   "outcome_label": "Next-day HRV",
+   "r": -0.305,
+   "ci_low": -0.4,
+   "ci_high": -0.204,
+   "n": 328
+  },
+  {
+   "input": "alcohol_units",
+   "label": "Alcohol",
+   "outcome": "resting_hr",
+   "outcome_label": "Resting heart rate",
+   "r": 0.291,
+   "ci_low": 0.189,
+   "ci_high": 0.386,
+   "n": 334
+  },
+  {
+   "input": "caffeine_mg",
+   "label": "Caffeine (mg)",
+   "outcome": "resting_hr",
+   "outcome_label": "Resting heart rate",
+   "r": 0.288,
+   "ci_low": 0.187,
+   "ci_high": 0.384,
+   "n": 334
+  },
+  {
+   "input": "alcohol_units",
+   "label": "Alcohol",
+   "outcome": "hrv_ms",
+   "outcome_label": "Next-day HRV",
+   "r": -0.284,
+   "ci_low": -0.381,
+   "ci_high": -0.182,
+   "n": 328
+  },
+  {
+   "input": "caffeine_mg",
+   "label": "Caffeine (mg)",
+   "outcome": "sleep_hours",
+   "outcome_label": "Sleep duration",
+   "r": -0.191,
+   "ci_low": -0.293,
+   "ci_high": -0.086,
+   "n": 334
+  },
+  {
+   "input": "training_load",
+   "label": "Training load",
+   "outcome": "resting_hr",
+   "outcome_label": "Resting heart rate",
+   "r": -0.09,
+   "ci_low": -0.196,
+   "ci_high": 0.017,
+   "n": 334
+  },
+  {
+   "input": "meditation",
+   "label": "Meditation",
+   "outcome": "hrv_ms",
+   "outcome_label": "Next-day HRV",
+   "r": 0.081,
+   "ci_low": -0.027,
+   "ci_high": 0.188,
+   "n": 328
+  },
+  {
+   "input": "training_load",
+   "label": "Training load",
+   "outcome": "hrv_ms",
+   "outcome_label": "Next-day HRV",
+   "r": 0.061,
+   "ci_low": -0.048,
+   "ci_high": 0.168,
+   "n": 328
+  },
+  {
+   "input": "training_load",
+   "label": "Training load",
+   "outcome": "sleep_hours",
+   "outcome_label": "Sleep duration",
+   "r": -0.026,
+   "ci_low": -0.133,
+   "ci_high": 0.082,
+   "n": 334
+  },
+  {
+   "input": "meditation",
+   "label": "Meditation",
+   "outcome": "resting_hr",
+   "outcome_label": "Resting heart rate",
+   "r": 0.016,
+   "ci_low": -0.091,
+   "ci_high": 0.123,
+   "n": 334
+  },
+  {
+   "input": "meditation",
+   "label": "Meditation",
+   "outcome": "sleep_hours",
+   "outcome_label": "Sleep duration",
+   "r": -0.007,
+   "ci_low": -0.115,
+   "ci_high": 0.1,
+   "n": 334
+  }
+ ],
+ "interventions": [
+  {
+   "date": "2025-10-06",
+   "title": "Started magnesium glycinate at night",
+   "category": "supplement",
+   "planted": "none: the generator adds no effect, so an honest analysis should find nothing.",
+   "window_days": 28,
+   "effects": [
+    {
+     "outcome": "hrv_ms",
+     "outcome_label": "Next-day HRV",
+     "unit": "ms",
+     "effect": -2.64,
+     "ci_low": -5.24,
+     "ci_high": -0.04,
+     "mean_before": 49.93,
+     "mean_after": 47.28,
+     "n_before": 26,
+     "n_after": 26,
+     "reading": "change observed"
+    },
+    {
+     "outcome": "sleep_hours",
+     "outcome_label": "Sleep duration",
+     "unit": "h",
+     "effect": 0.11,
+     "ci_low": -0.11,
+     "ci_high": 0.33,
+     "mean_before": 6.7,
+     "mean_after": 6.81,
+     "n_before": 26,
+     "n_after": 28,
+     "reading": "nothing detected"
+    },
+    {
+     "outcome": "resting_hr",
+     "outcome_label": "Resting heart rate",
+     "unit": "bpm",
+     "effect": 0.03,
+     "ci_low": -0.89,
+     "ci_high": 0.95,
+     "mean_before": 60.45,
+     "mean_after": 60.49,
+     "n_before": 26,
+     "n_after": 28,
+     "reading": "nothing detected"
+    }
+   ]
+  },
+  {
+   "date": "2026-01-12",
+   "title": "Moved bedtime 45 minutes earlier",
+   "category": "behaviour",
+   "planted": "sleep duration baseline rises by about 0.3 h.",
+   "window_days": 28,
+   "effects": [
+    {
+     "outcome": "hrv_ms",
+     "outcome_label": "Next-day HRV",
+     "unit": "ms",
+     "effect": -0.16,
+     "ci_low": -2.67,
+     "ci_high": 2.36,
+     "mean_before": 49.12,
+     "mean_after": 48.97,
+     "n_before": 26,
+     "n_after": 27,
+     "reading": "nothing detected"
+    },
+    {
+     "outcome": "sleep_hours",
+     "outcome_label": "Sleep duration",
+     "unit": "h",
+     "effect": 0.27,
+     "ci_low": 0.02,
+     "ci_high": 0.53,
+     "mean_before": 6.77,
+     "mean_after": 7.05,
+     "n_before": 27,
+     "n_after": 28,
+     "reading": "change observed"
+    },
+    {
+     "outcome": "resting_hr",
+     "outcome_label": "Resting heart rate",
+     "unit": "bpm",
+     "effect": 1.27,
+     "ci_low": 0.1,
+     "ci_high": 2.43,
+     "mean_before": 59.66,
+     "mean_after": 60.92,
+     "n_before": 27,
+     "n_after": 28,
+     "reading": "change observed"
+    }
+   ]
+  },
+  {
+   "date": "2026-03-02",
+   "title": "Began zone-2 cycling three mornings a week",
+   "category": "training",
+   "planted": "HRV baseline rises by about 1 ms and resting heart rate falls by about 0.8 bpm.",
+   "window_days": 28,
+   "effects": [
+    {
+     "outcome": "hrv_ms",
+     "outcome_label": "Next-day HRV",
+     "unit": "ms",
+     "effect": 1.26,
+     "ci_low": -1.01,
+     "ci_high": 3.53,
+     "mean_before": 48.96,
+     "mean_after": 50.22,
+     "n_before": 27,
+     "n_after": 26,
+     "reading": "nothing detected"
+    },
+    {
+     "outcome": "sleep_hours",
+     "outcome_label": "Sleep duration",
+     "unit": "h",
+     "effect": 0.09,
+     "ci_low": -0.17,
+     "ci_high": 0.35,
+     "mean_before": 6.98,
+     "mean_after": 7.07,
+     "n_before": 27,
+     "n_after": 26,
+     "reading": "nothing detected"
+    },
+    {
+     "outcome": "resting_hr",
+     "outcome_label": "Resting heart rate",
+     "unit": "bpm",
+     "effect": -2.33,
+     "ci_low": -3.45,
+     "ci_high": -1.21,
+     "mean_before": 60.96,
+     "mean_after": 58.63,
+     "n_before": 27,
+     "n_after": 26,
+     "reading": "change observed"
+    }
+   ]
+  }
+ ],
+ "supplements": [
+  {
+   "name": "omega_3",
+   "label": "omega 3",
+   "days": 891,
+   "first": "2023-03-20",
+   "last": "2026-07-20",
+   "current": true,
+   "span_months": 40.0
+  },
+  {
+   "name": "vitamin_d3",
+   "label": "vitamin d3",
+   "days": 541,
+   "first": "2023-01-09",
+   "last": "2026-03-30",
+   "current": false,
+   "span_months": 38.6
+  },
+  {
+   "name": "electrolytes",
+   "label": "electrolytes",
+   "days": 346,
+   "first": "2023-06-10",
+   "last": "2026-07-18",
+   "current": true,
+   "span_months": 37.3
+  },
+  {
+   "name": "creatine",
+   "label": "creatine",
+   "days": 303,
+   "first": "2024-03-04",
+   "last": "2025-02-21",
+   "current": false,
+   "span_months": 11.6
+  },
+  {
+   "name": "magnesium_glycinate",
+   "label": "magnesium glycinate",
+   "days": 248,
+   "first": "2025-10-06",
+   "last": "2026-07-20",
+   "current": true,
+   "span_months": 9.4
+  },
+  {
+   "name": "iron_bisglycinate",
+   "label": "iron bisglycinate",
+   "days": 162,
+   "first": "2023-02-13",
+   "last": "2023-09-29",
+   "current": false,
+   "span_months": 7.5
+  },
+  {
+   "name": "probiotic",
+   "label": "probiotic",
+   "days": 111,
+   "first": "2024-08-12",
+   "last": "2024-11-30",
+   "current": false,
+   "span_months": 3.6
+  }
+ ],
+ "benchmarks": [
+  {
+   "metric": "hrv_ms",
+   "label": "Nightly HRV",
+   "unit": "ms",
+   "digits": 1,
+   "persona_mean": 48.5,
+   "n": 83,
+   "window_days": 90,
+   "reference": 50,
+   "reference_note": "Approximate population median for the age band; HRV is device- and method-dependent.",
+   "age": 34.4,
+   "sex": "female"
+  },
+  {
+   "metric": "resting_hr",
+   "label": "Resting heart rate",
+   "unit": "bpm",
+   "digits": 1,
+   "persona_mean": 59.8,
+   "n": 85,
+   "window_days": 90,
+   "reference": 60,
+   "reference_note": "A fit-but-not-athlete reference, roughly flat across adult ages.",
+   "age": 34.4,
+   "sex": "female"
+  },
+  {
+   "metric": "sleep_hours",
+   "label": "Sleep duration",
+   "unit": "h",
+   "digits": 2,
+   "persona_mean": 6.96,
+   "n": 85,
+   "window_days": 90,
+   "reference": 7.0,
+   "reference_note": "Lower edge of the common 7 to 9 hour adult recommendation.",
+   "age": 34.4,
+   "sex": "female"
+  }
+ ],
+ "genome": {
+  "findings": [
+   {
+    "gene": "APOE",
+    "name": "Lipid handling and late-life neurological risk",
+    "category": "Longevity",
+    "marker": "rs429358 + rs7412",
+    "chromosome": "19",
+    "genotype": "TT/CC",
+    "call": "e3/e3",
+    "context": "The most common combination; studied as the reference pattern for lipid handling and late-life neurological risk.",
+    "uses": "Points at the LDL and ApoB series in the lab panel. Anything clinically material here belongs with a dedicated test and a clinician, not a consumer file.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "CYP1A2",
+    "name": "Caffeine metabolism",
+    "category": "Pharmacogenomics",
+    "marker": "rs762551",
+    "chromosome": "15",
+    "genotype": "AC",
+    "call": "AC",
+    "context": "Often studied as an intermediate or slower pattern; caffeine may linger into the evening.",
+    "uses": "This is why caffeine timing became the question worth testing. The marker chose the question; 73 paired nights answered it.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "COMT",
+    "name": "Dopamine clearance (Val158Met)",
+    "category": "Pharmacogenomics",
+    "marker": "rs4680",
+    "chromosome": "22",
+    "genotype": "AG",
+    "call": "AG",
+    "context": "Val/Met, an intermediate pattern.",
+    "uses": "Reads alongside the caffeine dose column: total milligrams per day is logged, so sensitivity can be checked against next-day resting heart rate.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "MTHFR",
+    "name": "Folate metabolism (C677T)",
+    "category": "Pharmacogenomics",
+    "marker": "rs1801133",
+    "chromosome": "1",
+    "genotype": "CT",
+    "call": "CT",
+    "context": "One copy of the variant; often studied as mildly reduced enzyme activity.",
+    "uses": "Homocysteine is not on any of the seven lab panels yet. This marker nominates it for the next draw; it does not justify a supplement.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "MTHFR",
+    "name": "Folate metabolism (A1298C)",
+    "category": "Pharmacogenomics",
+    "marker": "rs1801131",
+    "chromosome": "1",
+    "genotype": "AA",
+    "call": "AA",
+    "context": "Typical.",
+    "uses": "Read together with C677T above. Two typical copies here, so the C677T call carries the whole context.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "TCF7L2",
+    "name": "Glucose handling",
+    "category": "Cardio-metabolic",
+    "marker": "rs7903146",
+    "chromosome": "10",
+    "genotype": "CT",
+    "call": "CT",
+    "context": "One copy of the risk allele; modestly higher studied risk.",
+    "uses": "Points at the fasting glucose and HbA1c series in the lab panel, which are tracked across all seven draws.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "FTO",
+    "name": "Appetite and adiposity",
+    "category": "Cardio-metabolic",
+    "marker": "rs9939609",
+    "chromosome": "16",
+    "genotype": "AT",
+    "call": "AT",
+    "context": "One copy of the risk allele; intermediate.",
+    "uses": "Weight is not tracked in this demo record, so there is nothing to test against yet. Noted, not acted on.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "LCT",
+    "name": "Lactase persistence",
+    "category": "Traits",
+    "marker": "rs4988235",
+    "chromosome": "2",
+    "genotype": "CT",
+    "call": "CT",
+    "context": "Lactase-persistent (dominant); dairy is usually tolerated.",
+    "uses": "No dairy column in the habit log. A trait, not a question; nothing to test.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "ALDH2",
+    "name": "Alcohol metabolism",
+    "category": "Traits",
+    "marker": "rs671",
+    "chromosome": "12",
+    "genotype": "GG",
+    "call": "GG",
+    "context": "Typical aldehyde clearance.",
+    "uses": "Alcohol is a logged input and a known recovery confounder in every comparison on this page. Typical clearance here, so the alcohol effect is read as behaviour, not biology.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   },
+   {
+    "gene": "ACTN3",
+    "name": "Muscle fibre type (R577X)",
+    "category": "Fitness",
+    "marker": "rs1815739",
+    "chromosome": "11",
+    "genotype": "CT",
+    "call": "CT",
+    "context": "Mixed; no strong bias either way.",
+    "uses": "Training load is logged daily (0, 1, 2). The mixed call means the zone-2 cycling intervention was chosen on the data, not the genotype.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+   }
+  ],
+  "markers_total": 11,
+  "boundary": "Context, never verdicts. Single markers are probabilistic and population-dependent; in LiveForever a genotype can nominate a question or a lab to add, and nothing else."
+ },
+ "featured": {
+  "question": "Does stopping caffeine by 2 PM improve next-day recovery?",
+  "window_start": "2026-04-28",
+  "window_end": "2026-07-20",
+  "recorded_days": 80,
+  "effect": 3.94,
+  "ci_low": 1.13,
+  "ci_high": 6.42,
+  "n_on": 36,
+  "n_off": 37
+ },
+ "provenance": [
+  "record.json is generated by src/liveforever_lab/record.py from the same deterministic engine as analysis.json.",
+  "Habit effects reuse analysis.binary_effect: next-day mean on done days minus not-done days, moving-block bootstrap 95% interval.",
+  "Intervention windows compare the 28 days after a dated change with the 28 days before, independent-groups 95% interval; time-confounded by construction.",
+  "PhenoAge per draw uses the published Levine et al. (2018) coefficients with the persona's age on the draw date.",
+  "Genome findings come from a curated panel of public rsIDs; the fixture genotypes are invented."
+ ],
+ "boundary": "Every value on this page describes Maya Chen, a fictional person. Associations are not causes; nothing here is a diagnosis or a recommendation."
+}
