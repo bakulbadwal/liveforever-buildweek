@@ -556,6 +556,28 @@ figure { margin: 0; }
 .colophon nav a { padding: 8px 0; }
 .colophon-note { margin-top: 16px; font-size: 0.85rem; color: var(--ink-3); }
 
+/* ---------- hero gap + PhenoAge inputs ---------- */
+.dial-caption { display: grid; gap: 4px; justify-items: center; }
+.gap-figure { font-family: var(--serif); font-weight: 300; font-size: 2.6rem; line-height: 1; color: var(--ink); letter-spacing: -0.01em; }
+.gap-figure small { font-size: 1.1rem; font-weight: 400; color: var(--ink); letter-spacing: 0; }
+.gap-line { color: var(--ink-2); }
+.gap-swing { margin-top: 6px; font-size: 0.92rem; color: var(--ink-3); }
+.gap-swing b { color: var(--ink-2); font-weight: 500; }
+.pheno-inputs { margin-top: 12px; max-width: var(--measure); font-size: 0.92rem; color: var(--ink-3); }
+.pheno-inputs b { color: var(--ink-2); font-weight: 500; }
+
+/* ---------- small multiples ---------- */
+.multiples { margin-top: 20px; display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--gap, 16px); }
+.mcard { margin: 0; padding: 12px 12px 8px; background: var(--plate); border: 1px solid var(--rule-2); border-radius: 8px; min-width: 0; }
+.mcard figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.mlabel { font-size: 0.9rem; color: var(--ink); line-height: 1.25; min-width: 0; }
+.mlabel small { color: var(--ink-3); font-size: 0.78rem; }
+.mlabel i { display: block; font-style: normal; font-size: 0.72rem; color: var(--ink-3); margin-top: 2px; }
+.mvalue { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mcard svg { display: block; overflow: visible; }
+.mfoot { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-3); font-variant-numeric: tabular-nums; margin-top: 2px; }
+.mlegend { grid-column: 1 / -1; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; }

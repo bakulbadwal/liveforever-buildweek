@@ -176,6 +176,17 @@ class RecordTests(unittest.TestCase):
         checked_in = json.loads((ROOT / "demo" / "record.json").read_text(encoding="utf-8"))
         self.assertEqual(checked_in["hero"], record["hero"])
         self.assertEqual(checked_in["habits"]["effects"], record["habits"]["effects"])
+        self.assertEqual(checked_in["daily"], record["daily"])
+
+    def test_daily_mean_is_the_trailing_seven_day_mean(self) -> None:
+        history = load_csv(ROOT / "examples" / "maya_history.csv")
+        record = json.loads((ROOT / "demo" / "record.json").read_text(encoding="utf-8"))
+        hrv = next(s for s in record["daily"] if s["key"] == "hrv_ms")
+        self.assertEqual(len(hrv["series"]), len(history))
+        i = 200
+        window = [r["hrv_ms"] for r in history[i - 6: i + 1] if r["hrv_ms"] is not None]
+        self.assertAlmostEqual(hrv["series"][i]["mean7"], round(sum(window) / len(window), 1))
+        self.assertIsNone(hrv["series"][0]["mean7"])
 
 
 if __name__ == "__main__":

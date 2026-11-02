@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LiveForever · a personal evidence lab</title>
-  <meta name="description" content="LiveForever joins one person's wearable nights, daily habits, years of bloodwork and a genome into one record, tests one question at a time, and keeps the uncertainty on screen. A public replay on a fictional person, built by Bakul Badwal for OpenAI Build Week 2026.">
+  <title>LiveForever · a personal health lab</title>
+  <meta name="description" content="LiveForever puts wearable data, daily habits, years of blood work and a genome in one record, tests one question at a time, and keeps the uncertainty on screen. Built by Bakul Badwal for OpenAI Build Week 2026.">
   <meta name="theme-color" content="#0d1322">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://bakulbadwal.github.io/liveforever-buildweek/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LiveForever">
-  <meta property="og:title" content="LiveForever · a personal evidence lab">
-  <meta property="og:description" content="One person's health history, read as evidence: wearable nights, habits, years of bloodwork and a genome in one record, with the uncertainty kept on screen. Synthetic replay by Bakul Badwal, Darden MBA '27.">
+  <meta property="og:title" content="LiveForever · a personal health lab">
+  <meta property="og:description" content="Wearable data, habits, blood work and a genome in one record, tested one question at a time with the uncertainty on screen. By Bakul Badwal, Darden MBA '27.">
   <meta property="og:url" content="https://bakulbadwal.github.io/liveforever-buildweek/">
   <meta property="og:image" content="https://bakulbadwal.github.io/liveforever-buildweek/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="LiveForever: biological age 32.1 against a calendar age of 34.0 for a fictional person, drawn as an instrument dial on a night-blue plate.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LiveForever · a personal evidence lab">
-  <meta name="twitter:description" content="One person's health history, read as evidence, with the uncertainty kept on screen. Synthetic replay by Bakul Badwal, Darden MBA '27.">
+  <meta name="twitter:title" content="LiveForever · a personal health lab">
+  <meta name="twitter:description" content="Wearable data, habits, blood work and a genome in one record, tested one question at a time with the uncertainty on screen. By Bakul Badwal, Darden MBA '27.">
   <meta name="twitter:image" content="https://bakulbadwal.github.io/liveforever-buildweek/og.png">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -51,8 +51,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
   <div class="hero">
     <div class="hero-copy">
-      <h1>One person's health history, read as evidence.</h1>
-      <p class="lede">LiveForever is a personal evidence lab. It joins wearable nights, daily habits, years of bloodwork and a genome into one record, tests one question at a time, and keeps the uncertainty on screen.</p>
+      <h1>A personal health lab.</h1>
+      <p class="lede">LiveForever puts wearable data, daily habits, years of blood work and a genome in one record. It tests one question at a time and keeps the uncertainty on screen.</p>
       <p class="byline"><span>Bakul Badwal</span> · Darden MBA '27 · built for OpenAI Build Week, July 2026</p>
     </div>
     <figure class="dial" id="dial" aria-labelledby="dial-caption">
@@ -62,39 +62,48 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 
   <p class="scope" id="scope" aria-label="What is connected"></p>
-  <p class="synthetic-note">Maya Chen is fictional and every value on this page is synthetic. The private version of LiveForever runs on the author's own wearable data, a decade of coaching logs, bloodwork back to 2015 and his own 23andMe file; this public version replays the whole system on an invented person so anyone can inspect it.</p>
+  <p class="synthetic-note">Maya Chen is fictional, and every number here is synthetic. The private version runs on Bakul's own wearable data, ten years of coaching logs, blood work back to 2015 and his 23andMe genome. This one runs the same system on a made-up person so anyone can look inside.</p>
 </header>
 
 <main id="record">
 
   <section class="chapter" id="layers" aria-labelledby="layers-h">
     <h2 id="layers-h">One record, five layers</h2>
-    <p class="chapter-lede">Nothing here is a single app's export. The value is the join: a night can be read against the habit logged that morning, a blood draw against the supplement running at the time, and a genotype against both.</p>
+    <p class="chapter-lede">The point is the join. A night is read against that day's habits, a blood draw against the supplements she was taking, and a genotype against both.</p>
     <figure class="atlas" id="atlas"></figure>
   </section>
 
   <section class="chapter" id="labs" aria-labelledby="labs-h">
-    <h2 id="labs-h">Biological age across seven blood draws</h2>
-    <p class="chapter-lede">PhenoAge turns nine routine blood markers plus calendar age into one number. It is an educational summary, not a clinical age. Select a draw to see every marker from that day against its reference range.</p>
+    <h2 id="labs-h">Biological age (PhenoAge) across seven blood draws</h2>
+    <p class="chapter-lede">PhenoAge is a published formula (Levine et al., 2018). It takes nine routine blood markers plus calendar age and returns an estimate of biological age. It's an educational number, not a clinical one. Select a draw to see that day's full panel.</p>
+    <p class="pheno-inputs" id="pheno-inputs"></p>
     <figure class="phenochart" id="phenochart"></figure>
     <div class="draw-panel" id="draw-panel" aria-live="polite"></div>
+    <h3>Every marker, every draw</h3>
+    <div class="multiples" id="lab-multiples"></div>
+  </section>
+
+  <section class="chapter" id="daily" aria-labelledby="daily-h">
+    <h2 id="daily-h">A year of daily logs</h2>
+    <p class="chapter-lede">What she logged each day and what her ring measured each night. Dots are days, the line is the 7-day average, and dashed lines mark the three dated changes further down.</p>
+    <div class="multiples" id="daily-multiples"></div>
   </section>
 
   <section class="chapter" id="habits" aria-labelledby="habits-h">
     <h2 id="habits-h">Do the practices work?</h2>
-    <p class="chapter-lede">A year of 0/1 habits from the daily log, each compared with the next night's recovery on days it was done against days it was not. Several show nothing. That is the point of asking honestly.</p>
+    <p class="chapter-lede">Five daily habits, each compared with the next night's recovery on days done versus days skipped. Several show nothing, which is a real answer too.</p>
     <figure class="heatmap" id="heatmap"></figure>
     <div class="effects" id="habit-effects"></div>
     <h3>Three dated changes, before and after</h3>
-    <p class="chapter-lede">The 28 days after each change against the 28 before. This is the weakest evidence on the page: a window comparison cannot separate the change from everything else that moved in time. Because the record is synthetic, the generator's own truth is printed beside each result.</p>
+    <p class="chapter-lede">The 28 days after each change against the 28 days before. This is the weakest evidence here, because a before/after window can't separate the change from everything else that shifted. Since the data is synthetic, the effect we actually planted is shown beside each result.</p>
     <div class="interventions" id="interventions"></div>
     <div class="side-by-side">
       <div>
-        <h3>Supplements, as logged since 2023</h3>
+        <h3>Supplements logged since 2023</h3>
         <div class="supplements" id="supplements"></div>
       </div>
       <div>
-        <h3>Against reference values for her age and sex</h3>
+        <h3>Against typical values for her age and sex</h3>
         <div class="benchmarks" id="benchmarks"></div>
       </div>
     </div>
@@ -106,13 +115,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="headline-number" id="headline-number"></div>
     <figure class="forest" id="forest"></figure>
     <figure class="nightly" id="nightly"></figure>
-    <h3>The next test: fourteen days, pre-registered</h3>
+    <h3>Evidence audit</h3>
+    <div class="quality" id="quality"></div>
+    <h3>Next: a 14-day retest, rules set in advance</h3>
     <div class="plan" id="plan"></div>
   </section>
 
   <section class="chapter" id="genome" aria-labelledby="genome-h">
     <h2 id="genome-h">The genome, as context</h2>
-    <p class="chapter-lede">Ten markers from a curated panel, each tied to something the record already tracks. A genotype can nominate a question or a lab to add. It never decides an answer. Turn the helix and select a lit base pair.</p>
+    <p class="chapter-lede">Ten markers, each tied to something the record already tracks. A genotype can suggest a question or a lab to add. It never decides the answer. Drag to turn the helix and tap a lit rung.</p>
     <div class="helix-stage">
       <div class="helix-canvas" id="helix" aria-hidden="true"></div>
       <div class="helix-list" id="helix-list" role="list" aria-label="Genome findings"></div>
@@ -125,21 +136,20 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="ledger">
       <div>
         <h3>Code computes</h3>
-        <p>Deterministic Python produces every number on this page: effect sizes, bootstrap intervals, lags, sample counts, missingness, correlations, PhenoAge, the quality grade and the retest schedule. The browser only draws what is in <code>analysis.json</code> and <code>record.json</code>.</p>
+        <p>Plain Python computes every number on this page: effects, intervals, sample sizes, missing days, correlations, PhenoAge, the quality grade and the retest schedule. The browser only draws what's in <code>analysis.json</code> and <code>record.json</code>.</p>
       </div>
       <div>
         <h3>The model explains</h3>
-        <p>GPT-5.6, through the included Codex Skill, frames the question, reviews sources, explains the fixed result, names blind spots and adapts the plan to a person's constraints. It receives the numbers as an immutable contract and cannot change them, raise the grade or hide a warning.</p>
+        <p>GPT-5.6, through the included Codex skill, frames the question, explains the result, flags blind spots and fits the plan to a person's schedule. It gets the numbers as a fixed contract and can't change them, raise the grade or hide a warning.</p>
       </div>
     </div>
-    <div class="quality" id="quality"></div>
     <details class="method" id="method-details">
       <summary>Method and provenance</summary>
       <div class="method-body" id="method-body"></div>
     </details>
     <div class="privacy">
-      <h3>Privacy by construction</h3>
-      <p>The public artifact is a fictional person end to end. No login, external health service, API key or live model call is needed to run it. The author's real databases, exports, lab PDFs, genome file and intervention history are excluded from this repository by design.</p>
+      <h3>Privacy</h3>
+      <p>Everything public is a fictional person. It needs no login, health service, API key or live model call. Bakul's real data, lab PDFs and genome are never in this repo.</p>
     </div>
   </section>
 </main>

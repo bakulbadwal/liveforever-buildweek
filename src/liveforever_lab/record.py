@@ -21,6 +21,42 @@ from .synthetic import HABIT_COLUMNS, PERSONA, SYNTHETIC_INTERVENTIONS, SUPPLEME
 
 TIMELINE_KEYS = ("hrv_ms", "sleep_hours", "resting_hr")
 
+# Daily series drawn as small multiples: (key, label, unit, source, digits).
+DAILY_SERIES = (
+    ("caffeine_mg", "Caffeine", "mg", "logged", 0),
+    ("alcohol_units", "Alcohol", "drinks", "logged", 1),
+    ("training_load", "Training load", "0–3", "logged", 1),
+    ("mood", "Mood", "1–10", "logged", 1),
+    ("hrv_ms", "HRV", "ms", "wearable", 1),
+    ("resting_hr", "Resting heart rate", "bpm", "wearable", 1),
+    ("sleep_hours", "Sleep", "h", "wearable", 2),
+)
+
+
+def daily_series(history: list[dict[str, Any]], *, window: int = 7) -> list[dict[str, Any]]:
+    """Each daily series with its trailing ``window``-day mean (at least three
+    logged days in the window, otherwise no mean for that day)."""
+    out = []
+    for key, label, unit, source, digits in DAILY_SERIES:
+        points = []
+        for i, row in enumerate(history):
+            recent = [r.get(key) for r in history[max(0, i - window + 1): i + 1]]
+            recent = [v for v in recent if v is not None]
+            value = row.get(key)
+            points.append({
+                "date": row["date"],
+                "value": None if value is None else round(value, digits),
+                "mean7": round(sum(recent) / len(recent), digits) if len(recent) >= 3 else None,
+            })
+        logged = [p["value"] for p in points if p["value"] is not None]
+        out.append({
+            "key": key, "label": label, "unit": unit, "source": source, "digits": digits,
+            "days_logged": len(logged),
+            "min": min(logged), "max": max(logged),
+            "series": points,
+        })
+    return out
+
 
 def supplement_summary(rows: list[dict[str, Any]], *, as_of: str) -> list[dict[str, Any]]:
     cutoff = (date.fromisoformat(as_of).toordinal() - 30)
@@ -89,6 +125,7 @@ def build_record(
             "draw_date": labs["latest"]["date"],
             "first_gap_years": labs["first"]["gap_years"],
             "first_draw_date": labs["first"]["date"],
+            "swing_years": round(labs["first"]["gap_years"] - labs["latest"]["gap_years"], 2),
             "trend": [{"date": d["date"], "phenoage": d["phenoage"], "age": d["age"], "gap_years": d["gap_years"]} for d in labs["draws"] if d["phenoage"] is not None],
         },
         "timeline": [
@@ -96,6 +133,7 @@ def build_record(
             for r in history
         ],
         "labs": labs,
+        "daily": daily_series(history),
         "habits": {
             "columns": HABIT_COLUMNS,
             "effects": effects,

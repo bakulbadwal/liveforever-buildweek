@@ -149,7 +149,7 @@
     svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--rule)" stroke-width="' + sw + '"/>');
     svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--self)" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
     svg.push('<circle cx="' + mx.toFixed(1) + '" cy="' + my.toFixed(1) + '" r="7" fill="var(--ground)" stroke="var(--self)" stroke-width="2.5"/>');
-    svg.push('<text x="' + cx + '" y="' + (cy - 36) + '" text-anchor="middle" class="axis-label" font-size="12.5">biological age</text>');
+    svg.push('<text x="' + cx + '" y="' + (cy - 36) + '" text-anchor="middle" class="axis-label" font-size="12.5">biological age · PhenoAge</text>');
     svg.push('<text x="' + (cx + 14) + '" y="' + (cy - r - 22) + '" class="axis-label" font-size="11">' + fmt(hero.chronological_age_at_draw, 1) + ' calendar</text>');
     svg.push('<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-family="Spectral, serif" font-weight="300" font-size="64" fill="var(--ink)" letter-spacing="-0.02em">' + fmt(hero.phenoage, 1) + '</text>');
     svg.push('<line x1="' + tx0 + '" y1="' + sy(0).toFixed(1) + '" x2="' + (tx0 + tw) + '" y2="' + sy(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>');
@@ -161,7 +161,10 @@
     svg.push('<text x="' + (tx0 + tw) + '" y="' + (ty0 + th + 14) + '" text-anchor="end" class="axis-label" font-size="10.5">' + trend[trend.length - 1].date.slice(0, 4) + '</text>');
     svg.push('</svg>');
     $('dial-ring').innerHTML = svg.join('');
-    $('dial-caption').innerHTML = '<strong>' + fmt(Math.abs(hero.gap_years), 1) + ' years ' + (younger ? 'younger' : 'older') + '</strong> than her calendar age of ' + fmt(hero.chronological_age_at_draw, 1) + ' at the ' + monthYear(hero.draw_date) + ' draw. In ' + hero.first_draw_date.slice(0, 4) + ' the same markers read ' + fmt(Math.abs(hero.first_gap_years), 1) + ' years ' + (hero.first_gap_years < 0 ? 'younger' : 'older') + '.';
+    $('dial-caption').innerHTML =
+      '<span class="gap-figure">' + fmt(Math.abs(hero.gap_years), 1) + '<small> years ' + (younger ? 'younger' : 'older') + '</small></span>' +
+      '<span class="gap-line">than her calendar age of ' + fmt(hero.chronological_age_at_draw, 1) + ', ' + monthYear(hero.draw_date) + ' draw</span>' +
+      '<span class="gap-swing">In ' + hero.first_draw_date.slice(0, 4) + ' she read ' + fmt(Math.abs(hero.first_gap_years), 1) + ' years ' + (hero.first_gap_years < 0 ? 'younger' : 'older') + ': a <b>' + fmt(hero.swing_years, 1) + '-year swing</b> across ' + hero.trend.length + ' draws.</span>';
   }
 
   function renderScope(s) {
@@ -383,6 +386,122 @@
     host.innerHTML = html.join('');
   }
 
+  /* ---------- small multiples: every marker, every day ---------- */
+
+  function multiplesLayout(host, wideCols) {
+    var w = width(host);
+    var cols = w >= 880 ? (wideCols || 3) : 2;
+    var gap = narrow() ? 10 : 16;
+    return { cols: cols, cardW: Math.floor((w - gap * (cols - 1)) / cols) - 2, gap: gap };
+  }
+
+  // One card: header (label, latest value), a chart, and the first/last date.
+  function card(head, value, svg, foot, tag) {
+    return '<figure class="mcard"><figcaption><span class="mlabel">' + head + (tag ? '<i>' + tag + '</i>' : '') + '</span><span class="mvalue">' + value + '</span></figcaption>' + svg + '<div class="mfoot"><span>' + foot[0] + '</span><span>' + foot[1] + '</span></div></figure>';
+  }
+
+  function renderPhenoInputs(record) {
+    var m = record.labs.markers;
+    var names = Object.keys(m).filter(function (k) { return m[k].phenoage; }).map(function (k) { return esc(m[k].label); });
+    $('pheno-inputs').innerHTML = '<b>The nine inputs:</b> ' + names.join(', ') + '. Plus calendar age.';
+  }
+
+  function renderLabMultiples(record) {
+    var host = $('lab-multiples');
+    var L = multiplesLayout(host);
+    var w = L.cardW, h = narrow() ? 74 : 92, padX = 6, top = 8, bottom = h - 8;
+    var draws = record.labs.draws.filter(function (d) { return d.phenoage != null; });
+    var t0 = dayNum(draws[0].date), t1 = dayNum(draws[draws.length - 1].date);
+    var x = linearScale(t0, t1, padX, w - padX);
+    var foot = [draws[0].date.slice(0, 4), draws[draws.length - 1].date.slice(0, 4)];
+    function line(pts, y, stroke, dash) {
+      return '<path d="' + pts.map(function (p, i) { return (i ? 'L' : 'M') + x(dayNum(p.date)).toFixed(1) + ',' + y(p.value).toFixed(1); }).join(' ') + '" fill="none" stroke="' + stroke + '" stroke-width="1.5" stroke-linejoin="round"' + (dash ? ' stroke-dasharray="3 3"' : '') + '/>';
+    }
+    function dots(pts, y, inside) {
+      return pts.map(function (p, i) {
+        var last = i === pts.length - 1, ok = inside ? inside(p.value) : true;
+        return '<circle cx="' + x(dayNum(p.date)).toFixed(1) + '" cy="' + y(p.value).toFixed(1) + '" r="' + (last ? 3.5 : 2.5) + '" fill="' + (ok ? 'var(--self)' : 'var(--ground)') + '" stroke="var(--self)" stroke-width="1.5"><title>' + longDate(p.date) + ': ' + p.value + '</title></circle>';
+      }).join('');
+    }
+    var html = [];
+
+    // PhenoAge against calendar age
+    var pheno = draws.map(function (d) { return { date: d.date, value: d.phenoage }; });
+    var age = draws.map(function (d) { return { date: d.date, value: d.age }; });
+    var all = pheno.concat(age).map(function (p) { return p.value; });
+    var y = linearScale(Math.min.apply(null, all) - 0.5, Math.max.apply(null, all) + 0.5, bottom, top);
+    var last = draws[draws.length - 1];
+    html.push(card('PhenoAge <small>yrs</small>', fmt(last.phenoage, 1), svgOpen(w, h, 'role="img" aria-label="PhenoAge against calendar age by draw"') + line(age, y, 'var(--slate)', true) + line(pheno, y, 'var(--self)') + dots(pheno, y) + '</svg>', foot, 'dashed: calendar age'));
+
+    // Gap: PhenoAge minus calendar age
+    var gap = draws.map(function (d) { return { date: d.date, value: d.gap_years }; });
+    var gv = gap.map(function (p) { return p.value; }).concat([0]);
+    y = linearScale(Math.min.apply(null, gv) - 0.4, Math.max.apply(null, gv) + 0.4, bottom, top);
+    html.push(card('Age gap <small>yrs</small>', signed(last.gap_years, 1), svgOpen(w, h, 'role="img" aria-label="PhenoAge minus calendar age by draw"') + '<line x1="' + padX + '" y1="' + y(0).toFixed(1) + '" x2="' + (w - padX) + '" y2="' + y(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>' + line(gap, y, 'var(--self)') + dots(gap, y) + '</svg>', foot, 'below 0 = younger'));
+
+    // Every marker, with its reference band
+    var markers = record.labs.markers;
+    var keys = Object.keys(markers).sort(function (a, b) { return (markers[b].phenoage ? 1 : 0) - (markers[a].phenoage ? 1 : 0); });
+    keys.forEach(function (key) {
+      var m = markers[key];
+      var pts = m.series.filter(function (p) { return p.value != null; });
+      if (!pts.length) return;
+      var vals = pts.map(function (p) { return p.value; });
+      var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+      var span = Math.max(vmax - vmin, Math.abs(vmax) * 0.08, 0.1);
+      var lo = Math.min(vmin, Math.max(m.range[0], vmin - span)) - span * 0.15;
+      var hi = Math.max(vmax, Math.min(m.range[1], vmax + span)) + span * 0.15;
+      var yy = linearScale(lo, hi, bottom, top);
+      var bTop = yy(Math.min(m.range[1], hi)), bBot = yy(Math.max(m.range[0], lo));
+      var band = '<rect x="' + padX + '" y="' + bTop.toFixed(1) + '" width="' + (w - 2 * padX) + '" height="' + Math.max(0, bBot - bTop).toFixed(1) + '" fill="var(--slate)" fill-opacity="0.14"/>';
+      var inside = function (v) { return v >= m.range[0] && v <= m.range[1]; };
+      var lastV = pts[pts.length - 1].value;
+      html.push(card(esc(m.label) + ' <small>' + esc(m.unit) + '</small>', String(lastV), svgOpen(w, h, 'role="img" aria-label="' + esc(m.label) + ' by draw"') + band + line(pts, yy, 'var(--ink-3)') + dots(pts, yy, inside) + '</svg>', [pts[0].date.slice(0, 4), pts[pts.length - 1].date.slice(0, 4)], m.phenoage ? 'PhenoAge input' : ''));
+    });
+    host.style.setProperty('--cols', L.cols);
+    host.style.setProperty('--gap', L.gap + 'px');
+    host.innerHTML = html.join('') + '<div class="legend mlegend"><span><i class="band"></i>Reference range</span><span><i class="self"></i>Inside</span><span><i class="hollow"></i>Outside</span></div>';
+  }
+
+  function renderDailyMultiples(record) {
+    var host = $('daily-multiples');
+    var L = multiplesLayout(host, 4); // four self-logged, then three from the ring
+    var w = L.cardW, h = narrow() ? 74 : 92, padX = 4, top = 8, bottom = h - 8;
+    var html = [];
+    record.daily.forEach(function (s) {
+      var pts = s.series;
+      var t0 = dayNum(pts[0].date), t1 = dayNum(pts[pts.length - 1].date);
+      var x = linearScale(t0, t1, padX, w - padX);
+      var span = Math.max(s.max - s.min, 0.5);
+      var y = linearScale(s.min - span * 0.08, s.max + span * 0.08, bottom, top);
+      var out = [svgOpen(w, h, 'role="img" aria-label="' + esc(s.label) + ', daily values and 7-day average"')];
+      record.interventions.forEach(function (iv) {
+        var d = dayNum(iv.date);
+        if (d < t0 || d > t1) return;
+        out.push('<line x1="' + x(d).toFixed(1) + '" y1="' + top + '" x2="' + x(d).toFixed(1) + '" y2="' + bottom + '" stroke="var(--ink-3)" stroke-opacity="0.6" stroke-dasharray="2 3"><title>' + esc(iv.title) + ', ' + longDate(iv.date) + '</title></line>');
+      });
+      pts.forEach(function (p) {
+        if (p.value == null) return;
+        out.push('<circle cx="' + x(dayNum(p.date)).toFixed(1) + '" cy="' + y(p.value).toFixed(1) + '" r="1.3" fill="var(--slate)" fill-opacity="0.55"/>');
+      });
+      var path = [], pen = false;
+      pts.forEach(function (p) {
+        if (p.mean7 == null) { pen = false; return; }
+        path.push((pen ? 'L' : 'M') + x(dayNum(p.date)).toFixed(1) + ',' + y(p.mean7).toFixed(1));
+        pen = true;
+      });
+      out.push('<path d="' + path.join(' ') + '" fill="none" stroke="var(--self)" stroke-width="1.6" stroke-linejoin="round"/>');
+      var lastMean = null;
+      for (var i = pts.length - 1; i >= 0; i--) { if (pts[i].mean7 != null) { lastMean = pts[i]; break; } }
+      if (lastMean) out.push('<circle cx="' + x(dayNum(lastMean.date)).toFixed(1) + '" cy="' + y(lastMean.mean7).toFixed(1) + '" r="3" fill="var(--self)"/>');
+      out.push('</svg>');
+      html.push(card(esc(s.label) + ' <small>' + esc(s.unit) + '</small>', lastMean ? fmt(lastMean.mean7, s.digits) : '—', out.join(''), [monthYear(pts[0].date), monthYear(pts[pts.length - 1].date)], s.source === 'wearable' ? 'ring' : 'self-logged'));
+    });
+    host.style.setProperty('--cols', L.cols);
+    host.style.setProperty('--gap', L.gap + 'px');
+    host.innerHTML = html.join('') + '<p class="fig-note mlegend">The number on each card is the latest 7-day average. Self-logged values are what she typed in each day; ring values are measured overnight.</p>';
+  }
+
   /* ---------- habits ---------- */
 
   function renderHeatmap(record) {
@@ -456,7 +575,7 @@
       });
     });
     record.interventions.forEach(function (iv) {
-      html.push('<div class="intervention"><div><h4>' + esc(iv.title) + '</h4><div class="when">' + longDate(iv.date) + ' · ' + esc(iv.category) + '</div><div class="planted"><em>Generator truth:</em> ' + esc(iv.planted) + '</div></div><div class="iv-effects">');
+      html.push('<div class="intervention"><div><h4>' + esc(iv.title) + '</h4><div class="when">' + longDate(iv.date) + ' · ' + esc(iv.category) + '</div><div class="planted"><em>Planted effect:</em> ' + esc(iv.planted) + '</div></div><div class="iv-effects">');
       iv.effects.forEach(function (e) {
         var o = OUTCOME[e.outcome];
         var dom = sharedDomain(byOutcome[e.outcome], o.pad);
@@ -467,7 +586,7 @@
       });
       html.push('</div></div>');
     });
-    html.push('<p class="fig-note">Window comparisons are time-confounded by construction. The first change is the lesson: the generator planted nothing, yet the HRV window reads as a drop at this sample size. That is why the featured question below uses paired nights and a pre-registered retest instead.</p>');
+    html.push('<p class="fig-note">The first change shows the problem: we planted no effect, yet its HRV window still reads as a drop. That is why the caffeine question below uses paired nights and a retest instead.</p>');
     host.innerHTML = html.join('');
   }
 
@@ -506,7 +625,7 @@
         '<text x="' + clamp(xp, 30, barW - 30).toFixed(1) + '" y="12" text-anchor="middle" class="value-label">' + esc(herLabel) + '</text>' +
         '</svg></div>');
     });
-    html.push('<p class="bench-note">Reference values are approximate age-band figures written into the code as constants with a note, for a woman of ' + record.benchmarks[0].age + '; they are not a cited cohort study. Ivory is her mean, slate the reference. HRV is device- and method-dependent; these are context, not targets.</p>');
+    html.push('<p class="bench-note">Reference values are rough age-band figures for a woman of ' + record.benchmarks[0].age + ', coded as constants, not a cited study. Ivory is her average, slate the reference. HRV varies by device, so treat these as context, not targets.</p>');
     host.innerHTML = html.join('');
   }
 
@@ -516,7 +635,8 @@
     var primary = analysis.primary_effect;
     var paired = primary.n_on + primary.n_off;
     $('experiment-h').textContent = analysis.question;
-    $('experiment-lede').textContent = 'The question the genome nominated and the record could answer. For ' + analysis.dataset.recorded_days + ' recorded days from ' + longDate(analysis.dataset.start_date) + ' to ' + longDate(analysis.dataset.end_date) + ', each evening’s caffeine timing was paired with the following night’s recovery: ' + paired + ' paired nights, ' + primary.n_on + ' after a 2 PM cutoff and ' + primary.n_off + ' after usual timing.';
+    var g = analysis.genomics_context;
+    $('experiment-lede').textContent = 'Why this question: her ' + g.gene + ' result (' + g.marker + ' ' + g.synthetic_genotype + ', synthetic) is often studied as a slower caffeine-metabolism pattern. That makes late caffeine worth testing, not a verdict. Over ' + analysis.dataset.recorded_days + ' recorded days, ' + longDate(analysis.dataset.start_date) + ' to ' + longDate(analysis.dataset.end_date) + ', each day’s caffeine timing was paired with that night’s recovery: ' + paired + ' nights, ' + primary.n_on + ' after a 2 PM cutoff and ' + primary.n_off + ' after usual timing.';
     $('headline-number').innerHTML = '<div class="num">' + signed(primary.effect) + '<small>ms HRV</small></div><p class="read">Nights after a 2 PM cutoff averaged <strong>' + signed(primary.effect) + ' ms</strong> higher HRV, 95% interval ' + signed(primary.ci_low) + ' to ' + signed(primary.ci_high) + '. <em>Association only;</em> replicate before acting.</p>';
 
     var host = $('forest');
@@ -557,7 +677,7 @@
       path.push((started ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(v).toFixed(1));
       started = true;
     });
-    var out = ['<div class="toolbar"><p>Every recorded night in the last eight weeks of the window, coloured by the previous day’s caffeine timing, with a seven-day mean.</p><div class="toggle" role="group" aria-label="Metric">'];
+    var out = ['<div class="toolbar"><p>Every recorded night in the last eight weeks of the window, colored by the previous day’s caffeine timing, with a 7-day average.</p><div class="toggle" role="group" aria-label="Metric">'];
     Object.keys(OUTCOME).slice(0, 2).forEach(function (k) {
       out.push('<button type="button" data-night-metric="' + k + '" aria-pressed="' + (k === metric) + '">' + OUTCOME[k].label + '</button>');
     });
@@ -666,7 +786,7 @@
 
   function renderMethod(analysis, record) {
     var q = analysis.quality;
-    $('quality').innerHTML = '<div class="grade"><b>' + esc(q.grade) + '</b>Evidence-quality grade for the featured question, <span>' + q.score + ' of 100: ' + Math.round(q.coverage * 100) + '% calendar coverage, ' + q.paired_days + ' paired nights, balance ' + q.condition_on_n + ' to ' + q.condition_off_n + '.</span></div><ul>' + q.warnings.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '<li>The grade is deterministic. The model cannot raise it or suppress a warning.</li></ul>';
+    $('quality').innerHTML = '<div class="grade"><b>' + esc(q.grade) + '</b>Data quality, <span>' + q.score + ' of 100: ' + Math.round(q.coverage * 100) + '% of days recorded, ' + q.paired_days + ' paired nights, ' + q.condition_on_n + ' cutoff vs ' + q.condition_off_n + ' usual.</span></div><ul>' + q.warnings.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '<li>The grade is computed in code. The model can’t raise it or hide a warning.</li></ul>';
     $('method-body').innerHTML = '<ol>' + analysis.calculation_provenance.concat(record.provenance).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ol><p>' + esc(analysis.claim_boundary) + '</p><p>Regenerate everything with <code>PYTHONPATH=src python3 -m liveforever_lab.cli</code>; the judged interface is preserved at <a href="index-buildweek.html">index-buildweek.html</a> and commit 6978bcd.</p>';
   }
 
@@ -681,6 +801,9 @@
     if (state.draw == null) state.draw = r.hero.trend.length - 1;
     renderPheno(r);
     renderDrawPanel(r, state.draw);
+    renderPhenoInputs(r);
+    renderLabMultiples(r);
+    renderDailyMultiples(r);
     renderHeatmap(r);
     renderHabitEffects(r);
     renderInterventions(r);
