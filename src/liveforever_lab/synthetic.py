@@ -101,7 +101,7 @@ rs7412\t19\t45412079\tCC
 SYNTHETIC_INTERVENTIONS: list[dict[str, str]] = [
     {"date": "2025-10-06", "title": "Started magnesium glycinate at night", "category": "supplement",
      "planted": "none: the generator adds no effect, so an honest analysis should find nothing."},
-    {"date": "2026-01-12", "title": "Moved bedtime 45 minutes earlier", "category": "behaviour",
+    {"date": "2026-01-12", "title": "Moved bedtime 45 minutes earlier", "category": "behavior",
      "planted": "sleep duration baseline rises by about 0.3 h."},
     {"date": "2026-03-02", "title": "Began zone-2 cycling three mornings a week", "category": "training",
      "planted": "HRV baseline rises by about 1 ms and resting heart rate falls by about 0.8 bpm."},

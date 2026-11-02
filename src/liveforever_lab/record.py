@@ -25,10 +25,10 @@ TIMELINE_KEYS = ("hrv_ms", "sleep_hours", "resting_hr")
 DAILY_SERIES = (
     ("caffeine_mg", "Caffeine", "mg", "logged", 0),
     ("alcohol_units", "Alcohol", "drinks", "logged", 1),
-    ("training_load", "Training load", "0–3", "logged", 1),
+    ("training_load", "Training load", "0–2", "logged", 1),
     ("mood", "Mood", "1–10", "logged", 1),
     ("hrv_ms", "HRV", "ms", "wearable", 1),
-    ("resting_hr", "Resting heart rate", "bpm", "wearable", 1),
+    ("resting_hr", "Resting HR", "bpm", "wearable", 1),
     ("sleep_hours", "Sleep", "h", "wearable", 2),
 )
 
@@ -140,7 +140,7 @@ def build_record(
             "detected_on_hrv": detected,
             "tested": len(primary_effects),
             "calendar": habits_mod.habit_calendar(history, HABIT_COLUMNS + ["caffeine_cutoff_2pm"]),
-            "note": "Caffeine timing is excluded from this panel because it has its own pre-specified experiment on the fixed 84-day window below; mixing windows would show two different numbers for one question.",
+            "note": "Caffeine timing is excluded from this panel because it has its own experiment, on a fixed 84-day window, below. Mixing windows would show two different numbers for one question.",
         },
         "inputs": habits_mod.input_correlations(history, ["caffeine_mg", "training_load", "alcohol_units", "meditation"]),
         "interventions": habits_mod.intervention_effects(history, interventions),

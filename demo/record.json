@@ -6985,7 +6985,7 @@
   {
    "key": "training_load",
    "label": "Training load",
-   "unit": "0\u20133",
+   "unit": "0\u20132",
    "source": "logged",
    "digits": 1,
    "days_logged": 350,
@@ -12270,7 +12270,7 @@
   },
   {
    "key": "resting_hr",
-   "label": "Resting heart rate",
+   "label": "Resting HR",
    "unit": "bpm",
    "source": "wearable",
    "digits": 1,
@@ -20821,7 +20821,7 @@
    "first": "2025-07-21",
    "last": "2026-07-20"
   },
-  "note": "Caffeine timing is excluded from this panel because it has its own pre-specified experiment on the fixed 84-day window below; mixing windows would show two different numbers for one question."
+  "note": "Caffeine timing is excluded from this panel because it has its own experiment, on a fixed 84-day window, below. Mixing windows would show two different numbers for one question."
  },
  "inputs": [
   {
@@ -20997,7 +20997,7 @@
   {
    "date": "2026-01-12",
    "title": "Moved bedtime 45 minutes earlier",
-   "category": "behaviour",
+   "category": "behavior",
    "planted": "sleep duration baseline rises by about 0.3 h.",
    "window_days": 28,
    "effects": [
@@ -21209,7 +21209,7 @@
     "call": "e3/e3",
     "context": "The most common combination; studied as the reference pattern for lipid handling and late-life neurological risk.",
     "uses": "Points at the LDL and ApoB series in the lab panel. Anything clinically material here belongs with a dedicated test and a clinician, not a consumer file.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "CYP1A2",
@@ -21220,8 +21220,8 @@
     "genotype": "AC",
     "call": "AC",
     "context": "Often studied as an intermediate or slower pattern; caffeine may linger into the evening.",
-    "uses": "This is why caffeine timing became the question worth testing. The marker chose the question; 73 paired nights answered it.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "uses": "This is why caffeine timing became the question tested on this page.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "COMT",
@@ -21233,7 +21233,7 @@
     "call": "AG",
     "context": "Val/Met, an intermediate pattern.",
     "uses": "Reads alongside the caffeine dose column: total milligrams per day is logged, so sensitivity can be checked against next-day resting heart rate.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "MTHFR",
@@ -21245,7 +21245,7 @@
     "call": "CT",
     "context": "One copy of the variant; often studied as mildly reduced enzyme activity.",
     "uses": "Homocysteine is not on any of the seven lab panels yet. This marker nominates it for the next draw; it does not justify a supplement.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "MTHFR",
@@ -21257,7 +21257,7 @@
     "call": "AA",
     "context": "Typical.",
     "uses": "Read together with C677T above. Two typical copies here, so the C677T call carries the whole context.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "TCF7L2",
@@ -21269,7 +21269,7 @@
     "call": "CT",
     "context": "One copy of the risk allele; modestly higher studied risk.",
     "uses": "Points at the fasting glucose and HbA1c series in the lab panel, which are tracked across all seven draws.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "FTO",
@@ -21281,7 +21281,7 @@
     "call": "AT",
     "context": "One copy of the risk allele; intermediate.",
     "uses": "Weight is not tracked in this demo record, so there is nothing to test against yet. Noted, not acted on.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "LCT",
@@ -21293,7 +21293,7 @@
     "call": "CT",
     "context": "Lactase-persistent (dominant); dairy is usually tolerated.",
     "uses": "No dairy column in the habit log. A trait, not a question; nothing to test.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "ALDH2",
@@ -21304,12 +21304,12 @@
     "genotype": "GG",
     "call": "GG",
     "context": "Typical aldehyde clearance.",
-    "uses": "Alcohol is a logged input and a known recovery confounder in every comparison on this page. Typical clearance here, so the alcohol effect is read as behaviour, not biology.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "uses": "Alcohol is a logged input and a known recovery confounder in every comparison on this page. Typical clearance here, so any alcohol effect is about how much she drank, not how she clears it.",
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    },
    {
     "gene": "ACTN3",
-    "name": "Muscle fibre type (R577X)",
+    "name": "Muscle fiber type (R577X)",
     "category": "Fitness",
     "marker": "rs1815739",
     "chromosome": "11",
@@ -21317,7 +21317,7 @@
     "call": "CT",
     "context": "Mixed; no strong bias either way.",
     "uses": "Training load is logged daily (0, 1, 2). The mixed call means the zone-2 cycling intervention was chosen on the data, not the genotype.",
-    "boundary": "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+    "boundary": "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
    }
   ],
   "markers_total": 11,

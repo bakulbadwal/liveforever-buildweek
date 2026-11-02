@@ -144,7 +144,7 @@ class GenomeTests(unittest.TestCase):
         self.assertEqual(findings[0]["gene"], "APOE")
         self.assertEqual(findings[0]["call"], "e3/e3")
         self.assertEqual(len(findings), 10)
-        self.assertTrue(all("never decides" in item["boundary"] for item in findings))
+        self.assertTrue(all("never settle" in item["boundary"] for item in findings))
 
     def test_mthfr_strand_flip_is_only_a_fallback(self) -> None:
         flipped = interpret_panel({"rs1801133": "AG"})

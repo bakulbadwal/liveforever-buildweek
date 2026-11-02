@@ -65,7 +65,7 @@ PANEL: dict[str, dict[str, Any]] = {
             "AC": "Often studied as an intermediate or slower pattern; caffeine may linger into the evening.",
             "CC": "Often studied as a slower pattern; late-day caffeine may affect sleep more.",
         },
-        "uses": "This is why caffeine timing became the question worth testing. The marker chose the question; 73 paired nights answered it.",
+        "uses": "This is why caffeine timing became the question tested on this page.",
     },
     "rs4680": {
         "gene": "COMT", "name": "Dopamine clearance (Val158Met)", "category": "Pharmacogenomics",
@@ -135,10 +135,10 @@ PANEL: dict[str, dict[str, Any]] = {
             "AG": "Reduced clearance; often associated with flushing after alcohol.",
             "AA": "Near-absent clearance; alcohol is often poorly tolerated.",
         },
-        "uses": "Alcohol is a logged input and a known recovery confounder in every comparison on this page. Typical clearance here, so the alcohol effect is read as behaviour, not biology.",
+        "uses": "Alcohol is a logged input and a known recovery confounder in every comparison on this page. Typical clearance here, so any alcohol effect is about how much she drank, not how she clears it.",
     },
     "rs1815739": {
-        "gene": "ACTN3", "name": "Muscle fibre type (R577X)", "category": "Fitness",
+        "gene": "ACTN3", "name": "Muscle fiber type (R577X)", "category": "Fitness",
         "chromosome": "11",
         "genotypes": {
             "CC": "Two functional copies; often studied as a power or sprint bias.",
@@ -201,5 +201,5 @@ def interpret_panel(genotypes: dict[str, str]) -> list[dict[str, Any]]:
             "context": context, "uses": spec["uses"],
         })
     for finding in findings:
-        finding["boundary"] = "Context only. A single marker is probabilistic and population-dependent; it prioritises a question and never decides an answer."
+        finding["boundary"] = "Context only. A single marker is probabilistic and population-dependent; it can raise a question, never settle one."
     return findings
