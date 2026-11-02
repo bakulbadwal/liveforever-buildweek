@@ -7,6 +7,13 @@
 
   var state = { analysis: null, plan: null, record: null, draw: null, habitOutcome: 'hrv_ms', nightMetric: 'hrv_ms', width: 0 };
 
+  /* Motion is purely presentational. html.js lets the stylesheet stage the
+     reveals; without it (or under reduced motion) every rule in that block is
+     inert and the page is its static self. */
+  var MOTION = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var FINE = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+  document.documentElement.classList.add('js');
+
   var OUTCOME = {
     hrv_ms: { label: 'HRV', long: 'Next-day HRV', unit: 'ms', digits: 1, pad: 3, better: 'higher' },
     sleep_hours: { label: 'Sleep', long: 'Sleep duration', unit: 'h', digits: 2, pad: 0.25, better: 'longer' },
@@ -52,14 +59,17 @@
     var detected = row.ci_low != null && !(row.ci_low <= 0 && 0 <= row.ci_high);
     var stroke = 'var(--slate)';
     if (row.ci_low != null) {
+      // the whisker extends outward from the point estimate when it draws in
+      out.push('<g class="whisk" style="transform-origin:' + x.toFixed(1) + 'px ' + cy + 'px">');
       out.push('<line x1="' + scale(row.ci_low) + '" y1="' + cy + '" x2="' + scale(row.ci_high) + '" y2="' + cy + '" stroke="' + stroke + '" stroke-width="2" stroke-linecap="round"/>');
       out.push('<line x1="' + scale(row.ci_low) + '" y1="' + (cy - 5) + '" x2="' + scale(row.ci_low) + '" y2="' + (cy + 5) + '" stroke="' + stroke + '" stroke-width="1.5"/>');
       out.push('<line x1="' + scale(row.ci_high) + '" y1="' + (cy - 5) + '" x2="' + scale(row.ci_high) + '" y2="' + (cy + 5) + '" stroke="' + stroke + '" stroke-width="1.5"/>');
+      out.push('</g>');
     }
     if (detected) {
-      out.push('<circle cx="' + x + '" cy="' + cy + '" r="5.5" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
+      out.push('<circle class="pop" cx="' + x + '" cy="' + cy + '" r="5.5" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
     } else {
-      out.push('<circle cx="' + x + '" cy="' + cy + '" r="5" fill="var(--ground)" stroke="var(--slate)" stroke-width="2"/>');
+      out.push('<circle class="pop" cx="' + x + '" cy="' + cy + '" r="5" fill="var(--ground)" stroke="var(--slate)" stroke-width="2"/>');
     }
     var label = signed(row.effect, opts.digits) + ' ' + opts.unit;
     if (row.ci_low != null) label += ' (' + signed(row.ci_low, opts.digits) + ' to ' + signed(row.ci_high, opts.digits) + ')';
@@ -73,7 +83,7 @@
     }
     var lo = row.ci_low == null ? x : scale(row.ci_low);
     var textX = clamp(lo, 0, Math.max(0, w - est));
-    out.push('<text x="' + textX.toFixed(1) + '" y="' + (h - 6) + '" class="value-label">' + esc(label) +
+    out.push('<text x="' + textX.toFixed(1) + '" y="' + (h - 6) + '" class="value-label fade">' + esc(label) +
       (reading ? '<tspan class="axis-label" font-style="italic" font-family="Spectral, serif" font-size="12.5" dx="8">' + esc(reading) + '</tspan>' : '') + '</text>');
     return out.join('');
   }
@@ -145,26 +155,58 @@
     var sy = linearScale(gmin, gmax, ty0 + th, ty0);
     var path = trend.map(function (t, i) { return (i ? 'L' : 'M') + sx(dayNum(t.date)).toFixed(1) + ',' + sy(t.gap_years).toFixed(1); }).join(' ');
     var svg = [svgOpen(size, size, 'role="img" aria-label="Biological age ' + fmt(hero.phenoage, 1) + ' against calendar age ' + fmt(hero.chronological_age_at_draw, 1) + '"')];
+    // a recessed instrument plate behind the ring (decorative: gradient, bevel, shadow)
+    svg.push('<defs><radialGradient id="dial-plate-g" cx="50%" cy="42%" r="60%"><stop offset="0" stop-color="#1a2440"/><stop offset="0.7" stop-color="#121b31"/><stop offset="1" stop-color="#0f1729"/></radialGradient>' +
+      '<radialGradient id="dial-halo-g" cx="50%" cy="50%" r="50%"><stop offset="0.78" stop-color="#ece6d8" stop-opacity="0"/><stop offset="0.9" stop-color="#ece6d8" stop-opacity="0.05"/><stop offset="1" stop-color="#ece6d8" stop-opacity="0"/></radialGradient></defs>');
+    svg.push('<g class="dial-plate"><circle cx="' + cx + '" cy="' + cy + '" r="' + (r + 4) + '" fill="url(#dial-plate-g)"/>' +
+      '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r + 4) + '" fill="none" stroke="rgba(236,230,216,0.12)" stroke-width="1"/>' +
+      '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r - 8) + '" fill="none" stroke="rgba(5,8,16,0.45)" stroke-width="1"/></g>');
+    svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + (r + 24) + '" fill="url(#dial-halo-g)"/>');
     svg.push(ticks.join(''));
     svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--rule)" stroke-width="' + sw + '"/>');
-    svg.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--self)" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
-    svg.push('<circle cx="' + mx.toFixed(1) + '" cy="' + my.toFixed(1) + '" r="7" fill="var(--ground)" stroke="var(--self)" stroke-width="2.5"/>');
+    svg.push('<circle class="dial-arc" data-frac="' + Math.min(frac, 1).toFixed(5) + '" data-circ="' + circ.toFixed(1) + '" cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="var(--self)" stroke-width="' + sw + '" stroke-linecap="round" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
+    svg.push('<circle class="dial-marker" data-cx="' + cx + '" data-cy="' + cy + '" data-r="' + r + '" cx="' + mx.toFixed(1) + '" cy="' + my.toFixed(1) + '" r="7" fill="var(--ground)" stroke="var(--self)" stroke-width="2.5"/>');
     svg.push('<text x="' + cx + '" y="' + (cy - 36) + '" text-anchor="middle" class="axis-label" font-size="12.5">biological age · PhenoAge</text>');
     svg.push('<text x="' + (cx + 14) + '" y="' + (cy - r - 22) + '" class="axis-label" font-size="11">' + fmt(hero.chronological_age_at_draw, 1) + ' calendar</text>');
-    svg.push('<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-family="Spectral, serif" font-weight="300" font-size="64" fill="var(--ink)" letter-spacing="-0.02em">' + fmt(hero.phenoage, 1) + '</text>');
+    svg.push('<text class="dial-num" data-value="' + fmt(hero.phenoage, 1) + '" x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-family="Spectral, serif" font-weight="300" font-size="64" fill="var(--ink)" letter-spacing="-0.02em">' + fmt(hero.phenoage, 1) + '</text>');
     svg.push('<line x1="' + tx0 + '" y1="' + sy(0).toFixed(1) + '" x2="' + (tx0 + tw) + '" y2="' + sy(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>');
-    svg.push('<path d="' + path + '" fill="none" stroke="var(--ink-2)" stroke-width="1.5" stroke-linejoin="round"/>');
+    svg.push('<path class="trace" pathLength="1" style="--i:14" d="' + path + '" fill="none" stroke="var(--ink-2)" stroke-width="1.5" stroke-linejoin="round"/>');
     trend.forEach(function (t, i) {
-      svg.push('<circle cx="' + sx(dayNum(t.date)).toFixed(1) + '" cy="' + sy(t.gap_years).toFixed(1) + '" r="' + (i === trend.length - 1 ? 3.5 : 2) + '" fill="' + (i === trend.length - 1 ? 'var(--ink)' : 'var(--ink-2)') + '"/>');
+      svg.push('<circle class="pop" style="--i:' + (i * 6 + 50) + '" cx="' + sx(dayNum(t.date)).toFixed(1) + '" cy="' + sy(t.gap_years).toFixed(1) + '" r="' + (i === trend.length - 1 ? 3.5 : 2) + '" fill="' + (i === trend.length - 1 ? 'var(--ink)' : 'var(--ink-2)') + '"/>');
     });
     svg.push('<text x="' + tx0 + '" y="' + (ty0 + th + 14) + '" class="axis-label" font-size="10.5">' + trend[0].date.slice(0, 4) + '</text>');
     svg.push('<text x="' + (tx0 + tw) + '" y="' + (ty0 + th + 14) + '" text-anchor="end" class="axis-label" font-size="10.5">' + trend[trend.length - 1].date.slice(0, 4) + '</text>');
     svg.push('</svg>');
     $('dial-ring').innerHTML = svg.join('');
     $('dial-caption').innerHTML =
-      '<span class="gap-figure">' + fmt(Math.abs(hero.gap_years), 1) + '<small> years ' + (younger ? 'younger' : 'older') + '</small></span>' +
-      '<span class="gap-line">than her calendar age of ' + fmt(hero.chronological_age_at_draw, 1) + ', ' + monthYear(hero.draw_date) + ' draw</span>' +
-      '<span class="gap-swing">In ' + hero.first_draw_date.slice(0, 4) + ' her PhenoAge was ' + fmt(Math.abs(hero.first_gap_years), 1) + ' years ' + (hero.first_gap_years < 0 ? 'younger' : 'older') + ' than her calendar age: a <b>' + fmt(hero.swing_years, 1) + '-year swing</b> across ' + hero.trend.length + ' draws.</span>';
+      '<span class="gap-figure rv" style="--i:12">' + fmt(Math.abs(hero.gap_years), 1) + '<small> years ' + (younger ? 'younger' : 'older') + '</small></span>' +
+      '<span class="gap-line rv" style="--i:14">than her calendar age of ' + fmt(hero.chronological_age_at_draw, 1) + ', ' + monthYear(hero.draw_date) + ' draw</span>' +
+      '<span class="gap-swing rv" style="--i:16">In ' + hero.first_draw_date.slice(0, 4) + ' her PhenoAge was ' + fmt(Math.abs(hero.first_gap_years), 1) + ' years ' + (hero.first_gap_years < 0 ? 'younger' : 'older') + ' than her calendar age: a <b>' + fmt(hero.swing_years, 1) + '-year swing</b> across ' + hero.trend.length + ' draws.</span>';
+  }
+
+  /* The ring sweeps to its value and the number counts up to it, once, when
+     the dial first enters view. Final values are what renderDial already drew. */
+  function animateDial(host) {
+    var arc = host.querySelector('.dial-arc'), marker = host.querySelector('.dial-marker'), num = host.querySelector('.dial-num');
+    if (!arc || !marker || !num || !MOTION) return;
+    var frac = Number(arc.dataset.frac), circ = Number(arc.dataset.circ);
+    var cx = Number(marker.dataset.cx), cy = Number(marker.dataset.cy), r = Number(marker.dataset.r);
+    var finalText = num.dataset.value, value = Number(finalText);
+    var t0 = null, dur = 1700;
+    function step(now) {
+      if (t0 == null) t0 = now;
+      var p = clamp((now - t0) / dur, 0, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      var f = frac * e, a = -Math.PI / 2 + f * 2 * Math.PI;
+      arc.setAttribute('stroke-dasharray', (f * circ).toFixed(1) + ' ' + circ.toFixed(1));
+      marker.setAttribute('cx', (cx + Math.cos(a) * r).toFixed(1));
+      marker.setAttribute('cy', (cy + Math.sin(a) * r).toFixed(1));
+      num.textContent = p < 1 ? (value * e).toFixed(1) : finalText;
+      if (p < 1) requestAnimationFrame(step); else arc.setAttribute('stroke-dasharray', (frac * circ).toFixed(1) + ' ' + circ.toFixed(1));
+    }
+    arc.setAttribute('stroke-dasharray', '0 ' + circ.toFixed(1));
+    num.textContent = '0.0';
+    requestAnimationFrame(step);
   }
 
   function renderScope(s) {
@@ -231,6 +273,7 @@
     });
     rows.forEach(function (row, i) {
       var y = top + i * (rowH + gap), cy = y + rowH / 2;
+      out.push('<g class="fade" style="--i:' + (i * 5) + '">');
       out.push('<line x1="' + left + '" y1="' + (y + rowH) + '" x2="' + (w - right) + '" y2="' + (y + rowH) + '" class="grid-line"/>');
       out.push('<text x="0" y="' + (cy - 2) + '" class="row-label">' + esc(row.label) + '</text>');
       out.push('<text x="0" y="' + (cy + 13) + '" class="atlas-sub">' + esc(row.sub) + '</text>');
@@ -274,9 +317,10 @@
         var n = record.genome.findings.length;
         for (var k = 0; k < n; k++) {
           var gx = left + (k + 0.5) / n * (w - right - left);
-          out.push('<circle cx="' + gx.toFixed(1) + '" cy="' + cy + '" r="3" fill="var(--self)"/>');
+          out.push('<circle class="pop" style="--i:' + (k * 3 + 24) + '" cx="' + gx.toFixed(1) + '" cy="' + cy + '" r="3" fill="var(--self)"/>');
         }
       }
+      out.push('</g>');
     });
     out.push('</svg>');
     host.innerHTML = out.join('') + '<p class="fig-note">Horizontal axis is calendar time. Bloodwork is per draw; supplements are logged spans; wearable nights are plotted by HRV; the habit band is shaded by weekly adherence; the genome is one file read once.</p>';
@@ -305,21 +349,22 @@
     // gap area between the two lines
     var area = draws.map(function (d, i) { return (i ? 'L' : 'M') + x(dayNum(d.date)).toFixed(1) + ',' + y(d.phenoage).toFixed(1); }).join(' ')
       + draws.slice().reverse().map(function (d) { return ' L' + x(dayNum(d.date)).toFixed(1) + ',' + y(d.age).toFixed(1); }).join('') + ' Z';
-    out.push('<path d="' + area + '" fill="var(--self)" fill-opacity="0.07"/>');
+    out.push('<path class="fade" style="--i:18" d="' + area + '" fill="var(--self)" fill-opacity="0.07"/>');
     var ageLine = draws.map(function (d, i) { return (i ? 'L' : 'M') + x(dayNum(d.date)).toFixed(1) + ',' + y(d.age).toFixed(1); }).join(' ');
     var phenoLine = draws.map(function (d, i) { return (i ? 'L' : 'M') + x(dayNum(d.date)).toFixed(1) + ',' + y(d.phenoage).toFixed(1); }).join(' ');
-    out.push('<path d="' + ageLine + '" fill="none" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="4 4"/>');
-    out.push('<path d="' + phenoLine + '" fill="none" stroke="var(--self)" stroke-width="2" stroke-linejoin="round"/>');
+    out.push('<path class="fade" style="--i:6" d="' + ageLine + '" fill="none" stroke="var(--slate)" stroke-width="1.5" stroke-dasharray="4 4"/>');
+    out.push('<path class="trace" pathLength="1" d="' + phenoLine + '" fill="none" stroke="var(--self)" stroke-width="2" stroke-linejoin="round"/>');
     draws.forEach(function (d, i) {
       var dx = x(dayNum(d.date)), dy = y(d.phenoage), ay = y(d.age);
       var selected = state.draw === i;
+      var stagger = Math.round(i / Math.max(1, draws.length - 1) * 70);
       out.push('<g class="draw-button" role="button" tabindex="0" data-draw="' + i + '" aria-pressed="' + selected + '" aria-label="' + longDate(d.date) + ': biological age ' + fmt(d.phenoage, 1) + ', calendar age ' + fmt(d.age, 1) + '">');
       out.push('<rect class="draw-hit" x="' + (dx - 22) + '" y="' + (Math.min(dy, ay) - 22) + '" width="44" height="' + (Math.abs(dy - ay) + 44) + '" rx="6"/>');
-      out.push('<circle cx="' + dx.toFixed(1) + '" cy="' + ay.toFixed(1) + '" r="3" fill="var(--slate)"/>');
-      if (selected) out.push('<circle cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="12" fill="none" stroke="var(--self)" stroke-width="1.5"/>');
-      out.push('<circle class="draw-dot" cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="' + (selected ? 6 : 5) + '" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
+      out.push('<circle class="pop" style="--i:' + (stagger + 8) + '" cx="' + dx.toFixed(1) + '" cy="' + ay.toFixed(1) + '" r="3" fill="var(--slate)"/>');
+      if (selected) out.push('<circle class="pop" style="--i:' + (stagger + 14) + '" cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="12" fill="none" stroke="var(--self)" stroke-width="1.5"/>');
+      out.push('<circle class="draw-dot pop" style="--i:' + stagger + '" cx="' + dx.toFixed(1) + '" cy="' + dy.toFixed(1) + '" r="' + (selected ? 6 : 5) + '" fill="var(--self)" stroke="var(--ground)" stroke-width="2"/>');
       if (!narrow() || i === 0 || i === draws.length - 1 || selected) {
-        out.push('<text x="' + dx.toFixed(1) + '" y="' + (dy - 12).toFixed(1) + '" text-anchor="middle" class="value-label">' + fmt(d.phenoage, 1) + '</text>');
+        out.push('<text class="value-label fade" style="--i:' + (stagger / 2 + 10) + '" x="' + dx.toFixed(1) + '" y="' + (dy - 12).toFixed(1) + '" text-anchor="middle">' + fmt(d.phenoage, 1) + '</text>');
       }
       out.push('<text x="' + dx.toFixed(1) + '" y="' + (bottom + 20) + '" text-anchor="middle" class="axis-label">' + (narrow() ? "'" + d.date.slice(2, 4) : monthYear(d.date)) + '</text>');
       out.push('</g>');
@@ -355,8 +400,8 @@
     return svgOpen(w, 22) +
       '<rect x="' + x(lo).toFixed(1) + '" y="7" width="' + (x(hi) - x(lo)).toFixed(1) + '" height="8" rx="1.5" fill="var(--slate)" fill-opacity="0.32"/>' +
       (outside
-        ? '<circle cx="' + x(value).toFixed(1) + '" cy="11" r="5" fill="var(--ground)" stroke="var(--self)" stroke-width="2"/>'
-        : '<circle cx="' + x(value).toFixed(1) + '" cy="11" r="5" fill="var(--self)"/>') +
+        ? '<circle class="pop" style="--i:12" cx="' + x(value).toFixed(1) + '" cy="11" r="5" fill="var(--ground)" stroke="var(--self)" stroke-width="2"/>'
+        : '<circle class="pop" style="--i:12" cx="' + x(value).toFixed(1) + '" cy="11" r="5" fill="var(--self)"/>') +
       '</svg>';
   }
 
@@ -377,7 +422,7 @@
         var value = d.values[key];
         if (value == null) return;
         var outside = value < m.range[0] || value > m.range[1];
-        html.push('<div class="marker"><div class="name"><b>' + esc(m.label) + '</b> <span>' + value + ' <small>' + esc(m.unit) + '</small></span>' + (outside ? '<span class="flag">outside ' + m.range[0] + '–' + m.range[1] + '</span>' : '<small>' + m.range[0] + '–' + m.range[1] + '</small>') + '</div>' + rangeBar(value, m.range, barW) + '</div>');
+        html.push('<div class="marker rv" style="--i:' + Math.min(10, html.length) + '"><div class="name"><b>' + esc(m.label) + '</b> <span>' + value + ' <small>' + esc(m.unit) + '</small></span>' + (outside ? '<span class="flag">outside ' + m.range[0] + '–' + m.range[1] + '</span>' : '<small>' + m.range[0] + '–' + m.range[1] + '</small>') + '</div>' + rangeBar(value, m.range, barW) + '</div>');
       });
     });
     html.push('</div>');
@@ -396,8 +441,9 @@
   }
 
   // One card: header (label, latest value), a chart, and the first/last date.
-  function card(head, value, svg, foot, tag, wide) {
-    return '<figure class="mcard' + (wide ? ' wide' : '') + '"><figcaption><span class="mlabel">' + head + (tag ? '<i>' + tag + '</i>' : '') + '</span><span class="mvalue">' + value + '</span></figcaption>' + svg + '<div class="mfoot"><span>' + foot[0] + '</span><span>' + foot[1] + '</span></div></figure>';
+  // Each card reveals itself (will-draw) and staggers by its column so rows arrive as a wave.
+  function card(head, value, svg, foot, tag, wide, stagger) {
+    return '<figure class="mcard will-draw rv' + (wide ? ' wide' : '') + '" style="--i:' + (stagger || 0) + '"><figcaption><span class="mlabel">' + head + (tag ? '<i>' + tag + '</i>' : '') + '</span><span class="mvalue">' + value + '</span></figcaption>' + svg + '<div class="mfoot"><span>' + foot[0] + '</span><span>' + foot[1] + '</span></div></figure>';
   }
 
   function renderPhenoInputs(record) {
@@ -417,16 +463,18 @@
     var foot = [draws[0].date.slice(0, 4), draws[draws.length - 1].date.slice(0, 4)];
     function line(pts, y, stroke, dash, xs) {
       var x = xs || xBase;
-      return '<path d="' + pts.map(function (p, i) { return (i ? 'L' : 'M') + x(dayNum(p.date)).toFixed(1) + ',' + y(p.value).toFixed(1); }).join(' ') + '" fill="none" stroke="' + stroke + '" stroke-width="1.5" stroke-linejoin="round"' + (dash ? ' stroke-dasharray="3 3"' : '') + '/>';
+      // a dashed line fades in; a solid one traces itself
+      return '<path class="' + (dash ? 'fade' : 'trace') + '"' + (dash ? '' : ' pathLength="1"') + ' d="' + pts.map(function (p, i) { return (i ? 'L' : 'M') + x(dayNum(p.date)).toFixed(1) + ',' + y(p.value).toFixed(1); }).join(' ') + '" fill="none" stroke="' + stroke + '" stroke-width="1.5" stroke-linejoin="round"' + (dash ? ' stroke-dasharray="3 3"' : '') + '/>';
     }
     function dots(pts, y, inside, xs) {
       var x = xs || xBase;
       return pts.map(function (p, i) {
         var last = i === pts.length - 1, ok = inside ? inside(p.value) : true;
-        return '<circle cx="' + x(dayNum(p.date)).toFixed(1) + '" cy="' + y(p.value).toFixed(1) + '" r="' + (last ? 3.5 : 2.5) + '" fill="' + (ok ? 'var(--self)' : 'var(--ground)') + '" stroke="var(--self)" stroke-width="1.5"><title>' + longDate(p.date) + ': ' + p.value + '</title></circle>';
+        return '<circle class="pop" style="--i:' + Math.round(i / Math.max(1, pts.length - 1) * 60) + '" cx="' + x(dayNum(p.date)).toFixed(1) + '" cy="' + y(p.value).toFixed(1) + '" r="' + (last ? 3.5 : 2.5) + '" fill="' + (ok ? 'var(--self)' : 'var(--ground)') + '" stroke="var(--self)" stroke-width="1.5"><title>' + longDate(p.date) + ': ' + p.value + '</title></circle>';
       }).join('');
     }
     var html = [];
+    var col = function () { return (html.length + 1) % L.cols; }; // the first card is two columns wide
 
     // PhenoAge against calendar age
     var pheno = draws.map(function (d) { return { date: d.date, value: d.phenoage }; });
@@ -434,13 +482,13 @@
     var all = pheno.concat(age).map(function (p) { return p.value; });
     var y = linearScale(Math.min.apply(null, all) - 0.5, Math.max.apply(null, all) + 0.5, bottom, top);
     var last = draws[draws.length - 1];
-    html.push(card('PhenoAge <small>yrs</small>', fmt(last.phenoage, 1), svgOpen(wideW, h, 'role="img" aria-label="PhenoAge against calendar age by draw"') + line(age, y, 'var(--slate)', true, xw) + line(pheno, y, 'var(--self)', false, xw) + dots(pheno, y, null, xw) + '</svg>', foot, 'dashed: calendar age', true));
+    html.push(card('PhenoAge <small>yrs</small>', fmt(last.phenoage, 1), svgOpen(wideW, h, 'role="img" aria-label="PhenoAge against calendar age by draw"') + line(age, y, 'var(--slate)', true, xw) + line(pheno, y, 'var(--self)', false, xw) + dots(pheno, y, null, xw) + '</svg>', foot, 'dashed: calendar age', true, 0));
 
     // Gap: PhenoAge minus calendar age
     var gap = draws.map(function (d) { return { date: d.date, value: d.gap_years }; });
     var gv = gap.map(function (p) { return p.value; }).concat([0]);
     y = linearScale(Math.min.apply(null, gv) - 0.4, Math.max.apply(null, gv) + 0.4, bottom, top);
-    html.push(card('Age gap <small>yrs</small>', signed(last.gap_years, 1), svgOpen(w, h, 'role="img" aria-label="PhenoAge minus calendar age by draw"') + '<line x1="' + padX + '" y1="' + y(0).toFixed(1) + '" x2="' + (w - padX) + '" y2="' + y(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>' + line(gap, y, 'var(--self)') + dots(gap, y) + '</svg>', foot, 'below 0 = younger'));
+    html.push(card('Age gap <small>yrs</small>', signed(last.gap_years, 1), svgOpen(w, h, 'role="img" aria-label="PhenoAge minus calendar age by draw"') + '<line x1="' + padX + '" y1="' + y(0).toFixed(1) + '" x2="' + (w - padX) + '" y2="' + y(0).toFixed(1) + '" class="grid-line" stroke-dasharray="2 3"/>' + line(gap, y, 'var(--self)') + dots(gap, y) + '</svg>', foot, 'below 0 = younger', false, L.cols === 2 ? 0 : 2));
 
     // Every marker, with its reference band
     var markers = record.labs.markers;
@@ -456,10 +504,10 @@
       var hi = Math.max(vmax, Math.min(m.range[1], vmax + span)) + span * 0.15;
       var yy = linearScale(lo, hi, bottom, top);
       var bTop = yy(Math.min(m.range[1], hi)), bBot = yy(Math.max(m.range[0], lo));
-      var band = '<rect x="' + padX + '" y="' + bTop.toFixed(1) + '" width="' + (w - 2 * padX) + '" height="' + Math.max(0, bBot - bTop).toFixed(1) + '" fill="var(--slate)" fill-opacity="0.14"/>';
+      var band = '<rect class="fade" x="' + padX + '" y="' + bTop.toFixed(1) + '" width="' + (w - 2 * padX) + '" height="' + Math.max(0, bBot - bTop).toFixed(1) + '" fill="var(--slate)" fill-opacity="0.14"/>';
       var inside = function (v) { return v >= m.range[0] && v <= m.range[1]; };
       var lastV = pts[pts.length - 1].value;
-      html.push(card(esc(m.label) + ' <small>' + esc(m.unit) + '</small>', String(lastV), svgOpen(w, h, 'role="img" aria-label="' + esc(m.label) + ' by draw"') + band + line(pts, yy, 'var(--ink-3)') + dots(pts, yy, inside) + '</svg>', [pts[0].date.slice(0, 4), pts[pts.length - 1].date.slice(0, 4)], m.phenoage ? 'PhenoAge input' : ''));
+      html.push(card(esc(m.label) + ' <small>' + esc(m.unit) + '</small>', String(lastV), svgOpen(w, h, 'role="img" aria-label="' + esc(m.label) + ' by draw"') + band + line(pts, yy, 'var(--ink-3)') + dots(pts, yy, inside) + '</svg>', [pts[0].date.slice(0, 4), pts[pts.length - 1].date.slice(0, 4)], m.phenoage ? 'PhenoAge input' : '', false, col() * 2));
     });
     host.style.setProperty('--cols', L.cols);
     host.style.setProperty('--gap', L.gap + 'px');
@@ -470,7 +518,7 @@
     var host = $('daily-multiples');
     var L = multiplesLayout(host, 4); // four self-logged, then three from the ring
     var w = L.cardW, h = narrow() ? 74 : 92, padX = 4, top = 8, bottom = h - 8;
-    var html = [];
+    var html = [], slot = 0;
     record.daily.forEach(function (s) {
       var pts = s.series;
       var wide = s.key === 'hrv_ms';
@@ -485,22 +533,25 @@
         if (d < t0 || d > t1) return;
         out.push('<line x1="' + x(d).toFixed(1) + '" y1="' + top + '" x2="' + x(d).toFixed(1) + '" y2="' + bottom + '" stroke="var(--ink-3)" stroke-opacity="0.6" stroke-dasharray="2 3"><title>' + esc(iv.title) + ', ' + longDate(iv.date) + '</title></line>');
       });
+      out.push('<g class="fade" style="--i:4">');
       pts.forEach(function (p) {
         if (p.value == null) return;
         out.push('<circle cx="' + x(dayNum(p.date)).toFixed(1) + '" cy="' + y(p.value).toFixed(1) + '" r="1.3" fill="var(--slate)" fill-opacity="0.55"/>');
       });
+      out.push('</g>');
       var path = [], pen = false;
       pts.forEach(function (p) {
         if (p.mean7 == null) { pen = false; return; }
         path.push((pen ? 'L' : 'M') + x(dayNum(p.date)).toFixed(1) + ',' + y(p.mean7).toFixed(1));
         pen = true;
       });
-      out.push('<path d="' + path.join(' ') + '" fill="none" stroke="var(--self)" stroke-width="1.6" stroke-linejoin="round"/>');
+      out.push('<path class="trace" pathLength="1" d="' + path.join(' ') + '" fill="none" stroke="var(--self)" stroke-width="1.6" stroke-linejoin="round"/>');
       var lastMean = null;
       for (var i = pts.length - 1; i >= 0; i--) { if (pts[i].mean7 != null) { lastMean = pts[i]; break; } }
-      if (lastMean) out.push('<circle cx="' + x(dayNum(lastMean.date)).toFixed(1) + '" cy="' + y(lastMean.mean7).toFixed(1) + '" r="3" fill="var(--self)"/>');
+      if (lastMean) out.push('<circle class="pop" style="--i:70" cx="' + x(dayNum(lastMean.date)).toFixed(1) + '" cy="' + y(lastMean.mean7).toFixed(1) + '" r="3" fill="var(--self)"/>');
       out.push('</svg>');
-      html.push(card(esc(s.label) + ' <small>' + esc(s.unit) + '</small>', lastMean ? fmt(lastMean.mean7, s.digits) : '—', out.join(''), [monthYear(pts[0].date), monthYear(pts[pts.length - 1].date)], s.source === 'wearable' ? 'ring' : 'self-logged', wide));
+      html.push(card(esc(s.label) + ' <small>' + esc(s.unit) + '</small>', lastMean ? fmt(lastMean.mean7, s.digits) : '—', out.join(''), [monthYear(pts[0].date), monthYear(pts[pts.length - 1].date)], s.source === 'wearable' ? 'ring' : 'self-logged', wide, (slot % L.cols) * 2));
+      slot += wide ? 2 : 1;
     });
     host.style.setProperty('--cols', L.cols);
     host.style.setProperty('--gap', L.gap + 'px');
@@ -523,7 +574,7 @@
         wk.days.forEach(function (d) { if (d.done[c] != null) { logged++; done += d.done[c]; } });
         var v = logged ? done / logged : null;
         var label = t.label + ', week of ' + shortDate(wk.start) + ': ' + (logged ? done + ' of ' + logged + ' logged days' : 'not logged');
-        html.push('<button class="heat-cell" type="button" style="--v:' + (v == null ? 0 : v.toFixed(2)) + '" data-v="' + (v == null ? 'none' : v.toFixed(2)) + '" data-label="' + esc(label) + '" aria-label="' + esc(label) + '"></button>');
+        html.push('<button class="heat-cell" type="button" style="--v:' + (v == null ? 0 : v.toFixed(2)) + ';--w:' + wi + '" data-v="' + (v == null ? 'none' : v.toFixed(2)) + '" data-label="' + esc(label) + '" aria-label="' + esc(label) + '"></button>');
       });
       html.push('</div><div class="count">' + t.done + '/' + t.logged + '</div></div>');
     });
@@ -552,10 +603,10 @@
       html.push('<button type="button" data-habit-outcome="' + k + '" aria-pressed="' + (k === state.habitOutcome) + '">' + OUTCOME[k].label + '</button>');
     });
     html.push('</div></div><div class="effect-rows">');
-    rows.forEach(function (r) {
+    rows.forEach(function (r, i) {
       var back = {};
       var plot = intervalRow(w, 46, scale, r, { unit: o.unit, digits: 2, readingOut: back });
-      html.push('<div class="effect-row"><div class="name">' + esc(r.label) + '<small>' + r.n_on + ' done / ' + r.n_off + ' not' + (back.text ? ' <em>· ' + esc(back.text) + '</em>' : '') + '</small></div>' + svgOpen(w, 46) + plot + '</svg></div>');
+      html.push('<div class="effect-row rv" style="--i:' + i + '"><div class="name">' + esc(r.label) + '<small>' + r.n_on + ' done / ' + r.n_off + ' not' + (back.text ? ' <em>· ' + esc(back.text) + '</em>' : '') + '</small></div>' + svgOpen(w, 46) + plot.replace(/style="transform-origin/, 'style="--i:' + (i * 2) + ';transform-origin') + '</svg></div>');
     });
     html.push('</div><div class="effect-axis"><div></div>' + axisRow(w, scale, dom[0], dom[1], o.unit) + '</div>');
     var paired = rows.length ? rows[0].n_on + rows[0].n_off : 0;
@@ -579,15 +630,15 @@
         (byOutcome[e.outcome] = byOutcome[e.outcome] || []).push(e);
       });
     });
-    record.interventions.forEach(function (iv) {
-      html.push('<div class="intervention"><div><h4>' + esc(iv.title) + '</h4><div class="when">' + longDate(iv.date) + ' · ' + esc(iv.category) + '</div><div class="planted"><em>Planted effect:</em> ' + esc(iv.planted) + '</div></div><div class="iv-effects">');
-      iv.effects.forEach(function (e) {
+    record.interventions.forEach(function (iv, k) {
+      html.push('<div class="intervention rv" style="--i:' + (k * 2) + '"><div><h4>' + esc(iv.title) + '</h4><div class="when">' + longDate(iv.date) + ' · ' + esc(iv.category) + '</div><div class="planted"><em>Planted effect:</em> ' + esc(iv.planted) + '</div></div><div class="iv-effects">');
+      iv.effects.forEach(function (e, j) {
         var o = OUTCOME[e.outcome];
         var dom = sharedDomain(byOutcome[e.outcome], o.pad);
         var scale = linearScale(dom[0], dom[1], 0, innerW);
         var back = {};
         var plot = intervalRow(innerW, 46, scale, { effect: e.effect, ci_low: e.ci_low, ci_high: e.ci_high, note: 'not enough days on both sides' }, { unit: o.unit, digits: 2, detectedWord: 'change observed', readingOut: back });
-        html.push('<div class="iv-effect"><div class="lab">' + esc(o.long) + (back.text ? '<em>' + esc(back.text) + '</em>' : '') + '</div>' + svgOpen(innerW, 46) + plot + '</svg></div>');
+        html.push('<div class="iv-effect"><div class="lab">' + esc(o.long) + (back.text ? '<em>' + esc(back.text) + '</em>' : '') + '</div>' + svgOpen(innerW, 46) + plot.replace(/style="transform-origin/, 'style="--i:' + (k * 3 + j * 2) + ';transform-origin') + '</svg></div>');
       });
       html.push('</div></div>');
     });
@@ -603,8 +654,8 @@
     var t1 = dayNum(record.scope.last_night);
     var x = linearScale(t0, t1, 2, barW - 2);
     var html = [];
-    supps.forEach(function (s) {
-      html.push('<div class="supp"><div class="name">' + esc(s.label) + '<small>' + s.days + ' days · ' + (s.current ? 'current' : 'stopped ' + monthYear(s.last)) + '</small></div>' + svgOpen(barW, 14) + '<line x1="2" y1="7" x2="' + (barW - 2) + '" y2="7" class="grid-line"/><line x1="' + x(dayNum(s.first)).toFixed(1) + '" y1="7" x2="' + x(dayNum(s.last)).toFixed(1) + '" y2="7" stroke="var(--self)" stroke-opacity="' + (s.current ? 0.95 : 0.5) + '" stroke-width="6" stroke-linecap="round"/></svg></div>');
+    supps.forEach(function (s, i) {
+      html.push('<div class="supp rv" style="--i:' + i + '"><div class="name">' + esc(s.label) + '<small>' + s.days + ' days · ' + (s.current ? 'current' : 'stopped ' + monthYear(s.last)) + '</small></div>' + svgOpen(barW, 14) + '<line x1="2" y1="7" x2="' + (barW - 2) + '" y2="7" class="grid-line"/><line class="grow" style="--i:' + (i * 2) + ';transform-origin:' + x(dayNum(s.first)).toFixed(1) + 'px 7px" x1="' + x(dayNum(s.first)).toFixed(1) + '" y1="7" x2="' + x(dayNum(s.last)).toFixed(1) + '" y2="7" stroke="var(--self)" stroke-opacity="' + (s.current ? 0.95 : 0.5) + '" stroke-width="6" stroke-linecap="round"/></svg></div>');
     });
     html.push('<div class="supp-axis"><span>' + supps.reduce(function (m, s) { return s.first < m ? s.first : m; }, supps[0].first).slice(0, 4) + '</span><span>' + record.scope.last_night.slice(0, 4) + '</span></div>');
     html.push('<p class="fig-note">Mined from the daily log, so each supplement is a column that can be compared against recovery like any habit. Days logged, not doses.</p>');
@@ -615,19 +666,19 @@
     var host = $('benchmarks');
     var barW = Math.max(140, width(host) - (narrow() ? 112 : 150));
     var html = [];
-    record.benchmarks.forEach(function (b) {
+    record.benchmarks.forEach(function (b, i) {
       var lo = Math.min(b.persona_mean, b.reference), hi = Math.max(b.persona_mean, b.reference);
       var span = Math.max(hi - lo, b.reference * 0.06);
       var x = linearScale(lo - span * 1.6, hi + span * 1.6, 8, barW - 8);
       var xr = x(b.reference), xp = x(b.persona_mean);
       var herLabel = fmt(b.persona_mean, b.digits) + ' ' + b.unit;
       var refLabel = 'cohort ' + b.reference;
-      html.push('<div class="bench"><div class="name">' + esc(b.label) + '<small>her last ' + b.window_days + ' days, ' + b.n + ' nights</small></div>' + svgOpen(barW, 52) +
+      html.push('<div class="bench rv" style="--i:' + i + '"><div class="name">' + esc(b.label) + '<small>her last ' + b.window_days + ' days, ' + b.n + ' nights</small></div>' + svgOpen(barW, 52) +
         '<line x1="8" y1="30" x2="' + (barW - 8) + '" y2="30" class="grid-line"/>' +
-        '<line x1="' + xr.toFixed(1) + '" y1="20" x2="' + xr.toFixed(1) + '" y2="40" stroke="var(--slate)" stroke-width="2"/>' +
-        '<text x="' + clamp(xr, 34, barW - 34).toFixed(1) + '" y="50" text-anchor="middle" class="axis-label">' + esc(refLabel) + '</text>' +
-        '<circle cx="' + xp.toFixed(1) + '" cy="30" r="6" fill="var(--self)"/>' +
-        '<text x="' + clamp(xp, 30, barW - 30).toFixed(1) + '" y="12" text-anchor="middle" class="value-label">' + esc(herLabel) + '</text>' +
+        '<line class="fade" style="--i:' + i + '" x1="' + xr.toFixed(1) + '" y1="20" x2="' + xr.toFixed(1) + '" y2="40" stroke="var(--slate)" stroke-width="2"/>' +
+        '<text class="axis-label fade" style="--i:' + (i + 2) + '" x="' + clamp(xr, 34, barW - 34).toFixed(1) + '" y="50" text-anchor="middle">' + esc(refLabel) + '</text>' +
+        '<circle class="pop" style="--i:' + (i * 6 + 10) + '" cx="' + xp.toFixed(1) + '" cy="30" r="6" fill="var(--self)"/>' +
+        '<text class="value-label fade" style="--i:' + (i + 4) + '" x="' + clamp(xp, 30, barW - 30).toFixed(1) + '" y="12" text-anchor="middle">' + esc(herLabel) + '</text>' +
         '</svg></div>');
     });
     html.push('<p class="bench-note">Reference values are rough age-band figures for a ' + Math.floor(record.benchmarks[0].age) + '-year-old woman, coded as constants, not a cited study. Ivory is her average, slate the reference. HRV varies by device, so treat these as context, not targets.</p>');
@@ -642,19 +693,19 @@
     $('experiment-h').textContent = analysis.question;
     var g = analysis.genomics_context;
     $('experiment-lede').textContent = 'Why this question: her ' + g.gene + ' result (' + g.marker + ' ' + g.synthetic_genotype + ', synthetic) is often studied as a slower caffeine-metabolism pattern. So late caffeine was worth a test. Over ' + analysis.dataset.recorded_days + ' recorded days, ' + longDate(analysis.dataset.start_date) + ' to ' + longDate(analysis.dataset.end_date) + ', each day’s caffeine timing was paired with that night’s recovery: ' + paired + ' nights, ' + primary.n_on + ' after a 2 PM cutoff and ' + primary.n_off + ' after usual timing.';
-    $('headline-number').innerHTML = '<div class="num">' + signed(primary.effect) + '<small>ms HRV</small></div><p class="read">Nights after a 2 PM cutoff averaged <strong>' + fmt(primary.effect) + ' ms</strong> more HRV than nights after usual timing, 95% interval ' + signed(primary.ci_low) + ' to ' + signed(primary.ci_high) + '. <em>Association only;</em> retest before acting.</p>';
+    $('headline-number').innerHTML = '<div class="num rv"><span class="count" data-final="' + signed(primary.effect) + '">' + signed(primary.effect) + '</span><small>ms HRV</small></div><p class="read rv" style="--i:3">Nights after a 2 PM cutoff averaged <strong>' + fmt(primary.effect) + ' ms</strong> more HRV than nights after usual timing, 95% interval ' + signed(primary.ci_low) + ' to ' + signed(primary.ci_high) + '. <em>Association only;</em> retest before acting.</p>';
 
     var host = $('forest');
     var rows = [primary].concat(analysis.secondary_effects);
     var w = width(host) - (narrow() ? 112 : 182);
     var html = ['<div class="effect-rows">'];
-    rows.forEach(function (r) {
+    rows.forEach(function (r, i) {
       var o = OUTCOME[r.outcome];
       var dom = sharedDomain([r], o.pad);
       var scale = linearScale(dom[0], dom[1], 0, w);
       var back = {};
       var plot = intervalRow(w, 54, scale, r, { unit: o.unit, digits: 2, readingOut: back });
-      html.push('<div class="effect-row"><div class="name">' + esc(o.long) + '<small>' + r.n_on + ' cutoff / ' + r.n_off + ' usual nights' + (back.text ? ' <em>· ' + esc(back.text) + '</em>' : '') + '</small></div>' + svgOpen(w, 54) + plot + '</svg></div>');
+      html.push('<div class="effect-row rv" style="--i:' + (i * 2) + '"><div class="name">' + esc(o.long) + '<small>' + r.n_on + ' cutoff / ' + r.n_off + ' usual nights' + (back.text ? ' <em>· ' + esc(back.text) + '</em>' : '') + '</small></div>' + svgOpen(w, 54) + plot.replace(/style="transform-origin/, 'style="--i:' + (i * 3) + ';transform-origin') + '</svg></div>');
     });
     html.push('</div><p class="fig-note">Each outcome on its own scale; the vertical line is no difference. Resting heart rate falling after cutoff nights points the same way as the other two.</p>');
     host.innerHTML = html.join('');
@@ -704,7 +755,7 @@
       out.push('<text x="' + x(i).toFixed(1) + '" y="' + (bottom + 20) + '" class="axis-label">' + (i === 0 ? shortDate(p.date) : MONTHS[parse(p.date).getMonth()]) + '</text>');
     });
     out.push('<text x="' + (w - right) + '" y="' + (bottom + 20) + '" text-anchor="end" class="axis-label">' + shortDate(timeline[timeline.length - 1].date) + '</text>');
-    out.push('<path d="' + path.join(' ') + '" fill="none" stroke="var(--self)" stroke-opacity="0.7" stroke-width="1.5" stroke-linejoin="round"/>');
+    out.push('<path class="trace" pathLength="1" d="' + path.join(' ') + '" fill="none" stroke="var(--self)" stroke-opacity="0.7" stroke-width="1.5" stroke-linejoin="round"/>');
     timeline.forEach(function (p, i) {
       var v = p[metric];
       if (v == null) return;
@@ -715,7 +766,7 @@
       out.push('<g class="night" role="button" tabindex="0" data-i="' + i + '" aria-label="' + esc(label) + '">');
       out.push('<circle cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="12" fill="transparent"/>');
       out.push('<circle class="night-ring" cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="9"/>');
-      out.push('<circle cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="' + (narrow() ? 3.5 : 4.5) + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>');
+      out.push('<circle class="pop" style="--i:' + Math.round(i / Math.max(1, timeline.length - 1) * 75) + '" cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="' + (narrow() ? 3.5 : 4.5) + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.5"/>');
       out.push('</g>');
     });
     out.push('</svg><div class="chart-tooltip" id="night-tip" role="status" hidden></div></div>');
@@ -748,9 +799,9 @@
   function renderPlan(plan, analysis) {
     var host = $('plan');
     var html = ['<div><div class="schedule" aria-label="Fourteen-day schedule">'];
-    plan.schedule.forEach(function (d) {
+    plan.schedule.forEach(function (d, i) {
       var cut = d.condition.indexOf('Cutoff') === 0;
-      html.push('<div class="day ' + (cut ? 'cutoff' : 'usual') + '" aria-label="' + longDate(d.date) + ': ' + esc(d.condition) + '"><b>' + weekday(d.date) + '</b><b>' + parse(d.date).getDate() + '</b><span>' + (cut ? 'Cutoff' : 'Usual') + '</span></div>');
+      html.push('<div class="day rv ' + (cut ? 'cutoff' : 'usual') + '" style="--i:' + i + '" aria-label="' + longDate(d.date) + ': ' + esc(d.condition) + '"><b>' + weekday(d.date) + '</b><b>' + parse(d.date).getDate() + '</b><span>' + (cut ? 'Cutoff' : 'Usual') + '</span></div>');
     });
     html.push('</div><div class="legend"><span><i class="accent"></i>Cutoff by 2 PM</span><span><i class="slate"></i>Usual timing</span></div>');
     html.push('<p class="fig-note">Seven days of each condition in a fixed random order, starting ' + longDate(plan.schedule[0].date) + '. Outcomes are measured the next morning.</p></div>');
@@ -764,7 +815,7 @@
     var list = $('helix-list');
     var findings = record.genome.findings;
     list.innerHTML = findings.map(function (f, i) {
-      return '<button class="gene" type="button" role="listitem" data-gene="' + i + '" aria-pressed="false"><i aria-hidden="true"></i><span><b>' + esc(f.gene) + '</b><small>' + esc(f.name) + '</small></span><span class="gt">' + esc(f.call) + '</span></button>';
+      return '<button class="gene rv" style="--i:' + i + '" type="button" role="listitem" data-gene="' + i + '" aria-pressed="false"><i aria-hidden="true"></i><span><b>' + esc(f.gene) + '</b><small>' + esc(f.name) + '</small></span><span class="gt">' + esc(f.call) + '</span></button>';
     }).join('');
     list.querySelectorAll('.gene').forEach(function (b) {
       b.addEventListener('click', function () { selectGene(Number(b.dataset.gene), 'list'); });
@@ -793,6 +844,181 @@
     var q = analysis.quality;
     $('quality').innerHTML = '<div class="grade"><b>' + esc(q.grade) + '</b>Data quality, <span>' + q.score + ' of 100: ' + Math.round(q.coverage * 100) + '% of days recorded, ' + q.paired_days + ' paired nights, ' + q.condition_on_n + ' cutoff vs ' + q.condition_off_n + ' usual.</span></div><ul>' + q.warnings.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '<li>The grade is computed in code. The model can’t raise it or hide a warning.</li></ul>';
     $('method-body').innerHTML = '<ol>' + analysis.calculation_provenance.concat(record.provenance).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ol><p>' + esc(analysis.claim_boundary) + '</p><p>Regenerate everything with <code>PYTHONPATH=src python3 -m liveforever_lab.cli</code>; the judged interface is preserved at <a href="index-buildweek.html">index-buildweek.html</a> and commit 6978bcd.</p>';
+  }
+
+  /* ---------- motion: the sky, reveals, the count-ups, tilt ----------
+     Nothing here changes a word or a number. Hosts carry .will-draw and get
+     .drawn when they enter the viewport; the stylesheet does the rest. Hosts
+     already above the viewport (a mid-page landing) are marked drawn at once. */
+
+  var revealIO = null;
+  var drawnHooks = { dial: animateDial, count: countHost };
+
+  function markDrawn(el) {
+    el.classList.add('drawn');
+    var hook = el.getAttribute('data-on-drawn');
+    if (hook && drawnHooks[hook]) drawnHooks[hook](el);
+  }
+
+  function armMotion() {
+    var hosts = document.querySelectorAll('.will-draw:not(.armed)');
+    if (!hosts.length) return;
+    if (!MOTION || !('IntersectionObserver' in window)) {
+      hosts.forEach(function (el) { el.classList.add('armed'); markDrawn(el); });
+      return;
+    }
+    revealIO = revealIO || new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting || e.boundingClientRect.bottom < 0) { markDrawn(e.target); revealIO.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -7% 0px', threshold: 0 });
+    // Anything already on screen (or above it) is drawn now, synchronously, so the
+    // first viewport never waits on an observer callback; the rest wait for scroll.
+    var vh = window.innerHeight || document.documentElement.clientHeight || 800;
+    hosts.forEach(function (el) {
+      el.classList.add('armed');
+      var rect = el.getBoundingClientRect();
+      if (rect.bottom < 0 || (rect.top < vh * 0.93 && rect.bottom > 0)) markDrawn(el); else revealIO.observe(el);
+    });
+    // belt and braces: if anything in view is still undrawn a moment later, draw it
+    setTimeout(function () {
+      var h = window.innerHeight || 800;
+      document.querySelectorAll('.will-draw.armed:not(.drawn)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < h && r.bottom > 0) { markDrawn(el); if (revealIO) revealIO.unobserve(el); }
+      });
+    }, 2500);
+  }
+
+  // Static page furniture that rises in: each chapter's rule, its heading and lede, the h3s.
+  function tagStatic() {
+    document.querySelectorAll('.chapter').forEach(function (c) {
+      c.classList.add('will-draw');
+      c.querySelectorAll(':scope > h2, :scope > .chapter-lede').forEach(function (el, i) { el.classList.add('rv'); el.style.setProperty('--i', String(i * 2)); });
+    });
+    document.querySelectorAll('.chapter h3, .hero-copy, .scope, .synthetic-note, .ledger > div, .method, .privacy, .colophon > p').forEach(function (el, i) {
+      el.classList.add('will-draw', 'rv');
+    });
+    document.querySelectorAll('.hero-copy > *').forEach(function (el, i) { el.classList.add('rv'); el.style.setProperty('--i', String(i * 2)); });
+    ['dial', 'atlas', 'phenochart', 'draw-panel', 'heatmap', 'habit-effects', 'interventions', 'supplements', 'benchmarks', 'headline-number', 'forest', 'nightly', 'quality', 'plan', 'helix-list', 'finding'].forEach(function (id) {
+      var el = $(id);
+      if (el) el.classList.add('will-draw');
+    });
+    $('dial').setAttribute('data-on-drawn', 'dial');
+    $('headline-number').setAttribute('data-on-drawn', 'count');
+    $('quality').classList.add('rv');
+  }
+
+  // Counts a .count span from zero to its data-final text, keeping its sign and digits.
+  function countHost(host) {
+    if (!MOTION) return;
+    host.querySelectorAll('.count').forEach(function (el) {
+      var finalText = el.getAttribute('data-final');
+      var m = /^([+−-]?)(\d+)(?:\.(\d+))?$/.exec(finalText);
+      if (!m) return;
+      var sign = m[1], digits = m[3] ? m[3].length : 0, value = Number(m[2] + (m[3] ? '.' + m[3] : ''));
+      var t0 = null, dur = 1500;
+      function step(now) {
+        if (t0 == null) t0 = now;
+        var p = clamp((now - t0) / dur, 0, 1), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = p < 1 ? sign + (value * e).toFixed(digits) : finalText;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      el.textContent = sign + (0).toFixed(digits);
+      requestAnimationFrame(step);
+    });
+  }
+
+  // A seeded star tile, so the sky is the same on every visit.
+  function starTile(seed, n, rMin, rMax, aMin, aMax) {
+    var s = seed >>> 0;
+    var rnd = function () { s += 0x6D2B79F5; var t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    var out = ['<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">'];
+    for (var i = 0; i < n; i++) {
+      var slate = rnd() < 0.3;
+      out.push('<circle cx="' + (rnd() * 900).toFixed(1) + '" cy="' + (rnd() * 900).toFixed(1) + '" r="' + (rMin + rnd() * (rMax - rMin)).toFixed(2) + '" fill="' + (slate ? '#9aa6bd' : '#ece6d8') + '" fill-opacity="' + (aMin + rnd() * (aMax - aMin)).toFixed(2) + '"/>');
+    }
+    out.push('</svg>');
+    return 'url("data:image/svg+xml,' + encodeURIComponent(out.join('')) + '")';
+  }
+
+  function buildSky() {
+    var sky = document.createElement('div');
+    sky.className = 'sky';
+    sky.setAttribute('aria-hidden', 'true');
+    var far = document.createElement('div'), near = document.createElement('div'), glow = document.createElement('div');
+    far.className = 'sky-layer sky-far';
+    near.className = 'sky-layer sky-near';
+    glow.className = 'sky-glow';
+    far.style.backgroundImage = starTile(7, 150, 0.45, 1.0, 0.25, 0.7);
+    near.style.backgroundImage = starTile(23, 38, 0.8, 1.5, 0.35, 0.9);
+    sky.appendChild(glow);
+    sky.appendChild(far);
+    sky.appendChild(near);
+    if (MOTION) {
+      var s = 99;
+      var rnd = function () { s += 0x6D2B79F5; var t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+      for (var i = 0; i < 12; i++) {
+        var tw = document.createElement('i');
+        tw.className = 'twinkle';
+        tw.style.left = (rnd() * 100).toFixed(1) + '%';
+        tw.style.top = (rnd() * 100).toFixed(1) + '%';
+        tw.style.setProperty('--d', (3.5 + rnd() * 4).toFixed(1) + 's');
+        tw.style.setProperty('--delay', (-rnd() * 7).toFixed(1) + 's');
+        sky.appendChild(tw);
+      }
+    }
+    document.body.insertBefore(sky, document.body.firstChild);
+
+    // parallax on desktop only: the two star layers drift at different rates as the page scrolls
+    if (MOTION && FINE && window.innerWidth >= 820) {
+      var rates = [[far, 0.04], [near, 0.11]];
+      var ticking = false;
+      var size = function () {
+        var scrollable = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        rates.forEach(function (r) { r[0].style.height = Math.ceil(window.innerHeight + scrollable * r[1] + 20) + 'px'; });
+      };
+      var move = function () {
+        var y = window.scrollY || window.pageYOffset || 0;
+        rates.forEach(function (r) { r[0].style.transform = 'translate3d(0,' + (-y * r[1]).toFixed(1) + 'px,0)'; });
+        ticking = false;
+      };
+      var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(move); } };
+      size();
+      move();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', function () { size(); onScroll(); });
+      window.addEventListener('load', size);
+      setTimeout(size, 1500);
+    }
+  }
+
+  // Pointer tilt for the small-multiple cards and the dial (fine pointers only).
+  function armTilt() {
+    if (!MOTION || !FINE) return;
+    var set = function (el, e, max) {
+      var r = el.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty('--ry', (px * max).toFixed(2) + 'deg');
+      el.style.setProperty('--rx', (-py * max).toFixed(2) + 'deg');
+      el.style.setProperty('--mx', ((px + 0.5) * 100).toFixed(1) + '%');
+      el.style.setProperty('--my', ((py + 0.5) * 100).toFixed(1) + '%');
+    };
+    var reset = function (el) { ['--rx', '--ry'].forEach(function (p) { el.style.removeProperty(p); }); };
+    document.addEventListener('pointermove', function (e) {
+      if (e.pointerType && e.pointerType !== 'mouse') return;
+      var card = e.target.closest ? e.target.closest('.mcard') : null;
+      if (card) set(card, e, 5);
+      var hero = e.target.closest ? e.target.closest('.hero') : null;
+      if (hero) set($('dial-ring'), e, 6);
+    }, { passive: true });
+    document.addEventListener('pointerout', function (e) {
+      var card = e.target.closest ? e.target.closest('.mcard') : null;
+      if (card && !(e.relatedTarget && card.contains(e.relatedTarget))) reset(card);
+      var hero = e.target.closest ? e.target.closest('.hero') : null;
+      if (hero && !(e.relatedTarget && hero.contains(e.relatedTarget))) reset($('dial-ring'));
+    }, { passive: true });
   }
 
   /* ---------- orchestration ---------- */
@@ -825,7 +1051,17 @@
     if (!hash) return;
     var target = document.getElementById(LEGACY[hash] || hash);
     if (target) target.scrollIntoView({ block: 'start' });
+    // an in-page jump leaves the hosts it skipped above the viewport: draw them now
+    document.querySelectorAll('.will-draw.armed:not(.drawn)').forEach(function (el) {
+      if (el.getBoundingClientRect().bottom < 0) { markDrawn(el); if (revealIO) revealIO.unobserve(el); }
+    });
   }
+
+  // The static furniture starts revealing before the JSON arrives, so the page is never bare.
+  buildSky();
+  tagStatic();
+  armMotion();
+  armTilt();
 
   Promise.all([
     fetch('analysis.json').then(function (r) { return r.json(); }),
@@ -837,11 +1073,12 @@
     renderAll();
     renderGenome(state.record);
     landOnHash();
+    armMotion();
     var last = state.width, timer;
     window.addEventListener('resize', function () {
       clearTimeout(timer);
       timer = setTimeout(function () {
-        if (document.documentElement.clientWidth !== last) { last = document.documentElement.clientWidth; renderAll(); }
+        if (document.documentElement.clientWidth !== last) { last = document.documentElement.clientWidth; renderAll(); armMotion(); }
       }, 160);
     });
     window.addEventListener('hashchange', landOnHash);

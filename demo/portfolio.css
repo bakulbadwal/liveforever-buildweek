@@ -22,6 +22,8 @@
   --gutter: 20px;
   --measure: 62ch;
   --max: 1120px;
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --settle: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: dark;
 }
 
@@ -49,6 +51,49 @@ body {
   font-size: 17px;
   line-height: 1.55;
   font-variant-numeric: tabular-nums;
+}
+
+/* ---------- the sky: a fixed star field behind the plate (decorative, JS-built) ---------- */
+.masthead, main, .colophon { position: relative; z-index: 1; }
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+.sky-layer {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 150vh;
+  background-repeat: repeat;
+  background-size: 900px 900px;
+  will-change: transform;
+}
+.sky-far { opacity: 0.55; }
+.sky-near { opacity: 0.8; }
+.sky-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 520px at 72% -8%, rgba(232, 171, 79, 0.05), transparent 65%),
+    radial-gradient(1100px 700px at -10% 110%, rgba(127, 141, 168, 0.09), transparent 60%),
+    radial-gradient(1400px 900px at 50% 50%, transparent 50%, rgba(5, 8, 16, 0.55) 100%);
+}
+.twinkle {
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.55;
+  box-shadow: 0 0 6px 1px rgba(236, 230, 216, 0.35);
+  will-change: opacity;
+  animation: twinkle var(--d, 5s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.85; }
 }
 
 a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
@@ -146,8 +191,16 @@ p { margin: 0; }
   gap: 14px;
   width: min(100%, 360px);
 }
-.dial-ring { position: relative; width: 100%; }
-.dial-ring svg { display: block; width: 100%; height: auto; }
+.dial-ring {
+  position: relative;
+  width: 100%;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 500ms var(--ease);
+  will-change: transform;
+}
+.dial-ring svg { display: block; width: 100%; height: auto; overflow: visible; }
+.dial-plate { filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55)); }
+.dial-arc { filter: drop-shadow(0 0 7px rgba(236, 230, 216, 0.32)); }
 .dial-caption {
   font-family: var(--serif);
   font-size: 1.02rem;
@@ -187,9 +240,18 @@ p { margin: 0; }
 main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
 .chapter {
+  position: relative;
   padding: 72px 0 16px;
-  border-top: 1px solid var(--rule);
   margin-top: 56px;
+}
+/* the chapter's top hairline is a pseudo-element so it can be engraved in on reveal */
+.chapter::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: var(--rule);
+  transform-origin: left center;
 }
 .chapter:first-child { margin-top: 48px; }
 .chapter-lede {
@@ -469,7 +531,9 @@ figure { margin: 0; }
   border-radius: 6px;
   background:
     radial-gradient(60% 50% at 50% 50%, rgba(232, 171, 79, 0.07), transparent 70%),
+    radial-gradient(120% 90% at 50% 120%, rgba(127, 141, 168, 0.12), transparent 60%),
     var(--plate);
+  box-shadow: inset 0 1px 0 rgba(236, 230, 216, 0.06), inset 0 0 80px rgba(5, 8, 16, 0.5), 0 30px 60px -30px rgba(0, 0, 0, 0.7);
   overflow: hidden;
   touch-action: pan-y;
 }
@@ -568,7 +632,35 @@ figure { margin: 0; }
 
 /* ---------- small multiples ---------- */
 .multiples { margin-top: 20px; display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--gap, 16px); }
-.mcard { margin: 0; padding: 12px 12px 8px; background: var(--plate); border: 1px solid var(--rule-2); border-radius: 8px; min-width: 0; }
+.mcard {
+  position: relative;
+  margin: 0; padding: 12px 12px 8px;
+  background: linear-gradient(180deg, rgba(236, 230, 216, 0.025), transparent 40%), var(--plate);
+  border: 1px solid var(--rule-2);
+  border-radius: 8px;
+  min-width: 0;
+  box-shadow: inset 0 1px 0 rgba(236, 230, 216, 0.05), 0 1px 2px rgba(0, 0, 0, 0.25), 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), border-color 260ms var(--ease);
+}
+.mcard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(236, 230, 216, 0.075), transparent 62%);
+  opacity: 0;
+  transition: opacity 320ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .mcard:hover {
+    border-color: var(--rule);
+    box-shadow: inset 0 1px 0 rgba(236, 230, 216, 0.08), 0 2px 4px rgba(0, 0, 0, 0.3), 0 28px 50px -24px rgba(0, 0, 0, 0.8);
+    transition-duration: 120ms;
+  }
+  .mcard:hover::after { opacity: 1; }
+}
 .mcard figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
 .mlabel { font-size: 0.9rem; color: var(--ink); line-height: 1.25; min-width: 0; }
 .mlabel small { color: var(--ink-3); font-size: 0.78rem; }
@@ -627,6 +719,84 @@ figure { margin: 0; }
   .scope span + span::before { margin: 0 7px; }
 }
 
+/* ---------- motion: reveals and charts that draw themselves ----------
+   Every rule here lives under html.js and no-preference, so without JS or with
+   reduced motion the page is the static, fully visible version above. Hidden
+   states apply only inside a .will-draw host that is not yet .drawn; the
+   transition is declared on the visible state, so content re-rendered inside
+   an already-drawn host appears instantly with no replay. */
+@media (prefers-reduced-motion: no-preference) {
+  /* engraved chapter rule */
+  html.js .chapter.will-draw::before { transform: scaleX(0); }
+  html.js .chapter.will-draw.drawn::before { transform: scaleX(1); transition: transform 1100ms var(--ease); }
+
+  /* blocks that rise into place */
+  html.js .will-draw:not(.drawn) .rv,
+  html.js .will-draw.rv:not(.drawn) { opacity: 0; transform: translateY(14px); }
+  html.js .drawn .rv,
+  html.js .rv.drawn {
+    opacity: 1; transform: none;
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+  /* cards keep their tilt transform; the rise is a variable */
+  html.js .will-draw:not(.drawn) .mcard.rv { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(18px); }
+  html.js .drawn .mcard.rv {
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease), box-shadow 260ms var(--ease), border-color 260ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 55ms), calc(var(--i, 0) * 55ms), 0s, 0s;
+  }
+  html.js .drawn .mcard.rv:hover { transition-duration: 120ms; transition-delay: 0s; }
+
+  /* lines that trace themselves (pathLength="1" on the path) */
+  html.js .will-draw:not(.drawn) .trace { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  html.js .drawn .trace {
+    stroke-dasharray: 1; stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1300ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+
+  /* dots that settle */
+  html.js .will-draw:not(.drawn) .pop { transform: scale(0); opacity: 0; }
+  html.js .drawn .pop {
+    transform-box: fill-box; transform-origin: center;
+    transform: scale(1); opacity: 1;
+    transition: transform 620ms var(--settle), opacity 300ms ease-out, r 160ms ease-out;
+    transition-delay: calc(var(--i, 0) * 16ms);
+  }
+  html.js .will-draw:not(.drawn) .pop { transform-box: fill-box; transform-origin: center; }
+
+  /* interval whiskers that extend from the estimate; bars that grow */
+  html.js .will-draw:not(.drawn) .whisk, html.js .will-draw:not(.drawn) .grow { transform: scaleX(0); }
+  html.js .drawn .whisk, html.js .drawn .grow {
+    transform-box: view-box;
+    transform: scaleX(1);
+    transition: transform 900ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 50ms + 120ms);
+  }
+  html.js .will-draw:not(.drawn) .whisk, html.js .will-draw:not(.drawn) .grow { transform-box: view-box; }
+
+  /* quiet fades for labels, areas and bands */
+  html.js .will-draw:not(.drawn) .fade { opacity: 0; }
+  html.js .drawn .fade {
+    opacity: 1;
+    transition: opacity 800ms ease-out;
+    transition-delay: calc(var(--i, 0) * 40ms + 300ms);
+  }
+
+  /* heatmap cells, by week */
+  html.js .will-draw:not(.drawn) .heat-cell { opacity: 0; transform: scale(0.4); }
+  html.js .drawn .heat-cell {
+    opacity: 1; transform: scale(1);
+    transition: opacity 500ms ease-out, transform 500ms var(--settle);
+    transition-delay: calc(var(--w, 0) * 14ms);
+  }
+
+  /* the dial arc and number are driven by portfolio.js on load */
+  .dial-arc { transition: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+  .dial-ring, .mcard { transform: none !important; }
 }

@@ -58,32 +58,71 @@
     var T = window.THREE;
     var container = ctx.container;
     var w = container.clientWidth, h = container.clientHeight;
+    var phone = window.innerWidth < 820;
     var renderer = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2));
     renderer.setSize(w, h);
     renderer.outputEncoding = T.sRGBEncoding;
     container.insertBefore(renderer.domElement, container.firstChild);
 
     var scene = new T.Scene();
+    // depth: the far side of the helix recedes into the plate colour
+    scene.fog = new T.Fog(0x111a2d, 12, 19);
     var camera = new T.PerspectiveCamera(32, w / h, 0.1, 100);
     camera.position.set(0, 0, 13.5);
 
-    scene.add(new T.AmbientLight(0xc9c2b4, 0.55));
-    var key = new T.DirectionalLight(0xfff1d6, 0.9);
+    scene.add(new T.AmbientLight(0xc9c2b4, 0.35));
+    scene.add(new T.HemisphereLight(0xe3dccb, 0x0d1322, 0.5));
+    var key = new T.DirectionalLight(0xfff1d6, 0.95);
     key.position.set(4, 6, 8);
     scene.add(key);
-    var rim = new T.DirectionalLight(0x7f8da8, 0.6);
+    var rim = new T.DirectionalLight(0x7f8da8, 0.7);
     rim.position.set(-6, -3, -4);
     scene.add(rim);
+    var lamp = new T.PointLight(0xfff1d6, 0.55, 30, 2);
+    lamp.position.set(3, 2, 9);
+    scene.add(lamp);
 
     var group = new T.Group();
     scene.add(group);
 
     var height = 10, radius = 1.55, turns = 3.0;
-    var strandMat = new T.MeshStandardMaterial({ color: 0x8f8a7e, roughness: 0.6, metalness: 0.1 });
-    var rungMat = new T.MeshStandardMaterial({ color: 0x56627c, roughness: 0.7, metalness: 0.05 });
-    var litMat = new T.MeshStandardMaterial({ color: 0xece6d8, emissive: 0xece6d8, emissiveIntensity: 0.45, roughness: 0.35 });
-    var selMat = new T.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6e4, emissiveIntensity: 1.0, roughness: 0.25 });
+    var strandMat = new T.MeshStandardMaterial({ color: 0x8f8a7e, roughness: 0.42, metalness: 0.3 });
+    var rungMat = new T.MeshStandardMaterial({ color: 0x56627c, roughness: 0.6, metalness: 0.15 });
+    var litMat = new T.MeshStandardMaterial({ color: 0xece6d8, emissive: 0xece6d8, emissiveIntensity: 0.5, roughness: 0.3, metalness: 0.1 });
+    var selMat = new T.MeshStandardMaterial({ color: 0xffffff, emissive: 0xfff6e4, emissiveIntensity: 1.1, roughness: 0.2 });
+
+    // a soft additive halo, drawn once to a canvas, used for the lit rungs' glow
+    var haloCanvas = document.createElement('canvas');
+    haloCanvas.width = haloCanvas.height = 128;
+    var g2 = haloCanvas.getContext('2d');
+    var grad = g2.createRadialGradient(64, 64, 0, 64, 64, 64);
+    grad.addColorStop(0, 'rgba(255,250,238,0.9)');
+    grad.addColorStop(0.25, 'rgba(236,230,216,0.45)');
+    grad.addColorStop(0.6, 'rgba(236,230,216,0.1)');
+    grad.addColorStop(1, 'rgba(236,230,216,0)');
+    g2.fillStyle = grad;
+    g2.fillRect(0, 0, 128, 128);
+    var haloTex = new T.CanvasTexture(haloCanvas);
+    function halo(opacity, scale) {
+      var sp = new T.Sprite(new T.SpriteMaterial({ map: haloTex, color: 0xece6d8, transparent: true, opacity: opacity, blending: T.AdditiveBlending, depthWrite: false }));
+      sp.scale.set(scale, scale, 1);
+      return sp;
+    }
+
+    // dust: a slow field of motes around the helix for atmosphere (fewer on phones)
+    var motes = phone ? 70 : 180;
+    var dust = new Float32Array(motes * 3);
+    for (var d = 0; d < motes; d++) {
+      var ang = Math.random() * Math.PI * 2, rad = 2.4 + Math.random() * 2.6;
+      dust[d * 3] = Math.cos(ang) * rad;
+      dust[d * 3 + 1] = (Math.random() - 0.5) * 13;
+      dust[d * 3 + 2] = Math.sin(ang) * rad;
+    }
+    var dustGeo = new T.BufferGeometry();
+    dustGeo.setAttribute('position', new T.BufferAttribute(dust, 3));
+    var dustPts = new T.Points(dustGeo, new T.PointsMaterial({ color: 0xaab3c6, size: 0.05, transparent: true, opacity: 0.55, depthWrite: false, sizeAttenuation: true }));
+    scene.add(dustPts);
 
     function strandPoint(t, phase) {
       var y = -height / 2 + t * height;
@@ -127,13 +166,27 @@
           return s;
         });
         mesh.userData.finding = finding;
-        ctx.rungs[finding] = { mesh: mesh, beads: beads, angle: t * turns * Math.PI * 2, y: mid.y, lit: litMat, sel: selMat };
+        var glow = halo(0.28, 0.9);
+        glow.position.copy(mid);
+        group.add(glow);
+        ctx.rungs[finding] = { mesh: mesh, beads: beads, glow: glow, angle: t * turns * Math.PI * 2, y: mid.y, lit: litMat, sel: selMat };
       }
     }
 
-    ctx.T = T; ctx.renderer = renderer; ctx.scene = scene; ctx.camera = camera; ctx.group = group;
+    ctx.T = T; ctx.renderer = renderer; ctx.scene = scene; ctx.camera = camera; ctx.group = group; ctx.dust = dustPts;
     ctx.targetRot = 0; ctx.targetY = 0; ctx.auto = true; ctx.visible = true; ctx.ready = true;
+    ctx.scrollT = 0.5; ctx.camY = 0; ctx.tiltX = 0.08;
     group.rotation.x = 0.08;
+
+    // scroll-linked camera: as the section passes through the viewport the eye drifts
+    // down the helix and the tilt eases, so the strand reads as a solid object in space
+    var readScroll = function () {
+      var rect = container.getBoundingClientRect();
+      var vh = window.innerHeight || 1;
+      ctx.scrollT = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+    };
+    readScroll();
+    window.addEventListener('scroll', readScroll, { passive: true });
 
     var raycaster = new T.Raycaster();
     var pointer = new T.Vector2();
@@ -201,6 +254,24 @@
       if (ctx.auto) ctx.targetRot += dt * 0.25;
       group.rotation.y += (ctx.targetRot - group.rotation.y) * Math.min(1, dt * 5);
       group.position.y += (ctx.targetY - group.position.y) * Math.min(1, dt * 4);
+      // eased scroll camera and tilt
+      var wantCamY = (0.5 - ctx.scrollT) * 1.4, wantTilt = 0.08 + (ctx.scrollT - 0.5) * 0.3;
+      ctx.camY += (wantCamY - ctx.camY) * Math.min(1, dt * 3);
+      ctx.tiltX += (wantTilt - ctx.tiltX) * Math.min(1, dt * 3);
+      camera.position.y = ctx.camY;
+      camera.lookAt(0, ctx.camY * 0.35, 0);
+      group.rotation.x = ctx.tiltX;
+      // dust drifts the other way, slowly
+      dustPts.rotation.y -= dt * 0.03;
+      dustPts.position.y = Math.sin(now / 9000) * 0.25;
+      // the selected rung's halo breathes; the others hold a steady glow
+      ctx.rungs.forEach(function (r, k) {
+        var on = k === ctx.selected;
+        var want = on ? 2.1 + Math.sin(now / 700) * 0.15 : 0.9;
+        var s = r.glow.scale.x + (want - r.glow.scale.x) * Math.min(1, dt * 6);
+        r.glow.scale.set(s, s, 1);
+        r.glow.material.opacity += ((on ? 0.6 : 0.28) - r.glow.material.opacity) * Math.min(1, dt * 6);
+      });
       renderer.render(scene, camera);
     }
     requestAnimationFrame(frame);
